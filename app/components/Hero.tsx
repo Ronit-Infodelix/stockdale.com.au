@@ -58,11 +58,11 @@ export default function Hero() {
         <Container className="flex flex-col items-center text-center">
           {/* Gold pill badge */}
           <div
-            className="flex items-center gap-2 px-6 py-1.5 rounded-full border border-[#f0c41a] mb-8"
+            className="flex items-center px-3 py-1 rounded-full border border-[#f0c41a] mb-8"
             style={{ background: "rgba(234,196,88,0.2)" }}
           >
             <span
-              className="font-sans font-medium uppercase tracking-wide"
+              className="font-sans text-[13px] font-medium uppercase tracking-wide"
               style={{
                 background:
                   "linear-gradient(90deg, #8b732f 14.6%, #eac458 43.5%, #8b732f 101.7%)",
@@ -76,14 +76,13 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-agatho text-[70px] leading-normal text-white max-w-[936px]">
+          <h1 className="font-agatho text-[70px] leading-5 text-white max-w-[936px]">
             A Global Community of Scholars
           </h1>
 
           {/* Subheading */}
           <p
-            className="font-sans text-[24px] text-white uppercase mt-4 mb-10"
-            style={{ letterSpacing: "2.64px" }}
+            className="font-sans text-[24px] text-white uppercase mt-10 mb-8 tracking-[4px]"
           >
             Innovate &nbsp;|&nbsp; Create &nbsp;|&nbsp; Succeed
           </p>

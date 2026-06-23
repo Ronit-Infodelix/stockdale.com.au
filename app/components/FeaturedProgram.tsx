@@ -11,7 +11,7 @@ export default function FeaturedProgram() {
       {/* Image — absolute to Section (Container has no position:relative), bleeds to right edge */}
       <div className="absolute inset-y-0 right-0 w-[52%]">
         <Image
-          src="/images/about/smiling-students-outside-college-building-with-boo-2026-01-11-10-53-42-utc 1.png"
+          src="/images/home/about/smiling-students-outside-college-building-with-boo-2026-01-11-10-53-42-utc 1.png"
           alt="Students studying together"
           fill
           className="object-cover object-center"

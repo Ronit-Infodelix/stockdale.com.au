@@ -1,26 +1,36 @@
 import { Briefcase, GraduationCap, Users, MapPin } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Section from "./ui/Section";
+import { CountAnimation } from "./animation/CountAnimation";
 
-const stats: { icon: LucideIcon; value: string; label: string }[] = [
-  { icon: Briefcase,      value: "95%",     label: "Graduate employment rate within 6 months" },
-  { icon: GraduationCap, value: "15,000+", label: "Students from 80+ countries" },
-  { icon: Users,          value: "200+",    label: "Industry partnerships" },
-  { icon: MapPin,         value: "15",      label: "International locations" },
+const stats: { icon: LucideIcon; value: number; label: string }[] = [
+  {
+    icon: Briefcase,
+    value: 95,
+    label: "Graduate employment rate within 6 months",
+  },
+  {
+    icon: GraduationCap,
+    value: 15000,
+    label: "Students from 80+ countries",
+  },
+  { icon: Users, value: 200, label: "Industry partnerships" },
+  { icon: MapPin, value: 15, label: "International locations" },
 ];
 
 export default function StatsSection() {
   return (
     <Section className="bg-[#f5f5f5]">
-
       {/* Heading + description row */}
       <div className="flex items-start justify-between mb-12">
         <h2 className="font-agatho font-bold text-[50px] leading-tight text-black shrink-0">
-          Shaping Careers,<br />Empowering Success
+          Shaping Careers,
+          <br />
+          Empowering Success
         </h2>
         <p className="text-[#767676] text-[16px] leading-[24px] max-w-[472px] mt-3">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
 
@@ -34,9 +44,10 @@ export default function StatsSection() {
             {/* Icon + number */}
             <div className="flex items-center gap-3">
               <Icon size={40} strokeWidth={1.25} color="#d6a929" />
-              <span className="font-agatho font-bold text-[52px] leading-none text-brand-green-darkest">
-                {value}
-              </span>
+              <CountAnimation
+                number={value}
+                className="font-agatho font-bold text-[52px] leading-none text-brand-green-darkest"
+              />
             </div>
 
             {/* Label */}
@@ -46,7 +57,6 @@ export default function StatsSection() {
           </div>
         ))}
       </div>
-
     </Section>
   );
 }
