@@ -17,7 +17,7 @@ export default function Section<T extends ElementType = "section">({
 }: SectionProps<T>) {
   const Tag = as ?? "section";
   return (
-    <Tag className={`w-full py-12 md:py-16 lg:py-20 ${className}`} {...props}>
+    <Tag className={`relative w-full py-12 md:py-16 lg:py-20 ${className}`} {...props}>
       <Container className={containerClassName}>{children}</Container>
     </Tag>
   );
