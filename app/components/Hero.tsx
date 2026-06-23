@@ -15,15 +15,15 @@ export default function Hero() {
       />
 
       {/* Video — covers poster once loaded; poster keeps it seamless until then */}
-      {/* <video
-        className="absolute inset-0 w-full h-full object-cover object-[center_-20%]"
+      <video
+        className="absolute inset-0 w-full h-full object-cover object-center"
         src="/videos/globe.mp4"
         poster="/images/home/hero/banner.png"
         autoPlay
         muted
         loop
         playsInline
-      /> */}
+      />
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />
@@ -76,7 +76,7 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-agatho text-[70px] leading-tight text-white max-w-[936px]">
+          <h1 className="font-agatho text-[60px] leading-tight text-white max-w-[936px]">
             A Global Community of Scholars
           </h1>
 

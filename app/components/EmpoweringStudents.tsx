@@ -1,23 +1,19 @@
 import Image from "next/image";
 import Container from "./ui/Container";
+import Section from "./ui/Section";
 
 export default function EmpoweringStudents() {
   return (
-    <section className="relative w-full bg-white overflow-hidden">
+    <Section className="flex flex-col justify-end h-screen w-full overflow-hidden">
       {/* Students image with gradient overlay fading to white */}
-      <div className="relative h-[526px]">
-        <div
-          className="absolute top-0 left-0 h-full"
-          style={{ width: "88.7%" }}
-        >
-          <Image
-            src="/images/home/students-empowering.png"
-            alt="Students talking near college building"
-            fill
-            className="object-cover object-top"
-            priority
-          />
-        </div>
+      <Container className="inset-0 flex-1 h-full absolute">
+        <Image
+          src="/images/home/students-empowering.png"
+          alt="Students talking near college building"
+          fill
+          className="object-cover object-top"
+          priority
+        />
 
         {/* Gradient overlay — matches Figma: transparent → white from 4% → 61% */}
         <div
@@ -27,10 +23,10 @@ export default function EmpoweringStudents() {
               "linear-gradient(177.13deg, rgba(255,255,255,0) 1.56%, rgba(255,255,255,0) 3.83%, rgb(255,255,255) 61.34%, rgb(255,255,255) 80.40%)",
           }}
         />
-      </div>
+      </Container>
 
       {/* Text content */}
-      <Container className="flex flex-col items-center text-center pb-20">
+      <Container className="flex flex-col items-center text-center mt-auto relative">
         <h2 className="font-agatho text-[63px] leading-tight text-[#013529]">
           Empowering Students for Global Success
         </h2>
@@ -40,6 +36,6 @@ export default function EmpoweringStudents() {
           helps students gain confidence, knowledge, and real-world experience.
         </p>
       </Container>
-    </section>
+    </Section>
   );
 }
