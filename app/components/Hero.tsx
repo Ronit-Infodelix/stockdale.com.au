@@ -1,153 +1,114 @@
 import Image from "next/image";
+import { ChevronRight } from "lucide-react";
+import Container from "./ui/Container";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[865px] overflow-hidden bg-[#050e1a]">
-
-      {/* Globe background image — place file at /public/images/hero-globe.jpg */}
-      <Image
-        src="/images/hero-globe.jpg"
+    <section className="relative w-full h-[calc(100vh-140px)] overflow-hidden bg-[#050e1a]">
+      {/* Static poster — always rendered as base layer */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/hero/banner.png"
         alt=""
-        fill
-        style={{ objectFit: "cover", objectPosition: "center 40%" }}
-        priority
+        className="absolute inset-0 w-full h-full object-cover object-[center_40%] pointer-events-none"
+        aria-hidden="true"
       />
 
-      {/* Dark overlay so text stays readable */}
-      <div className="absolute inset-0 bg-[#000]/30" />
+      {/* Video — covers poster once loaded; poster keeps it seamless until then */}
+      {/* <video
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        src="/videos/globe.mp4"
+        poster="/images/hero/banner.png"
+        autoPlay
+        muted
+        loop
+        playsInline
+      /> */}
 
-      {/* Bottom-left decorative angular shapes */}
-      <div className="absolute bottom-0 left-0 w-[420px] h-[280px] pointer-events-none">
-        {/* shape 1 */}
-        <div
-          className="absolute bottom-[-60px] left-[-60px] w-[400px] h-[160px] border border-brand-gold-dark"
-          style={{
-            background: "linear-gradient(135deg, #28554a, #072722)",
-            transform: "rotate(38.23deg) skewX(-3.14deg)",
-            transformOrigin: "bottom left",
-          }}
-        />
-        {/* shape 2 */}
-        <div
-          className="absolute bottom-[-80px] left-[-80px] w-[420px] h-[160px] border-2 border-brand-gold-dark"
-          style={{
-            background: "linear-gradient(212deg, #014F3D, #013529)",
-            transform: "rotate(32.63deg) skewX(-2.97deg)",
-            transformOrigin: "bottom left",
-          }}
-        />
-        {/* shape 3 */}
-        <div
-          className="absolute bottom-[-100px] left-[-100px] w-[440px] h-[160px]"
-          style={{
-            background: "linear-gradient(224deg, rgba(1,79,61,0) 27%, #014F3D 40%, #013529 55%)",
-            transform: "rotate(27.48deg) skewX(-2.7deg)",
-            transformOrigin: "bottom left",
-          }}
-        />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/50" />
+
+      {/* Bottom-left decorative image */}
+      <div className="h-1/3 absolute w-full bottom-0 grid grid-cols-3">
+        <div className="relative -left-1/2 top-1/3">
+          <Image
+            src="/images/hero/left.png"
+            alt=""
+            fill
+            className="pointer-events-none select-none object-cover overflow-visible"
+            aria-hidden="true"
+          />
+        </div>
+        <div className=""></div>
+
+        {/* Bottom-right decorative image */}
+        <div className="relative -right-1/2 top-1/2">
+          <Image
+            src="/images/hero/right.png"
+            alt=""
+            fill
+            className=" pointer-events-none select-none object-cover overflow-visible"
+            aria-hidden="true"
+          />
+        </div>
       </div>
 
-      {/* Bottom-right decorative angular shapes */}
-      <div className="absolute bottom-0 right-0 w-[420px] h-[280px] pointer-events-none">
-        {/* shape 1 */}
-        <div
-          className="absolute bottom-[-60px] right-[-60px] w-[400px] h-[160px] border border-brand-gold-dark"
-          style={{
-            background: "linear-gradient(136deg, #014F3D 27%, #013529 58%)",
-            transform: "rotate(-34.8deg) skewX(3.05deg)",
-            transformOrigin: "bottom right",
-          }}
-        />
-        {/* shape 2 */}
-        <div
-          className="absolute bottom-[-80px] right-[-80px] w-[420px] h-[160px] border border-brand-gold"
-          style={{
-            background: "radial-gradient(ellipse at 50% 50%, #eac458, #d7c276, #bba05b, #a07e40, #845c25)",
-            transform: "rotate(-42.19deg) skewX(3.19deg)",
-            transformOrigin: "bottom right",
-          }}
-        />
-        {/* shape 3 */}
-        <div
-          className="absolute bottom-[-100px] right-[-100px] w-[440px] h-[160px] border border-brand-gold-dark"
-          style={{
-            background: "linear-gradient(174deg, #28554a 14%, #072722 35%, #072722 62%)",
-            transform: "rotate(45.73deg) skewX(-3.18deg)",
-            transformOrigin: "bottom right",
-          }}
-        />
-      </div>
-
-      {/* Hero content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pb-16">
-
-        {/* Gold pill badge */}
-        <div
-          className="flex items-center gap-2 px-6 py-1.5 rounded-full border border-brand-gold mb-8"
-          style={{ background: "rgba(234,196,88,0.2)" }}
-        >
-          <span
-            className="text-[13.6px] font-sans font-medium uppercase tracking-wide"
-            style={{
-              background: "linear-gradient(90deg, #8b732f 14.6%, #eac458 43.5%, #8b732f 101.7%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
+      {/* Hero content — upper portion of the hero */}
+      <div className="relative z-10 w-full pt-[80px]">
+        <Container className="flex flex-col items-center text-center">
+          {/* Gold pill badge */}
+          <div
+            className="flex items-center gap-2 px-6 py-1.5 rounded-full border border-[#f0c41a] mb-8"
+            style={{ background: "rgba(234,196,88,0.2)" }}
           >
-            Ranked #1 in Graduate outcome
-          </span>
-        </div>
+            <span
+              className="text-[13.6px] font-sans font-medium uppercase tracking-wide"
+              style={{
+                background:
+                  "linear-gradient(90deg, #8b732f 14.6%, #eac458 43.5%, #8b732f 101.7%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              • Ranked #1 in Graduate outcome •
+            </span>
+          </div>
 
-        {/* Headline */}
-        <h1 className="font-agatho text-[70px] leading-tight text-white max-w-[936px]">
-          A Global Community of Scholars
-        </h1>
+          {/* Headline */}
+          <h1 className="font-agatho text-[70px] leading-tight text-white max-w-[936px]">
+            A Global Community of Scholars
+          </h1>
 
-        {/* Subheading */}
-        <p
-          className="font-sans text-[24px] text-white uppercase mt-4 mb-10"
-          style={{ letterSpacing: "2.64px" }}
-        >
-          Innovate &nbsp;|&nbsp; Create &nbsp;|&nbsp; Succeed
-        </p>
-
-        {/* CTA buttons */}
-        <div className="flex items-center gap-4">
-          {/* Apply Now — gold gradient */}
-          <button
-            className="flex items-center gap-2 px-[17px] py-[10px] rounded-[8px] text-white text-[14px] font-sans"
-            style={{
-              background:
-                "linear-gradient(176.5deg, #F0C41A 0.56%, #D6A929 36.4%, #a6860d 89.05%)",
-            }}
+          {/* Subheading */}
+          <p
+            className="font-sans text-[24px] text-white uppercase mt-4 mb-10"
+            style={{ letterSpacing: "2.64px" }}
           >
-            Apply Now
-            <svg width="4" height="8" viewBox="0 0 4 8" fill="none">
-              <path
-                d="M1 1L3 4L1 7"
-                stroke="white"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
+            Innovate &nbsp;|&nbsp; Create &nbsp;|&nbsp; Succeed
+          </p>
 
-          {/* Enquire — white outline */}
-          <button className="flex items-center gap-2 px-[17px] py-[10px] rounded-[8px] text-white text-[14px] font-sans border border-white">
-            Enquire
-            <svg width="4" height="8" viewBox="0 0 4 8" fill="none">
-              <path
-                d="M1 1L3 4L1 7"
-                stroke="white"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
+          {/* CTA buttons */}
+          <div className="flex items-center gap-4">
+            {/* Enquire — white outline */}
+            <button className="flex items-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white text-[14px] font-sans border border-white whitespace-nowrap">
+              Enquire
+              <ChevronRight size={14} strokeWidth={2} />
+            </button>
+
+            {/* Apply Now — gold gradient */}
+            <button
+              className="flex items-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white text-[14px] font-sans whitespace-nowrap"
+              style={{
+                background:
+                  "linear-gradient(176.49deg, #F0C41A 0.56%, #D6A929 36.4%, #a6860d 89.05%)",
+              }}
+            >
+              Apply Now
+              <ChevronRight size={14} strokeWidth={2} />
+            </button>
+          </div>
+        </Container>
       </div>
     </section>
   );
