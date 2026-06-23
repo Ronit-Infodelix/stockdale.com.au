@@ -1,10 +1,56 @@
 @import "tailwindcss";
 
-/* Agatho — place font files in /public/fonts/ */
+/* Helvetica Neue font family */
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helveticaneuelight-webfont.woff2") format("woff2"),
+       url("/fonts/helveticaneuelight-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helveticaneueroman-webfont.woff2") format("woff2"),
+       url("/fonts/helveticaneueroman-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helveticaneuemedium-webfont.woff2") format("woff2"),
+       url("/fonts/helveticaneuemedium-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helveticaneuebold-webfont.woff2") format("woff2"),
+       url("/fonts/helveticaneuebold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Agatho font family */
 @font-face {
   font-family: "Agatho";
-  src: url("/fonts/Agatho-Regular.woff2") format("woff2"),
-       url("/fonts/Agatho-Regular.woff") format("woff");
+  src: url("/fonts/agatho__light-webfont.woff2") format("woff2"),
+       url("/fonts/agatho__light-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Agatho";
+  src: url("/fonts/agatho_regular-webfont.woff2") format("woff2"),
+       url("/fonts/agatho_regular-webfont.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -12,8 +58,8 @@
 
 @font-face {
   font-family: "Agatho";
-  src: url("/fonts/Agatho-Medium.woff2") format("woff2"),
-       url("/fonts/Agatho-Medium.woff") format("woff");
+  src: url("/fonts/agatho__medium-webfont.woff2") format("woff2"),
+       url("/fonts/agatho__medium-webfont.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -21,8 +67,8 @@
 
 @font-face {
   font-family: "Agatho";
-  src: url("/fonts/Agatho-Bold.woff2") format("woff2"),
-       url("/fonts/Agatho-Bold.woff") format("woff");
+  src: url("/fonts/agatho__bold-webfont.woff2") format("woff2"),
+       url("/fonts/agatho__bold-webfont.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -39,11 +85,11 @@
 
   /* Brand colours */
   --color-brand-green-darkest: #013529;
-  --color-brand-green-dark: #014F3D;
-  --color-brand-green: #43A48E;
-  --color-brand-green-light: #CDEAE3;
-  --color-brand-gold-dark: #D6A929;
-  --color-brand-gold: #F0C41A;
+  --color-brand-green-dark: #014f3d;
+  --color-brand-green: #43a48e;
+  --color-brand-green-light: #cdeae3;
+  --color-brand-gold-dark: #d6a929;
+  --color-brand-gold: #f0c41a;
   --color-brand-black: #000000;
   --color-brand-gray: #767676;
 
@@ -56,4 +102,11 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  font-size: 14px;
+}
+
+@layer utilities {
+  .text-normal {
+    @apply text-[14px];
+  }
 }

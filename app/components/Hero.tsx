@@ -16,7 +16,7 @@ export default function Hero() {
 
       {/* Video — covers poster once loaded; poster keeps it seamless until then */}
       <video
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        className="absolute inset-0 w-full h-full object-cover object-[center_-40%]"
         src="/videos/globe.mp4"
         poster="/images/home/hero/banner.png"
         autoPlay
@@ -32,7 +32,7 @@ export default function Hero() {
       <div className="h-1/3 absolute w-full bottom-0 grid grid-cols-3">
         <div className="relative -left-1/2 top-1/3">
           <Image
-            src="/images/hero/left.png"
+            src="/images/home/hero/left.png"
             alt=""
             fill
             className="pointer-events-none select-none object-cover overflow-visible"
@@ -44,7 +44,7 @@ export default function Hero() {
         {/* Bottom-right decorative image */}
         <div className="relative -right-1/2 top-1/2">
           <Image
-            src="/images/hero/right.png"
+            src="/images/home/hero/right.png"
             alt=""
             fill
             className=" pointer-events-none select-none object-cover overflow-visible"
@@ -54,7 +54,7 @@ export default function Hero() {
       </div>
 
       {/* Hero content — upper portion of the hero */}
-      <div className="relative z-10 w-full pt-[80px]">
+      <div className="relative z-10 w-full py-16">
         <Container className="flex flex-col items-center text-center">
           {/* Gold pill badge */}
           <div
@@ -62,7 +62,7 @@ export default function Hero() {
             style={{ background: "rgba(234,196,88,0.2)" }}
           >
             <span
-              className="text-[13.6px] font-sans font-medium uppercase tracking-wide"
+              className="font-sans font-medium uppercase tracking-wide"
               style={{
                 background:
                   "linear-gradient(90deg, #8b732f 14.6%, #eac458 43.5%, #8b732f 101.7%)",
@@ -76,7 +76,7 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-agatho text-[60px] leading-tight text-white max-w-[936px]">
+          <h1 className="font-agatho text-[70px] leading-normal text-white max-w-[936px]">
             A Global Community of Scholars
           </h1>
 
