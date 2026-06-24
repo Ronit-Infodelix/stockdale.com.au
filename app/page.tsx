@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import TextLine from "./components/TextLine";
 import StatsSection from "./components/StatsSection";
 import FeaturedProgram from "./components/FeaturedProgram";
 import LearnSkills from "./components/LearnSkills";
@@ -17,25 +18,32 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      <StatsSection />
-      <FeaturedProgram />
-      <LearnSkills />
-      <EmpoweringStudents />
-      <WhyChooseUs />
-      <DiscoverLife />
-      <Testimonials />
-      <BlogsEvents />
+
       {/*
-        MapSection + CTASection share a relative wrapper so the graduate girl
-        (which is 741px tall inside a 513px CTA section) naturally overflows
-        upward and paints over the bottom of the map — no z-index needed,
-        later DOM order handles stacking.
+        z-10 + relative: these sections sit above the sticky hero (z-0) in the
+        stacking context, so they slide up over it as the user scrolls.
+        bg-white ensures no transparency gap between sections.
       */}
-      <div className="relative">
-        <MapSection />
-        <CTASection />
+      <div className="relative z-10 bg-white">
+        <StatsSection />
+        <TextLine />
+        <FeaturedProgram />
+        <LearnSkills />
+        <EmpoweringStudents />
+        <WhyChooseUs />
+        <DiscoverLife />
+        <Testimonials />
+        <BlogsEvents />
+        {/*
+          MapSection + CTASection share a relative wrapper so the graduate girl
+          naturally overflows upward and paints over the bottom of the map.
+        */}
+        <div className="relative">
+          <MapSection />
+          <CTASection />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </main>
   );
 }
