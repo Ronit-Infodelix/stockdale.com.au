@@ -26,23 +26,44 @@ export default function Home() {
       */}
       <div className="relative z-10 bg-white">
         <StatsSection />
-        <FeaturedProgram />
-        <LearnSkills />
-        <EmpoweringStudents />
-        <WhyChooseUs />
-        <DiscoverLife />
-        <Testimonials />
-        <TextLine />
-        <BlogsEvents />
+        {/* FeaturedProgram pins — LearnSkills scrolls over it */}
+        <div className="sticky top-18 z-0">
+          <FeaturedProgram />
+        </div>
+
+        {/* LearnSkills card rises over the pinned FeaturedProgram */}
+        <div className="relative z-10 rounded-t-[28px] overflow-hidden">
+          <LearnSkills />
+        </div>
+        {/* EmpoweringStudents pins — WhyChooseUs scrolls over it */}
+        <div className="sticky top-0 z-0">
+          <EmpoweringStudents />
+        </div>
+
+        {/* WhyChooseUs card rises over the pinned EmpoweringStudents */}
+        <div className="relative z-10 rounded-t-[28px] overflow-hidden">
+          <WhyChooseUs />
+        </div>
+        <div className="relative">
+          <DiscoverLife />
+          <Testimonials />
+          <TextLine />
+          <BlogsEvents />
+        </div>
         {/*
           MapSection + CTASection share a relative wrapper so the graduate girl
           naturally overflows upward and paints over the bottom of the map.
         */}
         <div className="relative">
           <MapSection />
+        </div>
+        <div className="sticky top-0 z-0">
           <CTASection />
         </div>
-        <Footer />
+
+        <div className="relative">
+          <Footer />
+        </div>
       </div>
     </main>
   );

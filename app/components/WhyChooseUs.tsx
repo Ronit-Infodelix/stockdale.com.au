@@ -50,7 +50,7 @@ const VIS = "20vw"; // visible slice width per circle
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-brand-green-darkest">
+    <section className="relative overflow-hidden bg-brand-green-darkest mt-60">
       {/* Shimmering video bg */}
       <video
         className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none"
