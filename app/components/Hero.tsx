@@ -4,21 +4,21 @@ import Container from "./ui/Container";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[calc(100vh-140px)] overflow-hidden bg-[#050e1a]">
+    <section className="relative w-full h-screen overflow-hidden bg-[#050e1a] pt-35">
       {/* Static poster — always rendered as base layer */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/images/home/hero/banner.png"
         alt=""
-        className="absolute inset-0 w-full h-full object-cover object-[center_40%] pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover object-[center_-8%] pointer-events-none"
         aria-hidden="true"
       />
 
       {/* Video — covers poster once loaded; poster keeps it seamless until then */}
       <video
-        className="absolute inset-0 w-full h-full object-cover object-[center_-40%]"
-        src="/videos/globe.mp4"
-        poster="/images/home/hero/banner.png"
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/videos/Enhancer-Ultra HD-final-3.mp4"
+        // poster="/images/home/hero/banner.png"
         autoPlay
         muted
         loop
