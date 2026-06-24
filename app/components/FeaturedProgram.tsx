@@ -86,7 +86,7 @@ export default function FeaturedProgram() {
           variants={slideUp}
           className="font-sans text-[16px] text-[#767676] max-w-100"
         >
-          In today's rapidly evolving digital landscape, data analytics has
+          In today&apos;s rapidly evolving digital landscape, data analytics has
           become a crucial skill across various industries. The Bachelor of
           Information Technology (BIT) with a specialisation in Data Analytics
           addresses the growing need for professionals who can harness the power

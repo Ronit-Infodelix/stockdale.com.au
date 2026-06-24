@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import EnquiryModal from "./components/EnquiryModal";
 import TextLine from "./components/TextLine";
 import StatsSection from "./components/StatsSection";
 import FeaturedProgram from "./components/FeaturedProgram";
@@ -16,6 +17,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <main>
+      <EnquiryModal />
       <Navbar />
       <Hero />
 

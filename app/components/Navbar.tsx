@@ -106,31 +106,46 @@ export default function Navbar() {
           transition: "height 0.3s ease-in-out",
         }}
       >
-        <Container className="h-10 flex items-center justify-end gap-6">
-          {utilityLinks.map((link, i) => (
-            <Link
-              key={link}
-              href="#"
-              className="text-white text-sm font-sans hover:text-brand-gold transition-colors duration-150 whitespace-nowrap"
+        <Container className="h-10 flex items-center justify-end">
+          {/* Utility links — right side */}
+          <div className="flex items-center gap-6">
+            {utilityLinks.map((link, i) => (
+              <Link
+                key={link}
+                href="#"
+                className="text-white text-sm font-sans hover:text-brand-gold transition-colors duration-150 whitespace-nowrap"
+                style={{
+                  opacity: mounted ? 1 : 0,
+                  transform: mounted ? "translateX(0)" : "translateX(18px)",
+                  // stagger right-to-left: last item (rightmost) appears first
+                  transition: `opacity 0.4s ease, transform 0.5s ${SPRING}`,
+                  transitionDelay: mounted
+                    ? `${60 + (utilityLinks.length - 1 - i) * 55}ms`
+                    : "0ms",
+                }}
+              >
+                {link}
+              </Link>
+            ))}
+            {/* EN language selector — left side of utility bar */}
+            <span
+              className="text-white text-sm font-sans font-medium cursor-pointer hover:text-brand-gold transition-colors duration-150 select-none"
               style={{
                 opacity: mounted ? 1 : 0,
-                transform: mounted ? "translateX(0)" : "translateX(18px)",
-                // stagger right-to-left: last item (rightmost) appears first
+                transform: mounted ? "translateX(0)" : "translateX(-12px)",
                 transition: `opacity 0.4s ease, transform 0.5s ${SPRING}`,
-                transitionDelay: mounted
-                  ? `${60 + (utilityLinks.length - 1 - i) * 55}ms`
-                  : "0ms",
+                transitionDelay: mounted ? "60ms" : "0ms",
               }}
             >
-              {link}
-            </Link>
-          ))}
+              EN
+            </span>
+          </div>
         </Container>
       </div>
 
       {/* ── Main nav ── */}
       <div
-        className="bg-white"
+        className={`${scrolled ? "bg-white/90" : "bg-white"}`}
         style={{
           height: scrolled ? 76 : 100,
           boxShadow: scrolled
@@ -141,7 +156,6 @@ export default function Navbar() {
         }}
       >
         <Container className="h-full flex items-center justify-between">
-
           {/* ── Logo: glides in from screen-center ── */}
           <Link href="/" className="shrink-0">
             {/* Entrance animation wrapper (separates from scroll-resize wrapper) */}
@@ -190,7 +204,7 @@ export default function Navbar() {
                     transitionDelay: mounted ? `${220 + i * 75}ms` : "0ms",
                   }}
                 >
-                  <button className="group flex items-center gap-[5px] text-sm font-sans font-medium whitespace-nowrap text-brand-black hover:text-brand-green-dark transition-colors duration-200">
+                  <button className="group flex items-center gap-[5px] font-sans text-[15px] font-medium whitespace-nowrap text-brand-black hover:text-brand-green-dark transition-colors duration-200">
                     <span className="relative pb-0.5">
                       {link.label}
                       {/* Gold underline slide */}
@@ -258,21 +272,6 @@ export default function Navbar() {
                   </div>
                 </div>
               ))}
-
-              {/* EN — fades in last */}
-              <span
-                className="text-sm font-sans font-medium text-brand-black cursor-pointer hover:text-brand-green-dark transition-colors duration-150 select-none"
-                style={{
-                  opacity: mounted ? 1 : 0,
-                  transform: mounted ? "translateY(0)" : "translateY(-14px)",
-                  transition: `opacity 0.45s ease, transform 0.55s ${SPRING}`,
-                  transitionDelay: mounted
-                    ? `${220 + navLinks.length * 75}ms`
-                    : "0ms",
-                }}
-              >
-                EN
-              </span>
             </nav>
 
             {/* ── Actions — revealed on scroll ── */}
@@ -350,6 +349,9 @@ export default function Navbar() {
                       background:
                         "linear-gradient(176.49deg, #43A48E 0.56%, #014F3D 36.4%, #013529 89.05%)",
                     }}
+                    onClick={() =>
+                      window.dispatchEvent(new CustomEvent("open-apply"))
+                    }
                   >
                     Apply Now
                     <ChevronRight size={14} strokeWidth={2} />
@@ -401,7 +403,7 @@ export default function Navbar() {
               <button
                 onClick={() =>
                   setMobileExpanded(
-                    mobileExpanded === link.label ? null : link.label
+                    mobileExpanded === link.label ? null : link.label,
                   )
                 }
                 className="w-full flex items-center justify-between px-3 py-3 text-sm font-sans font-medium text-brand-black hover:text-brand-green-dark hover:bg-gray-50 rounded-lg transition-colors duration-150"

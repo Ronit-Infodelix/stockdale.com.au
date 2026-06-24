@@ -15,7 +15,7 @@ export default function EmpoweringStudents() {
   // 0 → 10 % of section visible  |  1 → 70 % visible (= "60 % through reveal")
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start 0.4", "start 0"],
+    offset: ["start 0.3", "start 0"],
   });
 
   // Clip grows from the top — grayscale disappears top-first, colour revealed beneath

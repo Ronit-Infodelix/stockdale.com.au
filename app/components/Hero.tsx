@@ -114,7 +114,7 @@ export default function Hero() {
       <motion.div
         className="absolute inset-0 bg-black"
         initial={{ opacity: 0 }}
-        animate={{ opacity: [0.3, 0.5, 0.7, 0.85, 0.7, 0.62] }}
+        animate={{ opacity: [0.3, 0.5, 0.7, 0.7, 0.7, 0.62] }}
         transition={{
           duration: 13,
           repeat: Infinity,
@@ -213,8 +213,8 @@ export default function Hero() {
             {/* Subheading — typewriter, hollow outlined */}
             <motion.p
               variants={twContainer}
-              className="font-sans text-[24px] uppercase mt-2 mb-8 tracking-[4px]"
-              style={{ color: "transparent", WebkitTextStroke: "0.8px #fff" }}
+              className="font-sans text-[24px] uppercase mt-2 mb-8 tracking-[4px] text-white"
+              // style={{ color: "transparent", WebkitTextStroke: "0.8px #fff" }}
             >
               {SUBHEADING.split("").map((char, i) => (
                 <motion.span key={i} variants={twChar}>
@@ -227,7 +227,10 @@ export default function Hero() {
             <motion.div className="flex items-center gap-4" variants={btnRow}>
               <motion.button
                 variants={btnItem}
-                className="flex items-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white text-[14px] font-sans border border-white whitespace-nowrap"
+                className="flex items-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white font-sans border border-white whitespace-nowrap"
+                onClick={() => window.dispatchEvent(new CustomEvent("open-enquiry"))}
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.12)", transition: { duration: 0.2 } }}
+                whileTap={{ scale: 0.96 }}
               >
                 Enquire
                 <ChevronRight size={14} strokeWidth={2} />
@@ -235,11 +238,14 @@ export default function Hero() {
 
               <motion.button
                 variants={btnItem}
-                className="flex items-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white text-[14px] font-sans whitespace-nowrap"
+                className="flex items-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white font-sans whitespace-nowrap"
                 style={{
                   background:
                     "linear-gradient(176.49deg, #F0C41A 0.56%, #D6A929 36.4%, #a6860d 89.05%)",
                 }}
+                onClick={() => window.dispatchEvent(new CustomEvent("open-apply"))}
+                whileHover={{ scale: 1.05, opacity: 0.92, transition: { duration: 0.2 } }}
+                whileTap={{ scale: 0.96 }}
               >
                 Apply Now
                 <ChevronRight size={14} strokeWidth={2} />
