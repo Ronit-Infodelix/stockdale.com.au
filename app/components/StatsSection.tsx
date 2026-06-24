@@ -3,7 +3,7 @@
 import { Briefcase, GraduationCap, Users, MapPin } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
-import Section from "./ui/Section";
+import Container from "./ui/Container";
 import PointerGrid from "./ui/PointerGrid";
 import { CountAnimation } from "./animation/CountAnimation";
 
@@ -62,9 +62,11 @@ const VIEWPORT = { once: true, margin: "-80px" } as const;
 
 export default function StatsSection() {
   return (
-    <Section className="bg-[#f5f5f5] overflow-hidden">
-      {/* interactive pointer-sweep grid — pointer-events:none so it never blocks clicks */}
-      <PointerGrid cols={20} rows={20} fadeDuration={900} cellOpacity={0.28} />
+    <section className="relative w-full py-12 md:py-16 lg:py-20 bg-[#f5f5f5] overflow-hidden">
+      {/* PointerGrid is a direct child of <section> so absolute inset-0 covers the full bg */}
+      <PointerGrid cellSize={20} fadeDuration={900} cellOpacity={0.28} />
+
+      <Container className="z-100 relative">
       {/* Heading + description */}
       <div className="flex items-start justify-between mb-12">
         <motion.h2
@@ -124,6 +126,7 @@ export default function StatsSection() {
           </motion.div>
         ))}
       </motion.div>
-    </Section>
+      </Container>
+    </section>
   );
 }

@@ -26,13 +26,13 @@ export default function Home() {
       */}
       <div className="relative z-10 bg-white">
         <StatsSection />
-        <TextLine />
         <FeaturedProgram />
         <LearnSkills />
         <EmpoweringStudents />
         <WhyChooseUs />
         <DiscoverLife />
         <Testimonials />
+        <TextLine />
         <BlogsEvents />
         {/*
           MapSection + CTASection share a relative wrapper so the graduate girl
