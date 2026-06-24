@@ -132,7 +132,7 @@ export default function Navbar() {
       <div
         className="bg-white"
         style={{
-          height: scrolled ? 68 : 100,
+          height: scrolled ? 76 : 100,
           boxShadow: scrolled
             ? "0 4px 24px rgba(1,53,41,0.10), 0 1px 4px rgba(0,0,0,0.06)"
             : "none",
@@ -147,20 +147,18 @@ export default function Navbar() {
             {/* Entrance animation wrapper (separates from scroll-resize wrapper) */}
             <div
               style={{
-                transform: mounted
-                  ? "translateX(0) scale(1)"
-                  : "translateX(38vw) scale(1.12)",
+                transform: mounted ? "scale(1)" : "scale(1.2)",
                 opacity: mounted ? 1 : 0,
-                transition: `transform 0.9s ${SPRING}, opacity 0.55s ease`,
-                transitionDelay: mounted ? "80ms" : "0ms",
+                transition: `transform 0.7s ${SPRING}, opacity 0.5s ease`,
+                transitionDelay: mounted ? "60ms" : "0ms",
               }}
             >
               {/* Scroll-resize wrapper */}
               <div
                 className="relative"
                 style={{
-                  height: scrolled ? 52 : 88,
-                  width: scrolled ? 176 : 300,
+                  height: scrolled ? 66 : 88,
+                  width: scrolled ? 240 : 300,
                   transition: `height 0.3s ease-in-out, width 0.3s ease-in-out`,
                 }}
               >

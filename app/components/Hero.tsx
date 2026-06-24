@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Static poster — always rendered as base layer */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/home/hero/banner.png"
+        src="/images/home/hero/banner.jpg"
         alt=""
         className="absolute inset-0 w-full h-full object-cover object-[center_-8%] pointer-events-none"
         aria-hidden="true"
@@ -16,8 +16,8 @@ export default function Hero() {
 
       {/* Video — covers poster once loaded; poster keeps it seamless until then */}
       <video
-        className="absolute inset-0 w-full h-full object-cover"
-        src="/videos/Enhancer-Ultra HD-final-3.mp4"
+        className="absolute inset-0 w-full h-full object-cover 2xl:object-[center_-20%] object-[center_-40%]"
+        src="/videos/Enhancer-Ultra HD-final-5.mp4"
         // poster="/images/home/hero/banner.png"
         autoPlay
         muted
