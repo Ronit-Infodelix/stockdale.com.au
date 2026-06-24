@@ -5,7 +5,7 @@ import { ChevronRight, GraduationCap, BookOpen, Network } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import {
   motion, animate,
-  useMotionValue, useTransform,
+  useMotionValue,
   type Variants,
 } from "framer-motion";
 import Section from "./ui/Section";
@@ -73,16 +73,6 @@ function FlipCard({ card, variants }: { card: Card; variants: Variants }) {
   // Rotation MotionValue — lets us derive shadow from the live angle
   const rotateY = useMotionValue(0);
 
-  // Box-shadow peaks at 90 ° (card is edge-on, maximising perceived depth)
-  const boxShadow = useTransform(
-    rotateY,
-    [0, 90, 180],
-    [
-      "0 4px 20px rgba(1,53,41,0.08)",
-      "0 28px 64px rgba(1,53,41,0.22), 0 8px 20px rgba(0,0,0,0.12)",
-      "0 4px 20px rgba(1,53,41,0.08)",
-    ]
-  );
 
   const onEnter = () => {
     clearTimeout(leaveTimer.current);
@@ -123,7 +113,6 @@ function FlipCard({ card, variants }: { card: Card; variants: Variants }) {
           rotateY,
           transformStyle: "preserve-3d",
           willChange: "transform",
-          boxShadow,
         }}
       >
         {/* ── Front ── */}
@@ -146,12 +135,12 @@ function FlipCard({ card, variants }: { card: Card; variants: Variants }) {
 
         {/* ── Back ── */}
         <div
-          className="rounded-[30px] border-b-4 border-brand-green-dark p-8 flex flex-col justify-between h-full bg-white overflow-hidden"
-          style={{ ...faceBase, transform: "rotateY(180deg)" }}
+          className="rounded-[30px] border-b-4 border-[#d6a929] p-8 flex flex-col justify-between h-full overflow-hidden"
+          style={{ ...faceBase, transform: "rotateY(180deg)", background: gradient }}
         >
           <div className="flex flex-col gap-3">
             <motion.h4
-              className="font-agatho font-bold text-[26px] leading-tight text-brand-green-darkest"
+              className="font-agatho font-bold text-[26px] leading-tight text-white"
               animate={{ opacity: flipped ? 1 : 0, y: flipped ? 0 : 14 }}
               transition={d(0.32)}
             >
@@ -159,7 +148,7 @@ function FlipCard({ card, variants }: { card: Card; variants: Variants }) {
             </motion.h4>
 
             <motion.p
-              className="font-sans text-[13px] leading-[1.55] text-[#767676]"
+              className="font-sans text-[13px] leading-[1.55] text-white/70"
               animate={{ opacity: flipped ? 1 : 0, y: flipped ? 0 : 10 }}
               transition={d(0.44)}
             >
@@ -170,7 +159,7 @@ function FlipCard({ card, variants }: { card: Card; variants: Variants }) {
               {bullets.map((b, i) => (
                 <motion.li
                   key={b}
-                  className="flex items-start gap-2 text-[13px] font-sans text-brand-green-darkest"
+                  className="flex items-start gap-2 text-[13px] font-sans text-white"
                   animate={{ opacity: flipped ? 1 : 0, x: flipped ? 0 : -10 }}
                   transition={d(0.54 + i * 0.08)}
                 >
@@ -182,7 +171,7 @@ function FlipCard({ card, variants }: { card: Card; variants: Variants }) {
           </div>
 
           <motion.button
-            className="flex items-center gap-1.5 text-brand-green-dark text-[14px] font-sans font-medium self-start"
+            className="flex items-center gap-1.5 text-white text-[14px] font-sans font-medium self-start"
             animate={{ opacity: flipped ? 1 : 0, y: flipped ? 0 : 6 }}
             transition={d(0.76)}
           >

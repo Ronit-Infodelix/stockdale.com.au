@@ -68,7 +68,7 @@ export default function StatsSection() {
 
       <Container className="z-100 relative">
       {/* Heading + description */}
-      <div className="flex items-start justify-between mb-12">
+      <div className="flex items-end justify-between mb-12">
         <motion.h2
           className="font-agatho font-bold text-[50px] leading-tight text-black shrink-0"
           initial={{ opacity: 0, x: -40 }}
