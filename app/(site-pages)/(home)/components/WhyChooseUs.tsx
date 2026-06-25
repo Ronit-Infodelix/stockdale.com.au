@@ -1,6 +1,6 @@
 "use client";
 
-import Container from "./ui/Container";
+import Container from "../../../components/ui/Container";
 import { motion } from "framer-motion";
 
 const SPRING = [0.22, 1, 0.36, 1] as const;

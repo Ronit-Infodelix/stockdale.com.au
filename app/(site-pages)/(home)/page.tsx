@@ -1,16 +1,16 @@
-import Hero from "../../components/Hero";
-import EnquiryModal from "../../components/EnquiryModal";
-import TextLine from "../../components/TextLine";
-import StatsSection from "../../components/StatsSection";
-import FeaturedProgram from "../../components/FeaturedProgram";
-import LearnSkills from "../../components/LearnSkills";
-import EmpoweringStudents from "../../components/EmpoweringStudents";
-import WhyChooseUs from "../../components/WhyChooseUs";
-import DiscoverLife from "../../components/DiscoverLife";
-import Testimonials from "../../components/Testimonials";
-import BlogsEvents from "../../components/BlogsEvents";
-import MapSection from "../../components/MapSection";
-import CTASection from "../../components/CTASection";
+import Hero from "./components/Hero";
+import EnquiryModal from "./components/EnquiryModal";
+import TextLine from "./components/TextLine";
+import StatsSection from "./components/StatsSection";
+import FeaturedProgram from "./components/FeaturedProgram";
+import LearnSkills from "./components/LearnSkills";
+import EmpoweringStudents from "./components/EmpoweringStudents";
+import WhyChooseUs from "./components/WhyChooseUs";
+import DiscoverLife from "./components/DiscoverLife";
+import Testimonials from "./components/Testimonials";
+import BlogsEvents from "./components/BlogsEvents";
+import MapSection from "./components/MapSection";
+import CTASection from "./components/CTASection";
 
 import {
   ParallaxSticky,

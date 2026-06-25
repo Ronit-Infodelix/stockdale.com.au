@@ -3,9 +3,9 @@
 import { Briefcase, GraduationCap, Users, MapPin } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
-import Container from "./ui/Container";
-import PointerGrid from "./ui/PointerGrid";
-import { CountAnimation } from "./animation/CountAnimation";
+import Container from "../../../components/ui/Container";
+import PointerGrid from "../../../components/ui/PointerGrid";
+import { CountAnimation } from "../../../components/animation/CountAnimation";
 
 const SPRING = [0.22, 1, 0.36, 1] as const;
 

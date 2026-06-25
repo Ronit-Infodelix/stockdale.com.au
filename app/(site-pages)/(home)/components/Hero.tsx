@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
-import Container from "./ui/Container";
+import Container from "../../../components/ui/Container";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 // ── Easing ────────────────────────────────────────────────────────────────────

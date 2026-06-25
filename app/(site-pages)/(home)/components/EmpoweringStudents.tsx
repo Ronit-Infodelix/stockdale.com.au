@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Container from "./ui/Container";
+import Container from "../../../components/ui/Container";
 
 const SPRING = [0.22, 1, 0.36, 1] as const;
 const VIEWPORT = { once: true, margin: "-10px" } as const;

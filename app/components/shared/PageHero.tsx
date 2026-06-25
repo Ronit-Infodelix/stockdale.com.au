@@ -100,8 +100,8 @@ export default function PageHero({
 
       {/* ── Breadcrumb strip ── */}
       {hasBread && (
-        <div className="bg-white border-b border-gray-100 h-18">
-          <Container className="py-3 flex items-center gap-1.5">
+        <div className="bg-gray-light border-b border-gray-100 h-18">
+          <Container className="py-2 flex items-center h-full gap-1.5">
             {breadcrumbs.map((crumb, i) => {
               const isLast = i === breadcrumbs.length - 1;
               return (
@@ -110,19 +110,19 @@ export default function PageHero({
                     <ChevronRight
                       size={13}
                       strokeWidth={2}
-                      className="text-gray-400 shrink-0"
+                      className="text-black shrink-0"
                     />
                   )}
                   {!isLast && crumb.href ? (
                     <Link
                       href={crumb.href}
-                      className="font-sans text-[13px] text-gray-600 hover:text-brand-green-dark transition-colors duration-150 whitespace-nowrap"
+                      className="font-sans text-black hover:text-brand-green-dark transition-colors duration-150 whitespace-nowrap"
                     >
                       {crumb.label}
                     </Link>
                   ) : (
                     <span
-                      className={`font-sans text-[13px] whitespace-nowrap ${isLast ? "text-gray-400" : "text-gray-600"}`}
+                      className={`font-sans whitespace-nowrap ${isLast ? "text-brand-gray" : "text-black"}`}
                     >
                       {crumb.label}
                     </span>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CircleCheckBigIcon, type LucideIcon, Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "framer-motion";
-import Container from "./ui/Container";
+import Container from "../../../components/ui/Container";
 
 const SPRING   = [0.22, 1, 0.36, 1] as const;
 const VIEWPORT = { once: true, margin: "-40px" } as const;

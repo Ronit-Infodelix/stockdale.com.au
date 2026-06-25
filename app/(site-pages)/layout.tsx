@@ -1,5 +1,5 @@
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Footer from "./(home)/components/Footer";
+import Navbar from "./(home)/components/Navbar";
 
 export default function SiteLayout({
   children,
@@ -10,7 +10,9 @@ export default function SiteLayout({
     <>
       <Navbar />
       {children}
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </>
   );
 }

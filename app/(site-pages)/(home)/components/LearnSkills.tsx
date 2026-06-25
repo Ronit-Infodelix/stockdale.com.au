@@ -8,7 +8,7 @@ import {
   useMotionValue,
   type Variants,
 } from "framer-motion";
-import Section from "./ui/Section";
+import Section from "../../../components/ui/Section";
 import Image from "next/image";
 
 const SPRING = [0.22, 1, 0.36, 1] as const;
