@@ -1,25 +1,26 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import EnquiryModal from "./components/EnquiryModal";
-import TextLine from "./components/TextLine";
-import StatsSection from "./components/StatsSection";
-import FeaturedProgram from "./components/FeaturedProgram";
-import LearnSkills from "./components/LearnSkills";
-import EmpoweringStudents from "./components/EmpoweringStudents";
-import WhyChooseUs from "./components/WhyChooseUs";
-import DiscoverLife from "./components/DiscoverLife";
-import Testimonials from "./components/Testimonials";
-import BlogsEvents from "./components/BlogsEvents";
-import MapSection from "./components/MapSection";
-import CTASection from "./components/CTASection";
-import Footer from "./components/Footer";
-import { ParallaxSticky, ParallaxOverlay } from "./components/ui/ParallaxLayer";
+import Hero from "../../components/Hero";
+import EnquiryModal from "../../components/EnquiryModal";
+import TextLine from "../../components/TextLine";
+import StatsSection from "../../components/StatsSection";
+import FeaturedProgram from "../../components/FeaturedProgram";
+import LearnSkills from "../../components/LearnSkills";
+import EmpoweringStudents from "../../components/EmpoweringStudents";
+import WhyChooseUs from "../../components/WhyChooseUs";
+import DiscoverLife from "../../components/DiscoverLife";
+import Testimonials from "../../components/Testimonials";
+import BlogsEvents from "../../components/BlogsEvents";
+import MapSection from "../../components/MapSection";
+import CTASection from "../../components/CTASection";
+
+import {
+  ParallaxSticky,
+  ParallaxOverlay,
+} from "../../components/ui/ParallaxLayer";
 
 export default function Home() {
   return (
     <main>
       <EnquiryModal />
-      <Navbar />
       <Hero />
 
       {/* StatsSection slides up over the sticky Hero */}
@@ -69,11 +70,8 @@ export default function Home() {
       <ParallaxSticky top="18">
         <MapSection />
       </ParallaxSticky>
-      <ParallaxSticky top="18">
+      <ParallaxOverlay className="overflow-visible">
         <CTASection />
-      </ParallaxSticky>
-      <ParallaxOverlay rounded={false} overflow={false}>
-        <Footer />
       </ParallaxOverlay>
     </main>
   );
