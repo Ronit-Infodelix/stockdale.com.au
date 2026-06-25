@@ -1,9 +1,11 @@
 import PageHero from "@/app/components/shared/PageHero";
 import SplitSection from "@/app/components/shared/SplitSection";
+import ValuesSection from "./components/ValuesSection";
 import {
   ParallaxOverlay,
   ParallaxSticky,
 } from "@/app/components/ui/ParallaxLayer";
+import CTASection from "../(home)/components/CTASection";
 
 export default function AboutUs() {
   return (
@@ -16,7 +18,7 @@ export default function AboutUs() {
           breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
         />
       </ParallaxSticky>
-      <ParallaxOverlay className="py-20 bg-white">
+      <ParallaxSticky className="py-20 bg-white">
         <SplitSection
           badge="Who we are?"
           title="About Us."
@@ -28,19 +30,34 @@ export default function AboutUs() {
           imageAlt="Students outside Stockdale campus"
           imagePosition="left"
         />
-      </ParallaxOverlay>
+      </ParallaxSticky>
 
       <ParallaxOverlay>
         <SplitSection
           title="Our"
           titleAccent="Mission"
           body="To empower students with industry-relevant skills, global perspectives, and the personal support they need to succeed — academically, professionally, and personally — long after graduation."
-          image="/images/home/smiling-students-talking-each-other-standing-near-2026-01-08-07-49-50-utc 1.png"
+          image="/images/about/mission.png"
           imageAlt="Students walking on campus"
           imagePosition="right"
           variant="dark"
+          className="min-h-140"
         />
+        <SplitSection
+          title="Our"
+          titleAccent="Mission"
+          body="To empower students with industry-relevant skills, global perspectives, and the personal support they need to succeed — academically, professionally, and personally — long after graduation."
+          image="/images/about/vision.png"
+          imageAlt="Students walking on campus"
+          imagePosition="left"
+          variant="dark"
+          className="min-h-140"
+        />
+        <ValuesSection />
       </ParallaxOverlay>
+      <div className="z-10">
+        <CTASection />
+      </div>
     </>
   );
 }
