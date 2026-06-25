@@ -149,7 +149,7 @@ function GalleryRow({ srcs, speed = 48, direction = -1 }: RowProps) {
 export default function DiscoverLife() {
 
   return (
-    <section className="relative w-full bg-white pt-20 pb-10 overflow-hidden">
+    <section className="relative w-full bg-white pt-10 pb-10 overflow-hidden">
 
       {/* Header */}
       <Container className="flex flex-col items-center text-center mb-14">

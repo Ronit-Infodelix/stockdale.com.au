@@ -7,7 +7,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Container from "./ui/Container";
 
 const SPRING = [0.22, 1, 0.36, 1] as const;
-const VIEWPORT = { once: true, margin: "-60px" } as const;
+const VIEWPORT = { once: true, margin: "-10px" } as const;
 
 export default function EmpoweringStudents() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -15,7 +15,7 @@ export default function EmpoweringStudents() {
   // 0 → 10 % of section visible  |  1 → 70 % visible (= "60 % through reveal")
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start 0.3", "start 0"],
+    offset: ["start 0.2", "start 0"],
   });
 
   // Clip grows from the top — grayscale disappears top-first, colour revealed beneath
@@ -29,7 +29,7 @@ export default function EmpoweringStudents() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col justify-end h-screen w-full overflow-hidden"
+      className="relative flex flex-col justify-end h-[calc(100vh-72px)] w-full overflow-hidden"
     >
       {/* ── Image layer ── */}
       <div className="absolute inset-0 overflow-hidden">
