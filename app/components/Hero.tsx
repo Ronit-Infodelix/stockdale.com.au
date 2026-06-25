@@ -71,8 +71,8 @@ export default function Hero() {
   const bgScale = useTransform(scrollY, [0, 900], [1, 1.08]);
   const leftY = useTransform(scrollY, [0, 900], [0, -60]);
   const rightY = useTransform(scrollY, [0, 900], [0, -80]);
-  const contentY = useTransform(scrollY, [60, 700], [0, -130]);
-  const contentOpacity = useTransform(scrollY, [60, 480], [1, 0]);
+  const contentY = useTransform(scrollY, [60, 700], [0, -100]);
+  const contentOpacity = useTransform(scrollY, [60, 480], [1, 0.3]);
   // Fades the entire visual layer (video, overlay, decoratives) to 0 so only
   // the base bg-[#050e1a] colour remains — prevents the Hero showing through
   // sticky sections that fade in later scroll stages.

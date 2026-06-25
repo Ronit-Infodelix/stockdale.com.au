@@ -5,6 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, ChevronRight, Search, X, Menu } from "lucide-react";
 import Container from "./ui/Container";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValueEvent,
+} from "framer-motion";
 
 const utilityLinks = ["Agents", "Contact Us", "Scholarships", "Student Login"];
 
@@ -56,8 +62,7 @@ const navLinks = [
   },
 ];
 
-// Shared spring easing used across entrance animations
-const SPRING = "cubic-bezier(0.22, 1, 0.36, 1)";
+const SPRING = [0.22, 1, 0.36, 1] as const;
 
 export default function Navbar() {
   const [mounted, setMounted] = useState(false);
@@ -67,8 +72,33 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
 
+  const { scrollY } = useScroll();
+
+  // Single source of truth — all scroll-driven values read the same MotionValue
+  // so logo resize, nav height, and button reveal are physically impossible to desync.
+  useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 24));
+
+  const utilBarH   = useTransform(scrollY, [0, 50], [40, 0]);
+  const navBarH    = useTransform(scrollY, [0, 50], [100, 72]);
+  const logoW      = useTransform(scrollY, [0, 50], [300, 240]);
+  const logoH      = useTransform(scrollY, [0, 50], [88, 66]);
+  const actMaxW    = useTransform(scrollY, [24, 70], [0, 280]);
+  const actOpacity = useTransform(scrollY, [24, 70], [0, 1]);
+  const navBg      = useTransform(
+    scrollY,
+    [0, 50],
+    ["rgba(255,255,255,1)", "rgba(255,255,255,0.9)"],
+  );
+  const navShadow = useTransform(scrollY, (y) => {
+    const t = Math.min(1, Math.max(0, y / 50));
+    return `0 4px 24px rgba(1,53,41,${(t * 0.1).toFixed(3)}), 0 1px 4px rgba(0,0,0,${(t * 0.06).toFixed(3)})`;
+  });
+  const navBlur = useTransform(scrollY, (y) => {
+    const t = Math.min(1, Math.max(0, y / 50));
+    return t > 0 ? `blur(${(t * 12).toFixed(1)}px)` : "none";
+  });
+
   useEffect(() => {
-    // Double-rAF so the browser has committed the initial (hidden) paint before animating in
     let frame: number;
     const outer = requestAnimationFrame(() => {
       frame = requestAnimationFrame(() => setMounted(true));
@@ -80,34 +110,22 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
     if (!scrolled) setSearchOpen(false);
   }, [scrolled]);
 
   return (
-    <header
+    <motion.header
       className="w-full fixed top-0 z-50"
-      style={{
-        transform: mounted ? "translateY(0)" : "translateY(-110%)",
-        opacity: mounted ? 1 : 0,
-        transition: `transform 0.65s ${SPRING}, opacity 0.45s ease`,
-      }}
+      initial={{ y: "-110%", opacity: 0 }}
+      animate={mounted ? { y: 0, opacity: 1 } : {}}
+      transition={{ duration: 0.65, ease: SPRING }}
     >
-      {/* ── Utility bar ── */}
-      <div
+      {/* Utility bar */}
+      <motion.div
         className="bg-brand-green-darkest overflow-hidden"
-        style={{
-          height: scrolled ? 0 : 40,
-          transition: "height 0.3s ease-in-out",
-        }}
+        style={{ height: utilBarH }}
       >
         <Container className="h-10 flex items-center justify-end">
-          {/* Utility links — right side */}
           <div className="flex items-center gap-6">
             {utilityLinks.map((link, i) => (
               <Link
@@ -117,8 +135,7 @@ export default function Navbar() {
                 style={{
                   opacity: mounted ? 1 : 0,
                   transform: mounted ? "translateX(0)" : "translateX(18px)",
-                  // stagger right-to-left: last item (rightmost) appears first
-                  transition: `opacity 0.4s ease, transform 0.5s ${SPRING}`,
+                  transition: `opacity 0.4s ease, transform 0.5s cubic-bezier(0.22,1,0.36,1)`,
                   transitionDelay: mounted
                     ? `${60 + (utilityLinks.length - 1 - i) * 55}ms`
                     : "0ms",
@@ -127,13 +144,12 @@ export default function Navbar() {
                 {link}
               </Link>
             ))}
-            {/* EN language selector — left side of utility bar */}
             <span
               className="text-white text-sm font-sans font-medium cursor-pointer hover:text-brand-gold transition-colors duration-150 select-none"
               style={{
                 opacity: mounted ? 1 : 0,
                 transform: mounted ? "translateX(0)" : "translateX(-12px)",
-                transition: `opacity 0.4s ease, transform 0.5s ${SPRING}`,
+                transition: `opacity 0.4s ease, transform 0.5s cubic-bezier(0.22,1,0.36,1)`,
                 transitionDelay: mounted ? "60ms" : "0ms",
               }}
             >
@@ -141,41 +157,27 @@ export default function Navbar() {
             </span>
           </div>
         </Container>
-      </div>
+      </motion.div>
 
-      {/* ── Main nav ── */}
-      <div
-        className={`${scrolled ? "bg-white/90" : "bg-white"}`}
+      {/* Main nav */}
+      <motion.div
         style={{
-          height: scrolled ? 76 : 100,
-          boxShadow: scrolled
-            ? "0 4px 24px rgba(1,53,41,0.10), 0 1px 4px rgba(0,0,0,0.06)"
-            : "none",
-          backdropFilter: scrolled ? "blur(12px)" : "none",
-          transition: `height 0.3s ease-in-out, box-shadow 0.3s ease, backdrop-filter 0.3s ease`,
+          height: navBarH,
+          backgroundColor: navBg,
+          boxShadow: navShadow,
+          backdropFilter: navBlur,
         }}
       >
         <Container className="h-full flex items-center justify-between">
-          {/* ── Logo: glides in from screen-center ── */}
+
+          {/* Logo: entrance scale-in, then scroll-driven resize in sync with nav */}
           <Link href="/" className="shrink-0">
-            {/* Entrance animation wrapper (separates from scroll-resize wrapper) */}
-            <div
-              style={{
-                transform: mounted ? "scale(1)" : "scale(1.2)",
-                opacity: mounted ? 1 : 0,
-                transition: `transform 0.7s ${SPRING}, opacity 0.5s ease`,
-                transitionDelay: mounted ? "60ms" : "0ms",
-              }}
+            <motion.div
+              initial={{ scale: 1.2, opacity: 0 }}
+              animate={mounted ? { scale: 1, opacity: 1 } : {}}
+              transition={{ duration: 0.7, ease: SPRING, delay: 0.06 }}
             >
-              {/* Scroll-resize wrapper */}
-              <div
-                className="relative"
-                style={{
-                  height: scrolled ? 66 : 88,
-                  width: scrolled ? 240 : 300,
-                  transition: `height 0.3s ease-in-out, width 0.3s ease-in-out`,
-                }}
-              >
+              <motion.div className="relative" style={{ width: logoW, height: logoH }}>
                 <Image
                   src="/images/logo/main.svg"
                   alt="Stockdale"
@@ -183,11 +185,11 @@ export default function Navbar() {
                   priority
                   className="object-contain object-left"
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </Link>
 
-          {/* ── Desktop nav ── */}
+          {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-8">
             <nav className="flex items-center gap-5">
               {navLinks.map((link, i) => (
@@ -199,15 +201,13 @@ export default function Navbar() {
                   style={{
                     opacity: mounted ? 1 : 0,
                     transform: mounted ? "translateY(0)" : "translateY(-14px)",
-                    transition: `opacity 0.45s ease, transform 0.55s ${SPRING}`,
-                    // links cascade left-to-right, starting after logo settles
+                    transition: `opacity 0.45s ease, transform 0.55s cubic-bezier(0.22,1,0.36,1)`,
                     transitionDelay: mounted ? `${220 + i * 75}ms` : "0ms",
                   }}
                 >
                   <button className="group flex items-center gap-[5px] font-sans text-[15px] font-medium whitespace-nowrap text-brand-black hover:text-brand-green-dark transition-colors duration-200">
                     <span className="relative pb-0.5">
                       {link.label}
-                      {/* Gold underline slide */}
                       <span
                         className="absolute bottom-0 left-0 h-[2px] rounded-full bg-brand-gold"
                         style={{
@@ -241,7 +241,7 @@ export default function Navbar() {
                           : "scaleY(0.92) translateY(-6px)",
                       pointerEvents:
                         activeDropdown === link.label ? "auto" : "none",
-                      transition: `opacity 0.2s ease, transform 0.22s ${SPRING}`,
+                      transition: `opacity 0.2s ease, transform 0.22s cubic-bezier(0.22,1,0.36,1)`,
                       boxShadow:
                         "0 12px 40px rgba(1,53,41,0.14), 0 2px 8px rgba(0,0,0,0.08)",
                       border: "1px solid rgba(1,79,61,0.08)",
@@ -274,31 +274,22 @@ export default function Navbar() {
               ))}
             </nav>
 
-            {/* ── Actions — revealed on scroll ── */}
-            <div
+            {/* Actions — single motion container, no per-child desync */}
+            <motion.div
               className="overflow-hidden"
               style={{
-                maxWidth: scrolled ? 280 : 0,
-                opacity: scrolled ? 1 : 0,
+                maxWidth: actMaxW,
+                opacity: actOpacity,
                 pointerEvents: scrolled ? "auto" : "none",
-                transition: `max-width 0.5s ${SPRING}, opacity 0.35s ease`,
               }}
             >
-              <div
-                className="flex items-center gap-2"
-                style={{ whiteSpace: "nowrap" }}
-              >
+              <div className="flex items-center gap-2 whitespace-nowrap">
                 {/* Search */}
                 <div
                   className="flex items-center overflow-hidden"
                   style={{
                     width: searchOpen ? 180 : 36,
-                    transform: scrolled ? "translateX(0)" : "translateX(10px)",
-                    opacity: scrolled ? 1 : 0,
-                    transitionProperty: "width, opacity, transform",
-                    transitionDuration: "0.3s, 0.35s, 0.4s",
-                    transitionTimingFunction: `${SPRING}, ease, ${SPRING}`,
-                    transitionDelay: scrolled ? "0ms, 0ms, 0ms" : "0ms",
+                    transition: `width 0.3s cubic-bezier(0.22,1,0.36,1)`,
                   }}
                 >
                   {searchOpen ? (
@@ -335,33 +326,24 @@ export default function Navbar() {
                 </div>
 
                 {/* Apply Now */}
-                <div
+                <button
+                  className="flex items-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white text-[14px] font-sans whitespace-nowrap hover:opacity-90 active:scale-[0.97] transition-all duration-150"
                   style={{
-                    transform: scrolled ? "translateX(0)" : "translateX(14px)",
-                    opacity: scrolled ? 1 : 0,
-                    transition: `opacity 0.35s ease, transform 0.45s ${SPRING}`,
-                    transitionDelay: scrolled ? "80ms" : "0ms",
+                    background:
+                      "linear-gradient(176.49deg, #43A48E 0.56%, #014F3D 36.4%, #013529 89.05%)",
                   }}
+                  onClick={() =>
+                    window.dispatchEvent(new CustomEvent("open-apply"))
+                  }
                 >
-                  <button
-                    className="flex items-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white text-[14px] font-sans whitespace-nowrap hover:opacity-90 active:scale-[0.97] transition-all duration-150"
-                    style={{
-                      background:
-                        "linear-gradient(176.49deg, #43A48E 0.56%, #014F3D 36.4%, #013529 89.05%)",
-                    }}
-                    onClick={() =>
-                      window.dispatchEvent(new CustomEvent("open-apply"))
-                    }
-                  >
-                    Apply Now
-                    <ChevronRight size={14} strokeWidth={2} />
-                  </button>
-                </div>
+                  Apply Now
+                  <ChevronRight size={14} strokeWidth={2} />
+                </button>
               </div>
-            </div>
+            </motion.div>
           </div>
 
-          {/* ── Mobile hamburger ── */}
+          {/* Mobile hamburger */}
           <button
             className="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors duration-150"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -387,9 +369,9 @@ export default function Navbar() {
             </span>
           </button>
         </Container>
-      </div>
+      </motion.div>
 
-      {/* ── Mobile drawer ── */}
+      {/* Mobile drawer */}
       <div
         className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
         style={{
@@ -467,6 +449,6 @@ export default function Navbar() {
           </button>
         </Container>
       </div>
-    </header>
+    </motion.header>
   );
 }
