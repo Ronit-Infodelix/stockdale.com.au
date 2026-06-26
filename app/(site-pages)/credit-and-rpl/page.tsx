@@ -17,7 +17,7 @@ export default function CreditAndRPL() {
           ]}
         />
       </ParallaxSticky>
-      <ParallaxOverlay>
+      <ParallaxOverlay overflow={false}>
         <RPLContent />
         <CTASection />
       </ParallaxOverlay>

@@ -17,7 +17,7 @@ export default function StayingSafe() {
           ]}
         />
       </ParallaxSticky>
-      <ParallaxOverlay>
+      <ParallaxOverlay overflow={false}>
         <StayingSafeSections />
         <CTASection />
       </ParallaxOverlay>

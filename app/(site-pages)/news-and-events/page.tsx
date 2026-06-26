@@ -17,7 +17,7 @@ export default function NewsAndEvents() {
           ]}
         />
       </ParallaxSticky>
-      <ParallaxOverlay>
+      <ParallaxOverlay overflow={false}>
         <NewsGrid />
         <ApplyCTA />
       </ParallaxOverlay>

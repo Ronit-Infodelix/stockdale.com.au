@@ -17,7 +17,7 @@ export default function LearningAndTeaching() {
           ]}
         />
       </ParallaxSticky>
-      <ParallaxOverlay>
+      <ParallaxOverlay overflow={false}>
         <LearningTabs />
         <CTASection />
       </ParallaxOverlay>

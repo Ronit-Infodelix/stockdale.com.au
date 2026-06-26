@@ -17,7 +17,7 @@ export default function IndustryPage() {
           ]}
         />
       </ParallaxSticky>
-      <ParallaxOverlay>
+      <ParallaxOverlay overflow={false}>
         <IndustryPartnersContent variant="industry" />
         <CTASection />
       </ParallaxOverlay>

@@ -17,7 +17,7 @@ export default function FeesRefundsAndCharges() {
           ]}
         />
       </ParallaxSticky>
-      <ParallaxOverlay>
+      <ParallaxOverlay overflow={false}>
         <FeesContent />
         <CTASection />
       </ParallaxOverlay>

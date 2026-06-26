@@ -300,7 +300,7 @@ export default function NewsGrid() {
   return (
     <div className="bg-white">
       {/* Tab bar */}
-      <div className="bg-brand-green-darkest sticky top-18 z-10">
+      <div className="bg-brand-green-darkest sticky top-18 z-40">
         <Container className="flex">
           {TABS.map((tab) => (
             <button
@@ -331,7 +331,7 @@ export default function NewsGrid() {
               badge="News"
               title="Lorem ipsum dolor simet, consectetur adipiscing elit"
               body="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              image="/images/home/about/students-outdoor.webp"
+              image="/images/news/cta.webp"
               imageAlt="Students in lecture"
               imagePosition="left"
               cta={{ label: "Read More", href: "#" }}

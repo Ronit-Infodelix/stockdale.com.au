@@ -16,7 +16,7 @@ export default function BachelorOfIT() {
           ]}
         />
       </ParallaxSticky>
-      <ParallaxOverlay>
+      <ParallaxOverlay overflow={false}>
         <BITContent />
       </ParallaxOverlay>
     </main>

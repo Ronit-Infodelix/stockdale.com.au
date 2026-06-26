@@ -158,7 +158,7 @@ export default function FeesContent() {
   return (
     <>
       {/* ── Sticky tab bar ── */}
-      <div className="sticky top-0 z-30 bg-brand-green-darkest overflow-x-auto">
+      <div className="sticky top-18 z-40 bg-brand-green-darkest overflow-x-auto">
         <Container>
           <div className="flex items-stretch">
             {TABS.map(({ id, label }) => {

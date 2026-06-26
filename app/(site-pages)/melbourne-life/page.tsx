@@ -16,7 +16,7 @@ export default function MelbourneLife() {
           ]}
         />
       </ParallaxSticky>
-      <ParallaxOverlay>
+      <ParallaxOverlay overflow={false}>
         <MelbourneSections />
         <CTASection />
       </ParallaxOverlay>

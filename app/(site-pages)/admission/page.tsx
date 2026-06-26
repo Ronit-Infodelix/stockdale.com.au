@@ -19,7 +19,7 @@ export default function Admission() {
           {/* Quick-action buttons sit inside the hero above the title */}
         </PageHero>
       </ParallaxSticky>
-      <ParallaxOverlay>
+      <ParallaxOverlay overflow={false}>
         <AdmissionSections />
         <InternationalStudentsCTA />
       </ParallaxOverlay>
