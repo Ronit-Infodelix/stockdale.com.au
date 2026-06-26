@@ -33,7 +33,8 @@ export default function PageHero({
   className = "",
 }: PageHeroProps) {
   const hasBread = breadcrumbs && breadcrumbs.length > 0;
-  const sectionHeight = !hasBread ? "min-h-screen" : "min-h-[calc(100vh-72px)]";
+  // const sectionHeight = !hasBread ? "min-h-screen" : "min-h-[calc(100vh-72px)]";
+  const sectionHeight = !hasBread ? "min-h-screen" : "min-h-screen";
   return (
     <div className={`w-full ${className}`}>
       {/* ── Hero image area ── */}
@@ -87,6 +88,38 @@ export default function PageHero({
         <Container className="absolute top-2/3 z-10 left-1/2 -translate-x-1/2">
           {children}
           <div className="w-24 h-1 bg-brand-gold-dark mb-5" />
+          {hasBread && (
+            <div className="flex items-center h-full gap-1.5">
+              {breadcrumbs.map((crumb, i) => {
+                const isLast = i === breadcrumbs.length - 1;
+                return (
+                  <Fragment key={crumb.label}>
+                    {i > 0 && (
+                      <ChevronRight
+                        size={13}
+                        strokeWidth={2}
+                        className="text-white shrink-0"
+                      />
+                    )}
+                    {!isLast && crumb.href ? (
+                      <Link
+                        href={crumb.href}
+                        className="font-sans text-white hover:text-brand-green-dark transition-colors duration-150 whitespace-nowrap"
+                      >
+                        {crumb.label}
+                      </Link>
+                    ) : (
+                      <span
+                        className={`font-sans whitespace-nowrap ${isLast ? "text-brand-green-light" : ""}`}
+                      >
+                        {crumb.label}
+                      </span>
+                    )}
+                  </Fragment>
+                );
+              })}
+            </div>
+          )}
           <h1 className="font-agatho text-[80px] font-bold leading-[1.05] text-white">
             {title}
           </h1>
@@ -99,40 +132,6 @@ export default function PageHero({
       </section>
 
       {/* ── Breadcrumb strip ── */}
-      {hasBread && (
-        <div className="bg-gray-light border-b border-gray-100 h-18">
-          <Container className="py-2 flex items-center h-full gap-1.5">
-            {breadcrumbs.map((crumb, i) => {
-              const isLast = i === breadcrumbs.length - 1;
-              return (
-                <Fragment key={crumb.label}>
-                  {i > 0 && (
-                    <ChevronRight
-                      size={13}
-                      strokeWidth={2}
-                      className="text-black shrink-0"
-                    />
-                  )}
-                  {!isLast && crumb.href ? (
-                    <Link
-                      href={crumb.href}
-                      className="font-sans text-black hover:text-brand-green-dark transition-colors duration-150 whitespace-nowrap"
-                    >
-                      {crumb.label}
-                    </Link>
-                  ) : (
-                    <span
-                      className={`font-sans whitespace-nowrap ${isLast ? "text-brand-gray" : "text-black"}`}
-                    >
-                      {crumb.label}
-                    </span>
-                  )}
-                </Fragment>
-              );
-            })}
-          </Container>
-        </div>
-      )}
     </div>
   );
 }
