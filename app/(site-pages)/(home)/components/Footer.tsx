@@ -9,10 +9,35 @@ import Container from "../../../components/ui/Container";
 const SPRING   = [0.22, 1, 0.36, 1] as const;
 const VIEWPORT = { once: true, margin: "-40px" } as const;
 
-const quickLinks  = ["About Us", "Courses", "Campuses", "Student Support", "Contact"];
-const resources   = ["News", "Blogs", "Events", "Gallery"];
-const otherLinks  = ["Accomodations", "Packages", "Faculty & Staffs", "Gallery"];
-const legalLinks  = ["Disclaimer", "Privacy Policy", "Terms & Conditions"];
+const quickLinks = [
+  { label: "About Us",       href: "/about-us" },
+  { label: "Our Campus",     href: "/our-campus" },
+  { label: "Our Team",       href: "/our-team" },
+  { label: "News & Events",  href: "/news-and-events" },
+  { label: "Contact",        href: "/contact" },
+];
+
+const admissions = [
+  { label: "How to Apply",          href: "/how-to-apply" },
+  { label: "Domestic Students",     href: "/domestic-students" },
+  { label: "International Students",href: "/international-students" },
+  { label: "Fees & Charges",        href: "/fees-refunds-and-charges" },
+  { label: "Scholarships",          href: "/scholarships" },
+];
+
+const studentLife = [
+  { label: "Melbourne Life",        href: "/melbourne-life" },
+  { label: "Library & Databases",   href: "/library-and-databases" },
+  { label: "Student Handbook",      href: "/student-handbook" },
+  { label: "Staying Safe",          href: "/staying-safe" },
+  { label: "Policies & Procedures", href: "/policies-and-procedures" },
+];
+
+const legalLinks = [
+  { label: "Disclaimer",         href: "#" },
+  { label: "Privacy Policy",     href: "#" },
+  { label: "Terms & Conditions", href: "#" },
+];
 
 const social = [
   { Icon: CircleCheckBigIcon, label: "WhatsApp",  active: false },
@@ -46,40 +71,40 @@ export default function Footer() {
         >
           {/* Quick links */}
           <motion.div variants={colItem}>
-            <h4 className="font-sans font-medium text-[16px] text-white mb-7">Quick links</h4>
+            <h4 className="font-sans font-medium text-[16px] text-white mb-7">Quick Links</h4>
             <ul className="flex flex-col gap-[18px]">
               {quickLinks.map((l) => (
-                <li key={l}>
-                  <Link href="#" className="font-sans text-[14px] text-[#9ca3af] hover:text-white transition-colors">
-                    {l}
+                <li key={l.label}>
+                  <Link href={l.href} className="font-sans text-[14px] text-[#9ca3af] hover:text-white transition-colors">
+                    {l.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </motion.div>
 
-          {/* Resources */}
+          {/* Admissions */}
           <motion.div variants={colItem}>
-            <h4 className="font-sans font-medium text-[16px] text-white mb-7">Resources</h4>
+            <h4 className="font-sans font-medium text-[16px] text-white mb-7">Admissions</h4>
             <ul className="flex flex-col gap-[18px]">
-              {resources.map((l) => (
-                <li key={l}>
-                  <Link href="#" className="font-sans text-[14px] text-[#9ca3af] hover:text-white transition-colors">
-                    {l}
+              {admissions.map((l) => (
+                <li key={l.label}>
+                  <Link href={l.href} className="font-sans text-[14px] text-[#9ca3af] hover:text-white transition-colors">
+                    {l.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </motion.div>
 
-          {/* Other link */}
+          {/* Student Life */}
           <motion.div variants={colItem}>
-            <h4 className="font-sans font-medium text-[16px] text-white mb-7">Other link</h4>
+            <h4 className="font-sans font-medium text-[16px] text-white mb-7">Student Life</h4>
             <ul className="flex flex-col gap-[18px]">
-              {otherLinks.map((l) => (
-                <li key={l}>
-                  <Link href="#" className="font-sans text-[14px] text-[#9ca3af] hover:text-white transition-colors">
-                    {l}
+              {studentLife.map((l) => (
+                <li key={l.label}>
+                  <Link href={l.href} className="font-sans text-[14px] text-[#9ca3af] hover:text-white transition-colors">
+                    {l.label}
                   </Link>
                 </li>
               ))}
@@ -177,8 +202,8 @@ export default function Footer() {
               </p>
               <div className="flex items-center gap-8">
                 {legalLinks.map((l) => (
-                  <Link key={l} href="#" className="font-sans text-[12px] text-[#6b7280] hover:text-white transition-colors">
-                    {l}
+                  <Link key={l.label} href={l.href} className="font-sans text-[12px] text-[#6b7280] hover:text-white transition-colors">
+                    {l.label}
                   </Link>
                 ))}
               </div>

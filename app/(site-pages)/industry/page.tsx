@@ -1,5 +1,5 @@
 import PageHero from "@/app/components/shared/PageHero";
-import IndustryPartnersContent from "@/app/components/shared/IndustryPartnersContent";
+import IndustryPartnersContent from "./components/IndustryPartnersContent";
 import CTASection from "../(home)/components/CTASection";
 
 export default function IndustryPage() {

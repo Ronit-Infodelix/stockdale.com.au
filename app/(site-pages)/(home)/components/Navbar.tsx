@@ -12,52 +12,59 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 
-const utilityLinks = ["Agents", "Contact Us", "Scholarships", "Student Login"];
+const utilityLinks = [
+  { label: "Agents", href: "/agent-login" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Scholarships", href: "/scholarships" },
+  { label: "Student Login", href: "/student-login" },
+];
 
 const navLinks = [
   {
     label: "About us",
     items: [
-      { label: "Our Story", href: "#" },
-      { label: "Vision & Mission", href: "#" },
-      { label: "Leadership", href: "#" },
-      { label: "Campus & Facilities", href: "#" },
-    ],
-  },
-  {
-    label: "Student Life",
-    items: [
-      { label: "Campus Culture", href: "#" },
-      { label: "Clubs & Societies", href: "#" },
-      { label: "Sports & Wellness", href: "#" },
-      { label: "Events Calendar", href: "#" },
+      { label: "About Us", href: "/about-us" },
+      { label: "Our Team", href: "/our-team" },
+      { label: "Our Campus", href: "/our-campus" },
+      { label: "News & Events", href: "/news-and-events" },
     ],
   },
   {
     label: "Study With Us",
     items: [
-      { label: "Undergraduate", href: "#" },
-      { label: "Postgraduate", href: "#" },
-      { label: "Online Courses", href: "#" },
-      { label: "Short Programs", href: "#" },
+      { label: "Bachelor of IT", href: "/bachelor-of-it" },
+      { label: "Graduation Courses", href: "/graduation-courses" },
+      { label: "Graduate Attributes", href: "/graduate-attributes" },
+      { label: "Learning & Teaching", href: "/learning-and-teaching" },
+      { label: "Credit & RPL", href: "/credit-and-rpl" },
     ],
   },
   {
     label: "Admission & Entry",
     items: [
-      { label: "How to Apply", href: "#" },
-      { label: "Entry Requirements", href: "#" },
-      { label: "Fees & Scholarships", href: "#" },
-      { label: "International Students", href: "#" },
+      { label: "Admission", href: "/admission" },
+      { label: "How to Apply", href: "/how-to-apply" },
+      { label: "Domestic Students", href: "/domestic-students" },
+      { label: "International Students", href: "/international-students" },
+      { label: "Fees & Charges", href: "/fees-refunds-and-charges" },
+      { label: "Scholarships", href: "/scholarships" },
+    ],
+  },
+  {
+    label: "Student Life",
+    items: [
+      { label: "Melbourne Life", href: "/melbourne-life" },
+      { label: "Library & Databases", href: "/library-and-databases" },
+      { label: "Staying Safe", href: "/staying-safe" },
+      { label: "Student Handbook", href: "/student-handbook" },
+      { label: "Policies & Procedures", href: "/policies-and-procedures" },
     ],
   },
   {
     label: "Industry & Partners",
     items: [
-      { label: "Corporate Partners", href: "#" },
-      { label: "Research & Innovation", href: "#" },
-      { label: "Alumni Network", href: "#" },
-      { label: "Work With Us", href: "#" },
+      { label: "Industry", href: "/industry" },
+      { label: "Partners", href: "/partners" },
     ],
   },
 ];
@@ -129,8 +136,8 @@ export default function Navbar() {
           <div className="flex items-center gap-6">
             {utilityLinks.map((link, i) => (
               <Link
-                key={link}
-                href="#"
+                key={link.label}
+                href={link.href}
                 className="text-white text-sm font-sans hover:text-brand-gold transition-colors duration-150 whitespace-nowrap"
                 style={{
                   opacity: mounted ? 1 : 0,
@@ -141,7 +148,7 @@ export default function Navbar() {
                     : "0ms",
                 }}
               >
-                {link}
+                {link.label}
               </Link>
             ))}
             <span
@@ -230,44 +237,51 @@ export default function Navbar() {
                     />
                   </button>
 
-                  {/* Dropdown panel */}
+                  {/* Dropdown panel — pt-4 bridges the gap so hover isn't lost */}
                   <div
-                    className="absolute top-full left-0 mt-4 w-56 bg-white rounded-xl overflow-hidden origin-top"
+                    className="absolute top-full left-0 pt-4 w-56"
                     style={{
                       opacity: activeDropdown === link.label ? 1 : 0,
-                      transform:
-                        activeDropdown === link.label
-                          ? "scaleY(1) translateY(0)"
-                          : "scaleY(0.92) translateY(-6px)",
                       pointerEvents:
                         activeDropdown === link.label ? "auto" : "none",
-                      transition: `opacity 0.2s ease, transform 0.22s cubic-bezier(0.22,1,0.36,1)`,
-                      boxShadow:
-                        "0 12px 40px rgba(1,53,41,0.14), 0 2px 8px rgba(0,0,0,0.08)",
-                      border: "1px solid rgba(1,79,61,0.08)",
+                      transition: `opacity 0.2s ease`,
                     }}
                   >
                     <div
-                      className="h-[3px]"
+                      className="bg-white rounded-xl overflow-hidden origin-top"
                       style={{
-                        background:
-                          "linear-gradient(90deg, #43A48E 0%, #014F3D 100%)",
+                        transform:
+                          activeDropdown === link.label
+                            ? "scaleY(1) translateY(0)"
+                            : "scaleY(0.92) translateY(-6px)",
+                        transition: `transform 0.22s cubic-bezier(0.22,1,0.36,1)`,
+                        boxShadow:
+                          "0 12px 40px rgba(1,53,41,0.14), 0 2px 8px rgba(0,0,0,0.08)",
+                        border: "1px solid rgba(1,79,61,0.08)",
                       }}
-                    />
-                    <div className="py-1.5">
-                      {link.items.map((item) => (
-                        <Link
-                          key={item.label}
-                          href={item.href}
-                          className="group/item flex items-center justify-between px-5 py-2.5 text-sm font-sans text-brand-black hover:bg-brand-green-light hover:text-brand-green-darkest transition-all duration-150"
-                        >
-                          {item.label}
-                          <ChevronRight
-                            size={13}
-                            className="text-brand-green-dark opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-150"
-                          />
-                        </Link>
-                      ))}
+                    >
+                      <div
+                        className="h-[3px]"
+                        style={{
+                          background:
+                            "linear-gradient(90deg, #43A48E 0%, #014F3D 100%)",
+                        }}
+                      />
+                      <div className="py-1.5">
+                        {link.items.map((item) => (
+                          <Link
+                            key={item.label}
+                            href={item.href}
+                            className="group/item flex items-center justify-between px-5 py-2.5 text-sm font-sans text-brand-black hover:bg-brand-green-light hover:text-brand-green-darkest transition-all duration-150"
+                          >
+                            {item.label}
+                            <ChevronRight
+                              size={13}
+                              className="text-brand-green-dark opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-150"
+                            />
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -428,11 +442,11 @@ export default function Navbar() {
           <div className="border-t border-gray-100 mt-2 pt-3 grid grid-cols-2 gap-1">
             {utilityLinks.map((link) => (
               <Link
-                key={link}
-                href="#"
+                key={link.label}
+                href={link.href}
                 className="px-3 py-2 text-sm font-sans text-brand-gray hover:text-brand-green-darkest transition-colors duration-150"
               >
-                {link}
+                {link.label}
               </Link>
             ))}
           </div>

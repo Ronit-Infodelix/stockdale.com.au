@@ -1,5 +1,5 @@
 import PageHero from "@/app/components/shared/PageHero";
-import StudentRequirementsContent from "@/app/components/shared/StudentRequirementsContent";
+import StudentRequirementsContent from "../domestic-students/components/StudentRequirementsContent";
 import CTASection from "../(home)/components/CTASection";
 
 export default function InternationalStudents() {

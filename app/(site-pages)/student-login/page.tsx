@@ -1,5 +1,5 @@
 import PageHero from "@/app/components/shared/PageHero";
-import PortalLoginCard from "@/app/components/shared/PortalLoginCard";
+import PortalLoginCard from "./components/PortalLoginCard";
 
 export default function StudentLogin() {
   return (
