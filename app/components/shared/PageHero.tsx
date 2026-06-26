@@ -1,7 +1,7 @@
 import { Fragment, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Home } from "lucide-react";
 import Container from "@/app/components/ui/Container";
 
 export interface Crumb {
@@ -84,42 +84,49 @@ export default function PageHero({
           </div>
         </div>
 
-        {/* Content */}
-        <Container className="absolute top-2/3 z-10 left-1/2 -translate-x-1/2">
-          {children}
-          <div className="w-24 h-1 bg-brand-gold-dark mb-5" />
-          {hasBread && (
-            <div className="flex items-center h-full gap-1.5">
+        {/* Breadcrumbs — full-width frosted bar pinned to bottom of hero */}
+        {hasBread && (
+          <nav
+            aria-label="Breadcrumb"
+            className="absolute bottom-0 left-0 right-0 z-10 bg-white/10 backdrop-blur-sm border-t border-white/15"
+          >
+            <Container className="flex items-center gap-1.5 py-3">
               {breadcrumbs.map((crumb, i) => {
                 const isLast = i === breadcrumbs.length - 1;
+                const isHome = i === 0 && crumb.label.toLowerCase() === "home";
                 return (
                   <Fragment key={crumb.label}>
                     {i > 0 && (
                       <ChevronRight
-                        size={13}
+                        size={12}
                         strokeWidth={2}
-                        className="text-white shrink-0"
+                        className="text-white/40 shrink-0"
                       />
                     )}
                     {!isLast && crumb.href ? (
                       <Link
                         href={crumb.href}
-                        className="font-sans text-white hover:text-brand-green-dark transition-colors duration-150 whitespace-nowrap"
+                        className="flex items-center gap-1.5 font-sans text-xs text-white/70 hover:text-white transition-colors duration-150 whitespace-nowrap"
                       >
-                        {crumb.label}
+                        {isHome && <Home size={11} strokeWidth={2} />}
+                        {isHome ? null : crumb.label}
                       </Link>
                     ) : (
-                      <span
-                        className={`font-sans whitespace-nowrap ${isLast ? "text-brand-green-light" : ""}`}
-                      >
+                      <span className="font-sans text-xs font-medium text-brand-gold-dark whitespace-nowrap">
                         {crumb.label}
                       </span>
                     )}
                   </Fragment>
                 );
               })}
-            </div>
-          )}
+            </Container>
+          </nav>
+        )}
+
+        {/* Content */}
+        <Container className="absolute top-2/3 z-10 left-1/2 -translate-x-1/2">
+          {children}
+          <div className="w-24 h-1 bg-brand-gold-dark mb-5" />
           <h1 className="font-agatho text-[80px] font-bold leading-[1.05] text-white">
             {title}
           </h1>
