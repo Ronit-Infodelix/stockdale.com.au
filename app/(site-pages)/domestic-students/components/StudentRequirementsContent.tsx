@@ -150,7 +150,7 @@ export default function StudentRequirementsContent({ variant }: { variant: Stude
             {/* Right: image */}
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
               <Image
-                src="/images/home/about/smiling-students-outside-college-building-with-boo-2026-01-11-10-53-42-utc 1.png"
+                src="/images/domestic/section.webp"
                 alt="Students at Stockdale"
                 fill
                 className="object-cover object-center"
@@ -167,7 +167,7 @@ export default function StudentRequirementsContent({ variant }: { variant: Stude
             {/* Left: image */}
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
               <Image
-                src="/images/home/gallery/a-group-of-young-multi-ethnic-group-of-student-in-2026-03-17-14-49-05-utc 1.png"
+                src="/images/domestic/section-2.webp"
                 alt={cfg.secondHeading}
                 fill
                 className="object-cover object-center"

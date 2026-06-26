@@ -15,10 +15,10 @@ const TABS = [
 type TabId = (typeof TABS)[number]["id"];
 
 const FACILITY_IMAGES = [
-  "/images/home/gallery/a-group-of-young-multi-ethnic-group-of-student-in-2026-03-17-14-49-05-utc 1.png",
-  "/images/home/gallery/diverse-students-celebrating-success-throwing-note-2026-03-25-10-03-39-utc 1.png",
-  "/images/home/students.png",
-  "/images/home/students-empowering.png",
+  "/images/campus/tab-1.webp",
+  "/images/campus/tab-2.webp",
+  "/images/campus/tab-3.webp",
+  "/images/campus/tab-4.webp",
 ];
 
 export default function CampusSections() {
@@ -77,7 +77,7 @@ export default function CampusSections() {
             "The initial campus will be fit for purpose and accommodate projected student growth over five years. Stockdale's campus is located at Level 2, 120 Miller Street, West Melbourne, Victoria 3003. This campus ensures proximity to affordable housing, dining and transportation options.",
             "The campus will be staffed and accessible to students weekdays and weekends. To ensure security and safety, students will be required to swipe their unique student ID card to gain access to the campus outside of office hours.",
           ]}
-          image="/images/home/gallery/diverse-students-celebrating-success-throwing-note-2026-03-25-10-03-39-utc 1.png"
+          image="/images/campus/section.webp"
           imageAlt="Stockdale campus"
           imagePosition="right"
         />
@@ -89,7 +89,7 @@ export default function CampusSections() {
           badge="Teaching Spaces"
           title="Teaching Spaces"
           body="The campus features modern classrooms equipped with ample seating and desk space to accommodate laptops and will include whiteboards and digital projectors/screens, fostering an interactive learning environment and encouraging academic collaboration within classes."
-          image="/images/home/gallery/a-group-of-young-multi-ethnic-group-of-student-in-2026-03-17-14-49-05-utc 1.png"
+          image="/images/campus/tab-1.webp"
           imageAlt="Teaching spaces"
           imagePosition="left"
         />

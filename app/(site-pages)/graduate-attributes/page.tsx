@@ -8,7 +8,7 @@ export default function GraduateAttributes() {
     <main>
       <ParallaxSticky top="0">
         <PageHero
-          image="/images/home/smiling-students-talking-each-other-standing-near-2026-01-08-07-49-50-utc 1.png"
+          image="/images/graduate/hero.webp"
           title="Graduate Attributes"
           breadcrumbs={[
             { label: "Home", href: "/" },

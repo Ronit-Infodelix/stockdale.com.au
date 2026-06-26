@@ -28,10 +28,10 @@ const GROUPS: TeamGroup[] = [
     description:
       "The Board is responsible for setting the strategic direction of HEA and ensuring the institution fulfils its legal, regulatory, financial, and ethical obligations. The Board oversees institutional performance, sustainability, and risk management.",
     members: [
-      { name: "Professor Janet Verbyla",          role: "Independent Director and Chair", image: BASE + "image 6.png" },
-      { name: "Associate Professor Justin Pierce", role: "Independent Director",           image: BASE + "image 7.png" },
-      { name: "Dr Julie Fisher",                   role: "Independent Director",           image: BASE + "image 7-1.png" },
-      { name: "Associate Professor Beulah Moses",  role: "Independent Director",           image: BASE + "image 6-3.png" },
+      { name: "Professor Janet Verbyla",          role: "Independent Director and Chair", image: BASE + "image 6.webp" },
+      { name: "Associate Professor Justin Pierce", role: "Independent Director",           image: BASE + "image 7.webp" },
+      { name: "Dr Julie Fisher",                   role: "Independent Director",           image: BASE + "image 7-1.webp" },
+      { name: "Associate Professor Beulah Moses",  role: "Independent Director",           image: BASE + "image 6-3.webp" },
     ],
   },
   {
@@ -41,10 +41,10 @@ const GROUPS: TeamGroup[] = [
     description:
       "The Academic Board is the principal academic governance body, responsible for oversight of academic quality, learning and teaching, assessment standards, academic integrity, and scholarly activity. The Academic Board establishes committees to support its work and ensures alignment with regulatory requirements.",
     members: [
-      { name: "Dr Samuel Kaspi",   role: "Independent Member",           image: BASE + "image 6-1.png" },
+      { name: "Dr Samuel Kaspi",   role: "Independent Member",           image: BASE + "image 6-1.webp" },
       { name: "Mr Colin Hardie",   role: "Chair and Independent Member" },
-      { name: "Mr Colin Hardie",   role: "Independent Member",           image: BASE + "image 8.png" },
-      { name: "Dr Catherine Lang", role: "Independent Member",           image: BASE + "image 6-4.png" },
+      { name: "Mr Colin Hardie",   role: "Independent Member",           image: BASE + "image 8.webp" },
+      { name: "Dr Catherine Lang", role: "Independent Member",           image: BASE + "image 6-4.webp" },
       { name: "Dr Samuel Kaspi",   role: "Independent Member" },
     ],
   },
@@ -55,9 +55,9 @@ const GROUPS: TeamGroup[] = [
     description:
       "Stockdale is supported by qualified and experienced leaders and staff responsible for the delivery, oversight, and continuous improvement of academic programs.",
     members: [
-      { name: "Ms Marni Woods",         role: "Chief Executive Officer", image: BASE + "image 6-2.png" },
+      { name: "Ms Marni Woods",         role: "Chief Executive Officer", image: BASE + "image 6-2.webp" },
       { name: "Dr Farinoush Farhadieh", role: "Dean" },
-      { name: "Dr Isaac Kwadwo Nti",    role: "Course Coordinator",      image: BASE + "image 7-2.png" },
+      { name: "Dr Isaac Kwadwo Nti",    role: "Course Coordinator",      image: BASE + "image 7-2.webp" },
     ],
   },
 ];

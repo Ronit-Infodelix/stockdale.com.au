@@ -21,7 +21,7 @@ export default function ApplyCTA() {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/news/cta.png"
+          src="/images/news/cta.webp"
           alt="Students on campus"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />

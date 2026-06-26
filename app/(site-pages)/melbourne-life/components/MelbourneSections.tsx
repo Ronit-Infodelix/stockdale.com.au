@@ -14,10 +14,10 @@ const TABS = [
 type TabId = (typeof TABS)[number]["id"];
 
 const GRID_IMAGES = [
-  "/images/home/gallery/a-group-of-young-multi-ethnic-group-of-student-in-2026-03-17-14-49-05-utc 1.png",
-  "/images/home/gallery/diverse-students-celebrating-success-throwing-note-2026-03-25-10-03-39-utc 1.png",
-  "/images/home/students.png",
-  "/images/home/students-empowering.png",
+  "/images/melbourne/section-1.webp",
+  "/images/melbourne/section-2.webp",
+  "/images/melbourne/section-3.webp",
+  "/images/melbourne/section-4.webp",
 ];
 
 export default function MelbourneSections() {
@@ -72,7 +72,7 @@ export default function MelbourneSections() {
             "Melbourne offers a vibrant, multicultural environment where you can study, work, and build your future.",
             "As a major business and education hub, it provides access to diverse communities, cultural experiences, and real career opportunities alongside your studies.",
           ]}
-          image="/images/home/gallery/diverse-students-celebrating-success-throwing-note-2026-03-25-10-03-39-utc 1.png"
+          image="/images/melbourne/section.webp"
           imageAlt="Melbourne city"
           imagePosition="right"
         />

@@ -46,7 +46,7 @@ export default function AdmissionsIntro() {
           {/* Right: image */}
           <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
             <Image
-              src="/images/home/gallery/a-group-of-young-multi-ethnic-group-of-student-in-2026-03-17-14-49-05-utc 1.png"
+              src="/images/how-to-apply/Application.webp"
               alt="Students studying at Stockdale"
               fill
               className="object-cover"

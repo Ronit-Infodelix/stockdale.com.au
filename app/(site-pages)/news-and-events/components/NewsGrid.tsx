@@ -30,7 +30,7 @@ const ARTICLES: Record<Tab, Article[]> = {
       excerpt:
         "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
       image:
-        "/images/home/gallery/a-group-of-young-multi-ethnic-group-of-student-in-2026-03-17-14-49-05-utc 1.png",
+        "/images/home/gallery/students-group.webp",
     },
     {
       day: "21",
@@ -41,7 +41,7 @@ const ARTICLES: Record<Tab, Article[]> = {
       excerpt:
         "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       image:
-        "/images/home/gallery/diverse-students-celebrating-success-throwing-note-2026-03-25-10-03-39-utc 1.png",
+        "/images/home/gallery/students-celebrating.webp",
     },
     {
       day: "21",
@@ -51,7 +51,7 @@ const ARTICLES: Record<Tab, Article[]> = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       excerpt:
         "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-      image: "/images/home/students.png",
+      image: "/images/home/students.webp",
     },
     {
       day: "21",
@@ -61,7 +61,7 @@ const ARTICLES: Record<Tab, Article[]> = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       excerpt:
         "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "/images/home/students-empowering.png",
+      image: "/images/home/students-empowering.webp",
     },
     {
       day: "21",
@@ -72,7 +72,7 @@ const ARTICLES: Record<Tab, Article[]> = {
       excerpt:
         "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
       image:
-        "/images/home/gallery/a-group-of-young-multi-ethnic-group-of-student-in-2026-03-17-14-49-05-utc 1.png",
+        "/images/home/gallery/students-group.webp",
     },
     {
       day: "14",
@@ -83,7 +83,7 @@ const ARTICLES: Record<Tab, Article[]> = {
       excerpt:
         "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       image:
-        "/images/home/gallery/diverse-students-celebrating-success-throwing-note-2026-03-25-10-03-39-utc 1.png",
+        "/images/home/gallery/students-celebrating.webp",
     },
     {
       day: "02",
@@ -93,7 +93,7 @@ const ARTICLES: Record<Tab, Article[]> = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       excerpt:
         "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-      image: "/images/home/students.png",
+      image: "/images/home/students.webp",
     },
   ],
   News: [
@@ -105,7 +105,7 @@ const ARTICLES: Record<Tab, Article[]> = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       excerpt:
         "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-      image: "/images/home/students-empowering.png",
+      image: "/images/home/students-empowering.webp",
     },
     {
       day: "05",
@@ -115,7 +115,7 @@ const ARTICLES: Record<Tab, Article[]> = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       excerpt:
         "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "/images/home/students.png",
+      image: "/images/home/students.webp",
     },
     {
       day: "21",
@@ -126,7 +126,7 @@ const ARTICLES: Record<Tab, Article[]> = {
       excerpt:
         "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
       image:
-        "/images/home/gallery/a-group-of-young-multi-ethnic-group-of-student-in-2026-03-17-14-49-05-utc 1.png",
+        "/images/home/gallery/students-group.webp",
     },
     {
       day: "03",
@@ -137,7 +137,7 @@ const ARTICLES: Record<Tab, Article[]> = {
       excerpt:
         "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       image:
-        "/images/home/gallery/diverse-students-celebrating-success-throwing-note-2026-03-25-10-03-39-utc 1.png",
+        "/images/home/gallery/students-celebrating.webp",
     },
     {
       day: "18",
@@ -147,7 +147,7 @@ const ARTICLES: Record<Tab, Article[]> = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       excerpt:
         "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-      image: "/images/home/students-empowering.png",
+      image: "/images/home/students-empowering.webp",
     },
   ],
 };
@@ -331,7 +331,7 @@ export default function NewsGrid() {
               badge="News"
               title="Lorem ipsum dolor simet, consectetur adipiscing elit"
               body="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              image="/images/home/about/smiling-students-outside-college-building-with-boo-2026-01-11-10-53-42-utc 1.png"
+              image="/images/home/about/students-outdoor.webp"
               imageAlt="Students in lecture"
               imagePosition="left"
               cta={{ label: "Read More", href: "#" }}

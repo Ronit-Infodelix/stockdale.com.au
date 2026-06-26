@@ -7,7 +7,7 @@ export default function AgentLogin() {
     <main>
       <ParallaxSticky top="0">
         <PageHero
-          image="/images/home/gallery/a-group-of-young-multi-ethnic-group-of-student-in-2026-03-17-14-49-05-utc 1.png"
+          image="/images/home/gallery/students-group.webp"
           title="Agent Portal"
           subtitle="Manage student referrals and track applications through our dedicated agent portal."
           breadcrumbs={[

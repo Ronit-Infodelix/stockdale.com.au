@@ -29,7 +29,7 @@ export default function RequirementsSection() {
           {/* Left: image */}
           <div className="relative aspect-[590/496] rounded-xl overflow-hidden">
             <Image
-              src="/images/home/smiling-students-talking-each-other-standing-near-2026-01-08-07-49-50-utc 1.png"
+              src="/images/how-to-apply/Requirements.webp"
               alt="Student requirements"
               fill
               className="object-cover object-center"

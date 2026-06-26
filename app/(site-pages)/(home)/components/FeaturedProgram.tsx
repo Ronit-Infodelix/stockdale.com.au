@@ -57,7 +57,7 @@ export default function FeaturedProgram() {
           style={{ scaleX: maskScaleX }}
         />
         <Image
-          src="/images/home/about/smiling-students-outside-college-building-with-boo-2026-01-11-10-53-42-utc 1.png"
+          src="/images/home/about/students-outdoor.webp"
           alt="Students studying together"
           fill
           className="object-cover object-center"

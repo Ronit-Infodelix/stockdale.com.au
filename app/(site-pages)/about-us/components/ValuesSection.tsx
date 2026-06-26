@@ -62,7 +62,7 @@ export default function ValuesSection() {
           <div className="absolute right-0 inset-y-0 w-full">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <Image
-              src="/images/about/value.png"
+              src="/images/about/value.webp"
               alt="Students on campus"
               fill
               className="object-cover object-top"

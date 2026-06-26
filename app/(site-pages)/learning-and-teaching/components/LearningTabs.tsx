@@ -157,7 +157,7 @@ export default function LearningTabs() {
             {/* Right: masked image */}
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
               <Image
-                src="/images/home/gallery/a-group-of-young-multi-ethnic-group-of-student-in-2026-03-17-14-49-05-utc 1.png"
+                src="/images/learning/section.webp"
                 alt="Diverse group of students studying"
                 fill
                 className="object-cover"

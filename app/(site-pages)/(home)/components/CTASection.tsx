@@ -105,7 +105,7 @@ export default function CTASection() {
         transition={{ duration: 1, delay: 0.1, ease: SPRING }}
       >
         <Image
-          src="/images/home/graduate-girl.png"
+          src="/images/home/graduate-girl.webp"
           alt="Graduate student"
           fill
           className="object-cover object-top"

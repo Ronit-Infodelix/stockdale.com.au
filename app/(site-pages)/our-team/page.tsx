@@ -8,7 +8,7 @@ export default function OurTeam() {
     <main>
       <ParallaxSticky top="0">
         <PageHero
-          image="/images/home/about/smiling-students-outside-college-building-with-boo-2026-01-11-10-53-42-utc 1.png"
+          image="/images/team/hero.webp"
           title="Our Team"
           subtitle="Meet the people who make Stockdale a world-class institution."
           breadcrumbs={[

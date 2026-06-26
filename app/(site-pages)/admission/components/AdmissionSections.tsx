@@ -155,7 +155,7 @@ export default function AdmissionSections() {
             {/* Right — image */}
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
               <Image
-                src="/images/home/gallery/a-group-of-young-multi-ethnic-group-of-student-in-2026-03-17-14-49-05-utc 1.png"
+                src="/images/admission/section.webp"
                 alt="Students studying"
                 fill
                 className="object-cover"
@@ -174,7 +174,7 @@ export default function AdmissionSections() {
             "Stockdale does not discriminate on the grounds of religion, race, sex, disability or any other basis. Stockdale considers the Applicant's demonstrated academic ability that is relevant to the course requirements for which they are applying.",
             "Stockdale provides resources to enable those from historically disadvantaged groups the opportunity to apply for Admission into its courses of study, with special consideration given to the recruitment, admission, participation and completion of Aboriginal and Torres Strait Islander peoples.",
           ]}
-          image="/images/home/gallery/diverse-students-celebrating-success-throwing-note-2026-03-25-10-03-39-utc 1.png"
+          image="/images/admission/section-2.webp"
           imageAlt="Diverse students"
           imagePosition="left"
         />

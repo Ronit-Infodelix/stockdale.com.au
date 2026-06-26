@@ -7,7 +7,7 @@ export default function BachelorOfIT() {
     <main>
       <ParallaxSticky top="0">
         <PageHero
-          image="/images/home/about/smiling-students-outside-college-building-with-boo-2026-01-11-10-53-42-utc 1.png"
+          image="/images/graduation/hero.webp"
           title={`Bachelor of Information\nTechnology`}
           breadcrumbs={[
             { label: "Home", href: "/" },

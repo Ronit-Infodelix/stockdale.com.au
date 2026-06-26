@@ -199,7 +199,7 @@ export default function LearnSkills() {
     <Section className="bg-[#f9f9f9]" containerClassName="flex flex-col items-center gap-12">
       <div className="absolute inset-0 w-full h-full">
         <Image
-          src="/images/bg/map.png"
+          src="/images/bg/map.webp"
           alt=""
           fill
           className="object-contain pointer-events-none"

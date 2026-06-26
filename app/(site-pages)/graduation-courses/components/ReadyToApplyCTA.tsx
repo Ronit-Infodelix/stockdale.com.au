@@ -9,7 +9,7 @@ export default function ReadyToApplyCTA() {
       {/* Student image bleeds to the left edge */}
       <div className="absolute inset-y-0 left-0 w-[48%] hidden lg:block">
         <Image
-          src="/images/home/smiling-students-talking-each-other-standing-near-2026-01-08-07-49-50-utc 1.png"
+          src="/images/graduation/hero.webp"
           alt="Student ready to apply"
           fill
           className="object-cover object-center"

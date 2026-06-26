@@ -69,7 +69,7 @@ export default function IntakesSection() {
           {/* Right: image */}
           <div className="relative aspect-[590/495] rounded-xl overflow-hidden">
             <Image
-              src="/images/home/gallery/diverse-students-celebrating-success-throwing-note-2026-03-25-10-03-39-utc 1.png"
+              src="/images/how-to-apply/Scholarships.webp"
               alt="Intakes and scholarships"
               fill
               className="object-cover object-center"

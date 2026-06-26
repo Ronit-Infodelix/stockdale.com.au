@@ -7,7 +7,7 @@ export default function StudentLogin() {
     <main>
       <ParallaxSticky top="0">
         <PageHero
-          image="/images/home/gallery/diverse-students-celebrating-success-throwing-note-2026-03-25-10-03-39-utc 1.png"
+          image="/images/home/gallery/students-celebrating.webp"
           title="Student Portal"
           subtitle="Welcome back — access your courses, results, timetable and student services."
           breadcrumbs={[

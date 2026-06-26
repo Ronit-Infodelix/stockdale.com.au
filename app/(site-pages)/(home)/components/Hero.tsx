@@ -100,7 +100,7 @@ export default function Hero() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/home/hero/banner.jpg"
+              src="/images/home/hero/banner.webp"
               alt=""
               className="absolute inset-0 w-full h-full object-cover object-[center_-8%] pointer-events-none"
               aria-hidden="true"
@@ -139,7 +139,7 @@ export default function Hero() {
             transition={{ duration: 1.1, delay: 1.1, ease: SPRING }}
           >
             <Image
-              src="/images/home/hero/left.png"
+              src="/images/home/hero/left.webp"
               alt=""
               fill
               className="select-none object-cover overflow-visible"
@@ -157,7 +157,7 @@ export default function Hero() {
             transition={{ duration: 1.1, delay: 1.2, ease: SPRING }}
           >
             <Image
-              src="/images/home/hero/right.png"
+              src="/images/home/hero/right.webp"
               alt=""
               fill
               className="select-none object-cover overflow-visible"

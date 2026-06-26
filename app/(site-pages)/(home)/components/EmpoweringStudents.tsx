@@ -39,7 +39,7 @@ export default function EmpoweringStudents() {
           style={{ scale: imageScale }}
         >
           <Image
-            src="/images/home/students-empowering.png"
+            src="/images/home/students-empowering.webp"
             alt="Students talking near college building"
             fill
             className="object-cover object-top"
@@ -53,7 +53,7 @@ export default function EmpoweringStudents() {
           style={{ clipPath, scale: imageScale }}
         >
           <Image
-            src="/images/home/students-empowering.png"
+            src="/images/home/students-empowering.webp"
             alt=""
             fill
             className="object-cover object-top grayscale"

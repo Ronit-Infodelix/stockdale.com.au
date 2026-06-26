@@ -62,7 +62,7 @@ export default function StayingSafeSections() {
           badge="Staying Safe"
           title="Campus safety"
           body={[]}
-          image="/images/home/gallery/a-group-of-young-multi-ethnic-group-of-student-in-2026-03-17-14-49-05-utc 1.png"
+          image="/images/staying-safe/section.webp"
           imageAlt="Campus safety"
           imagePosition="right"
         >

@@ -8,7 +8,7 @@ export default function IndustryPage() {
     <main>
       <ParallaxSticky top="0">
         <PageHero
-          image="/images/home/about/smiling-students-outside-college-building-with-boo-2026-01-11-10-53-42-utc 1.png"
+          image="/images/indrustry/hero.webp"
           title="Industry"
           breadcrumbs={[
             { label: "Home", href: "/" },

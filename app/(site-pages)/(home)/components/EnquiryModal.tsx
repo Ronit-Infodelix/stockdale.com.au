@@ -122,8 +122,8 @@ export default function EnquiryModal() {
                 <Image
                   src={
                     intent === "apply"
-                      ? "/images/home/gallery/a-group-of-young-multi-ethnic-group-of-student-in-2026-03-17-14-49-05-utc 1.png"
-                      : "/images/home/gallery/Mask group.png"
+                      ? "/images/home/gallery/students-group.webp"
+                      : "/images/home/gallery/gallery.webp"
                   }
                   alt=""
                   fill

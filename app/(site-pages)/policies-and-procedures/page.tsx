@@ -8,7 +8,7 @@ export default function PoliciesAndProcedures() {
     <main>
       <ParallaxSticky top="0">
         <PageHero
-          image="/images/home/smiling-students-talking-each-other-standing-near-2026-01-08-07-49-50-utc 1.png"
+          image="/images/policies-and-procedures/hero.webp"
           title="Policies and Procedures"
           breadcrumbs={[
             { label: "Home", href: "/" },

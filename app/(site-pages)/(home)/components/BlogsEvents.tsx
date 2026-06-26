@@ -15,19 +15,19 @@ const blogPosts = [
     date: "26 Oct 2026",
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing.",
     excerpt: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad",
-    image: "/images/home/gallery/Rectangle 79.png",
+    image: "/images/home/gallery/gallery-3.webp",
   },
   {
     date: "26 Oct 2026",
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing.",
     excerpt: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad",
-    image: "/images/home/gallery/Mask group-1.png",
+    image: "/images/home/gallery/gallery-1.webp",
   },
   {
     date: "26 Oct 2026",
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing.",
     excerpt: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad",
-    image: "/images/home/gallery/Rectangle 80.png",
+    image: "/images/home/gallery/gallery-4.webp",
   },
 ];
 
@@ -146,7 +146,7 @@ export default function BlogsEvents() {
             transition={{ duration: 0.8, ease: SPRING }}
           >
             <Image
-              src="/images/home/students.png"
+              src="/images/home/students.webp"
               alt="Featured article"
               fill
               className="object-cover object-center"

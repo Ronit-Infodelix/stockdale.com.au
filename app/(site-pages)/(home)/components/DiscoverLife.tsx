@@ -11,25 +11,25 @@ const SPRING   = [0.22, 1, 0.36, 1] as const;
 const VIEWPORT = { once: true, margin: "-80px" } as const;
 
 const GALLERY1 = [
-  "/images/home/gallery/a-group-of-young-multi-ethnic-group-of-student-in-2026-03-17-14-49-05-utc 1.png",
-  "/images/home/gallery/Mask group-1.png",
-  "/images/home/gallery/Mask group-2.png",
-  "/images/home/gallery/diverse-students-celebrating-success-throwing-note-2026-03-25-10-03-39-utc 1.png",
-  "/images/home/gallery/a-group-of-young-multi-ethnic-group-of-student-in-2026-03-17-14-49-05-utc 1.png",
-  "/images/home/gallery/Mask group-1.png",
-  "/images/home/gallery/Mask group-2.png",
-  "/images/home/gallery/diverse-students-celebrating-success-throwing-note-2026-03-25-10-03-39-utc 1.png",
+  "/images/home/gallery/students-group.webp",
+  "/images/home/gallery/gallery-1.webp",
+  "/images/home/gallery/gallery-2.webp",
+  "/images/home/gallery/students-celebrating.webp",
+  "/images/home/gallery/students-group.webp",
+  "/images/home/gallery/gallery-1.webp",
+  "/images/home/gallery/gallery-2.webp",
+  "/images/home/gallery/students-celebrating.webp",
 ];
 
 const GALLERY2 = [
-  "/images/home/gallery/Mask group.png",
-  "/images/home/gallery/Rectangle 79.png",
-  "/images/home/gallery/Rectangle 80.png",
-  "/images/home/gallery/Rectangle 81.png",
-  "/images/home/gallery/Mask group.png",
-  "/images/home/gallery/Rectangle 79.png",
-  "/images/home/gallery/Rectangle 80.png",
-  "/images/home/gallery/Rectangle 81.png",
+  "/images/home/gallery/gallery.webp",
+  "/images/home/gallery/gallery-3.webp",
+  "/images/home/gallery/gallery-4.webp",
+  "/images/home/gallery/gallery-5.webp",
+  "/images/home/gallery/gallery.webp",
+  "/images/home/gallery/gallery-3.webp",
+  "/images/home/gallery/gallery-4.webp",
+  "/images/home/gallery/gallery-5.webp",
 ];
 
 const ROW_1 = GALLERY1;

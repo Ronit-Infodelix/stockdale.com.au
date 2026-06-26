@@ -9,7 +9,7 @@ export default function InternationalStudentsCTA() {
       {/* Image — bleeds to the right edge */}
       <div className="absolute inset-y-0 right-0 w-[35%] lg:w-[38%] hidden lg:block">
         <Image
-          src="/images/home/about/smiling-students-outside-college-building-with-boo-2026-01-11-10-53-42-utc 1.png"
+          src="/images/admission/section-2.webp"
           alt="International students"
           fill
           className="object-cover object-center"

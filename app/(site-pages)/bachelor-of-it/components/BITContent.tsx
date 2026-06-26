@@ -464,7 +464,7 @@ export default function BITContent() {
             {/* Right: image */}
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
               <Image
-                src="/images/home/gallery/diverse-students-celebrating-success-throwing-note-2026-03-25-10-03-39-utc 1.png"
+                src="/images/graduation/hero.webp"
                 alt="Graduates celebrating"
                 fill
                 className="object-cover object-center"

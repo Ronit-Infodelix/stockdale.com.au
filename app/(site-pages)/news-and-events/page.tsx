@@ -8,7 +8,7 @@ export default function NewsAndEvents() {
     <main>
       <ParallaxSticky top="0">
         <PageHero
-          image="/images/news/hero.png"
+          image="/images/news/hero.webp"
           title="News and Events"
           breadcrumbs={[
             { label: "Home", href: "/" },

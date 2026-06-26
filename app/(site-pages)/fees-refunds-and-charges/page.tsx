@@ -8,7 +8,7 @@ export default function FeesRefundsAndCharges() {
     <main>
       <ParallaxSticky top="0">
         <PageHero
-          image="/images/home/smiling-students-talking-each-other-standing-near-2026-01-08-07-49-50-utc 1.png"
+          image="/images/fee/hero.webp"
           title="Fees, Refunds and Charges"
           breadcrumbs={[
             { label: "Home", href: "/" },

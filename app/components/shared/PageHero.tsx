@@ -65,7 +65,7 @@ export default function PageHero({
         <div className="h-1/2 absolute w-full z-1 bottom-0 grid grid-cols-3 pointer-events-none">
           <div className="relative -left-1/2 top-1/3">
             <Image
-              src="/images/home/hero/left.png"
+              src="/images/home/hero/left.webp"
               alt=""
               fill
               className="select-none object-cover overflow-visible"
@@ -75,7 +75,7 @@ export default function PageHero({
           <div />
           <div className="relative -right-1/2 top-1/2">
             <Image
-              src="/images/home/hero/right.png"
+              src="/images/home/hero/right.webp"
               alt=""
               fill
               className="select-none object-cover overflow-visible"

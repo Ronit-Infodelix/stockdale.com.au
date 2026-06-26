@@ -8,7 +8,7 @@ export default function MelbourneLife() {
     <main>
       <ParallaxSticky top="0">
         <PageHero
-          image="/images/home/smiling-students-talking-each-other-standing-near-2026-01-08-07-49-50-utc 1.png"
+          image="/images/melbourne/hero.webp"
           title="Melbourne Life"
           breadcrumbs={[
             { label: "Home", href: "/" },
