@@ -111,7 +111,7 @@ export default function PageHero({
           <Container className="flex items-center gap-1.5 py-3 px-3">
             {breadcrumbs.map((crumb, i) => {
               const isLast = i === breadcrumbs.length - 1;
-              const isHome = i === 0 && crumb.label.toLowerCase() === "home";
+              // const isHome = i === 0 && crumb.label.toLowerCase() === "home";
               return (
                 <Fragment key={crumb.label}>
                   {i > 0 && (
@@ -124,13 +124,12 @@ export default function PageHero({
                   {!isLast && crumb.href ? (
                     <Link
                       href={crumb.href}
-                      className="flex items-center gap-1.5 font-sans text-xs lg:text-base text-white/70 hover:text-white transition-colors duration-150 whitespace-nowrap"
+                      className="flex items-center gap-1.5 font-sans text-xs text-white/70 hover:text-white transition-colors duration-150 whitespace-nowrap"
                     >
-                      {isHome && <Home className="size-4" />}
-                      {isHome ? null : crumb.label}
+                      {crumb.label}
                     </Link>
                   ) : (
-                    <span className="flex items-center  justify-center font-sans text-xs lg:text-base text-brand-green whitespace-nowrap">
+                    <span className="flex items-center  justify-center font-sans text-xs text-white whitespace-nowrap">
                       {crumb.label}
                     </span>
                   )}
