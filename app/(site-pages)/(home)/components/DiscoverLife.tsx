@@ -154,7 +154,7 @@ export default function DiscoverLife() {
       {/* Header */}
       <Container className="flex flex-col items-center text-center mb-14">
         <motion.div
-          className="bg-[#cdeae3] text-black text-[10px] font-sans px-3 py-[5px] rounded-[4px] mb-5"
+          className="bg-brand-green-light text-black text-[10px] font-sans px-3 py-[5px] rounded-[4px] mb-5"
           initial={{ opacity: 0, scale: 0.85 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={VIEWPORT}
@@ -174,7 +174,7 @@ export default function DiscoverLife() {
         </motion.h2>
 
         <motion.p
-          className="font-sans text-[16px] leading-[24px] text-[#767676] max-w-[516px] mt-4"
+          className="font-sans text-[16px] leading-[24px] text-brand-gray max-w-[516px] mt-4"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VIEWPORT}

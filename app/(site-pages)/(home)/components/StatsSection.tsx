@@ -82,7 +82,7 @@ export default function StatsSection() {
         </motion.h2>
 
         <motion.p
-          className="text-[#767676] text-[16px] leading-[24px] max-w-[472px] mt-3"
+          className="text-brand-gray text-[16px] leading-[24px] max-w-[472px] mt-3"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={VIEWPORT}
@@ -120,7 +120,7 @@ export default function StatsSection() {
             </div>
 
             {/* Label */}
-            <p className="text-[#767676] text-[14px] leading-[20px] max-w-[192px]">
+            <p className="text-brand-gray text-[14px] leading-[20px] max-w-[192px]">
               {label}
             </p>
           </motion.div>

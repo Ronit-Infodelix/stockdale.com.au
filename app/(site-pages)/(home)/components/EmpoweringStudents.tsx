@@ -74,7 +74,7 @@ export default function EmpoweringStudents() {
       {/* ── Text content — z-30 stays above curtain ── */}
       <Container className="relative z-30 flex flex-col items-center text-center mt-auto pb-16 gap-4">
         <motion.h2
-          className="font-agatho text-[63px] leading-tight text-[#013529]"
+          className="font-agatho text-[63px] leading-tight text-brand-green-darkest"
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VIEWPORT}
@@ -84,7 +84,7 @@ export default function EmpoweringStudents() {
         </motion.h2>
 
         <motion.p
-          className="font-sans text-[16px] leading-[28px] text-[#767676] max-w-[834px]"
+          className="font-sans text-[16px] leading-[28px] text-brand-gray max-w-[834px]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VIEWPORT}

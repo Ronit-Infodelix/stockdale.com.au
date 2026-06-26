@@ -25,7 +25,7 @@ function NumberedList({
   nested?: boolean;
 }) {
   return (
-    <ol className={`list-decimal ${nested ? "pl-6" : "pl-5"} space-y-3 text-[#767676] font-sans text-[16px] leading-[28px]`}>
+    <ol className={`list-decimal ${nested ? "pl-6" : "pl-5"} space-y-3 text-brand-gray font-sans text-[16px] leading-[28px]`}>
       {items.map((item, i) => {
         if (typeof item === "string") {
           return <li key={i}>{item}</li>;
@@ -72,7 +72,7 @@ function PolicySection({
         <h2 className="font-agatho text-[40px] leading-[50px] text-[#0a0a0a] max-w-[640px]">
           {heading}
         </h2>
-        <span className="mt-2 shrink-0 text-[#767676] group-hover:text-[#013529] transition-colors">
+        <span className="mt-2 shrink-0 text-brand-gray group-hover:text-brand-green-darkest transition-colors">
           {open ? <Minus size={22} /> : <Plus size={22} />}
         </span>
       </button>
@@ -111,7 +111,7 @@ export default function RPLContent() {
   return (
     <>
       {/* ── Sticky tab bar ── */}
-      <div className="sticky top-0 z-30 bg-[#013529] overflow-x-auto">
+      <div className="sticky top-0 z-30 bg-brand-green-darkest overflow-x-auto">
         <Container>
           <div className="flex items-stretch">
             {TABS.map(({ id, label }) => {
@@ -122,7 +122,7 @@ export default function RPLContent() {
                   onClick={() => scrollTo(id)}
                   className={`px-5 py-5 shrink-0 font-sans text-[11px] font-bold uppercase tracking-[0.96px] transition-colors whitespace-nowrap ${
                     active
-                      ? "bg-[#cdeae3] text-[#013529]"
+                      ? "bg-brand-green-light text-brand-green-darkest"
                       : "text-white hover:bg-white/10"
                   }`}
                 >
@@ -142,7 +142,7 @@ export default function RPLContent() {
             <ChevronRight size={12} className="text-gray-400" />
             <Link href="/how-to-apply" className="text-black hover:underline">Admission</Link>
             <ChevronRight size={12} className="text-gray-400" />
-            <span className="text-[#767676]">Credit & RPL</span>
+            <span className="text-brand-gray">Credit & RPL</span>
           </nav>
         </Container>
       </div>
@@ -157,7 +157,7 @@ export default function RPLContent() {
               <h2 className="font-agatho text-[40px] leading-[50px] text-[#0a0a0a] mb-4">
                 Eligibility to apply
               </h2>
-              <div className="space-y-4 font-sans text-[16px] leading-[28px] text-[#767676]">
+              <div className="space-y-4 font-sans text-[16px] leading-[28px] text-brand-gray">
                 <p>
                   Both Domestic and international Students who have relevant prior learning for
                   which Credit may be granted are eligible to apply for Credit in accordance with
@@ -183,7 +183,7 @@ export default function RPLContent() {
           </div>
 
           {/* How to Apply continuation */}
-          <div className="max-w-[720px] space-y-4 font-sans text-[16px] leading-[28px] text-[#767676]">
+          <div className="max-w-[720px] space-y-4 font-sans text-[16px] leading-[28px] text-brand-gray">
             <p>
               Students will be informed that if their application for credit is successful they
               will not be disadvantaged in achieving the expected course learning outcomes.
@@ -290,7 +290,7 @@ export default function RPLContent() {
               />
 
               {/* Info box */}
-              <div className="mt-8 bg-[#f8f5eb] rounded-xl p-6 space-y-3 font-sans text-[16px] leading-[35px] text-[#767676]">
+              <div className="mt-8 bg-[#f8f5eb] rounded-xl p-6 space-y-3 font-sans text-[16px] leading-[35px] text-brand-gray">
                 <p>
                   Applications for review must be submitted within 10 working days of receiving
                   notice of the original decision and be sent by email and include their full

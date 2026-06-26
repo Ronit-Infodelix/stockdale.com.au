@@ -38,7 +38,7 @@ export default function CTASection() {
           </motion.h2>
 
           <motion.p
-            className="font-sans text-[16px] leading-[24px] text-[#767676] max-w-[438px]"
+            className="font-sans text-[16px] leading-[24px] text-brand-gray max-w-[438px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={VIEWPORT}

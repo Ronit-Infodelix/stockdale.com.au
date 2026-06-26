@@ -84,7 +84,7 @@ export default function FeaturedProgram() {
 
         <motion.p
           variants={slideUp}
-          className="font-sans text-[16px] text-[#767676] max-w-100"
+          className="font-sans text-[16px] text-brand-gray max-w-100"
         >
           In today&apos;s rapidly evolving digital landscape, data analytics has
           become a crucial skill across various industries. The Bachelor of

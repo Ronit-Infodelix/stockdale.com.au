@@ -135,7 +135,7 @@ function OutlinedBtn({ label, href = "#" }: { label: string; href?: string }) {
   return (
     <Link
       href={href}
-      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#013529] text-[#013529] bg-white text-[14px] font-sans hover:bg-[#013529] hover:text-white transition-colors"
+      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#013529] text-brand-green-darkest bg-white text-[14px] font-sans hover:bg-brand-green-darkest hover:text-white transition-colors"
     >
       {label}
       <ChevronRight size={12} strokeWidth={2} />
@@ -162,7 +162,7 @@ function AccordionSection({
           className="w-full flex items-start justify-between gap-4 text-left group"
         >
           <h2 className="font-agatho text-[40px] leading-[44px] text-[#0a0a0a]">{heading}</h2>
-          <span className="mt-1 shrink-0 text-[#767676] group-hover:text-[#013529] transition-colors">
+          <span className="mt-1 shrink-0 text-brand-gray group-hover:text-brand-green-darkest transition-colors">
             {open ? <Minus size={20} /> : <Plus size={20} />}
           </span>
         </button>
@@ -203,7 +203,7 @@ export default function BITContent() {
   return (
     <>
       {/* ── Sticky tab bar ── */}
-      <div className="sticky top-0 z-30 bg-[#013529] overflow-x-auto">
+      <div className="sticky top-0 z-30 bg-brand-green-darkest overflow-x-auto">
         <Container>
           <div className="flex items-stretch">
             {TABS.map(({ id, label }) => {
@@ -213,7 +213,7 @@ export default function BITContent() {
                   key={id}
                   onClick={() => scrollTo(id)}
                   className={`px-5 py-5 shrink-0 font-sans text-[11px] font-bold uppercase tracking-[0.96px] transition-colors whitespace-nowrap ${
-                    active ? "bg-[#cdeae3] text-[#013529]" : "text-white hover:bg-white/10"
+                    active ? "bg-brand-green-light text-brand-green-darkest" : "text-white hover:bg-white/10"
                   }`}
                 >
                   {label}
@@ -233,7 +233,7 @@ export default function BITContent() {
               <ChevronRight size={12} className="text-gray-400" />
               <Link href="/graduation-courses" className="text-black hover:underline">Admission</Link>
               <ChevronRight size={12} className="text-gray-400" />
-              <span className="text-[#767676]">Graduate Course</span>
+              <span className="text-brand-gray">Graduate Course</span>
             </nav>
             <div className="flex items-center gap-3">
               <GreenBtn label="Apply Now" href="/how-to-apply" />
@@ -254,7 +254,7 @@ export default function BITContent() {
               <div key={ri} className="grid grid-cols-3 gap-8 py-7">
                 {row.map((cell) => (
                   <div key={cell.label}>
-                    <p className="font-sans text-[12px] font-normal text-[#767676] uppercase tracking-wider mb-2">
+                    <p className="font-sans text-[12px] font-normal text-brand-gray uppercase tracking-wider mb-2">
                       {cell.label}
                     </p>
                     <p className="font-sans text-[18px] text-[#0a0a0a] leading-[26px] whitespace-pre-line">
@@ -274,7 +274,7 @@ export default function BITContent() {
           <h2 className="font-agatho text-[40px] leading-[44px] text-[#0a0a0a] mb-4">
             Course Overview
           </h2>
-          <div className="max-w-[720px] space-y-3 font-sans text-[14px] leading-[20px] text-[#767676] mb-10">
+          <div className="max-w-[720px] space-y-3 font-sans text-[14px] leading-[20px] text-brand-gray mb-10">
             <p>
               The course structure is designed to provide a robust foundation in Information
               Technology while allowing students to specialise and tailor their education to their
@@ -298,7 +298,7 @@ export default function BITContent() {
         <Container>
           <div className="max-w-[720px]">
             <AccordionSection id="course-structure-inner" heading="Course Structure">
-              <div className="font-sans text-[14px] leading-[20px] text-[#767676] space-y-3 mb-6">
+              <div className="font-sans text-[14px] leading-[20px] text-brand-gray space-y-3 mb-6">
                 <p>
                   To qualify for award of the Bachelor of Information Technology the student shall
                   accrue an aggregate of 240 credit points.
@@ -390,7 +390,7 @@ export default function BITContent() {
               id="entry-inner"
               heading="Entry Requirement & Admissions Criteria"
             >
-              <p className="font-sans text-[14px] leading-[20px] text-[#767676] mb-6">
+              <p className="font-sans text-[14px] leading-[20px] text-brand-gray mb-6">
                 In accordance with TIA&apos;s Admissions Policy and Procedure, the following
                 minimum entry thresholds have been assigned for entry to this course. The
                 institution has defined certain minimum entry requirements that applicants must
@@ -419,10 +419,10 @@ export default function BITContent() {
               </div>
 
               <h3 className="font-agatho text-[24px] text-[#014f3d] mb-4">Entry Requirements</h3>
-              <p className="font-sans text-[14px] leading-[20px] text-[#767676] mb-4">
+              <p className="font-sans text-[14px] leading-[20px] text-brand-gray mb-4">
                 {ENTRY[entryTab].requirements[0]}
               </p>
-              <ul className="list-disc pl-5 space-y-2 font-sans text-[14px] leading-[30px] text-[#767676]">
+              <ul className="list-disc pl-5 space-y-2 font-sans text-[14px] leading-[30px] text-brand-gray">
                 {ENTRY[entryTab].bullets.map((b) => (
                   <li key={b}>{b}</li>
                 ))}
@@ -488,14 +488,14 @@ function OverviewPanel({ title, body }: { title: string; body: string }) {
       >
         <span className="font-sans text-[20px] text-[#0a0a0a]">{title}:</span>
         {open ? (
-          <Minus size={18} className="text-[#767676] shrink-0" />
+          <Minus size={18} className="text-brand-gray shrink-0" />
         ) : (
-          <Plus size={18} className="text-[#767676] shrink-0" />
+          <Plus size={18} className="text-brand-gray shrink-0" />
         )}
       </button>
       {open && (
         <div className="px-6 pb-5">
-          <p className="font-sans text-[14px] leading-[24px] text-[#767676]">{body}</p>
+          <p className="font-sans text-[14px] leading-[24px] text-brand-gray">{body}</p>
         </div>
       )}
     </div>

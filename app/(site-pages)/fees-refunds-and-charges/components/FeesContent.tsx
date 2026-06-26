@@ -88,7 +88,7 @@ function OutlinedBtn({ label, href = "#" }: { label: string; href?: string }) {
   return (
     <Link
       href={href}
-      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#013529] text-[#013529] bg-white text-[14px] font-sans hover:bg-[#013529] hover:text-white transition-colors"
+      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#013529] text-brand-green-darkest bg-white text-[14px] font-sans hover:bg-brand-green-darkest hover:text-white transition-colors"
     >
       {label}
       <ChevronRight size={12} strokeWidth={2} />
@@ -117,7 +117,7 @@ function PolicySection({
         <h2 className="font-agatho text-[40px] leading-[50px] text-[#0a0a0a] max-w-[640px]">
           {heading}
         </h2>
-        <span className="mt-2 shrink-0 text-[#767676] group-hover:text-[#013529] transition-colors">
+        <span className="mt-2 shrink-0 text-brand-gray group-hover:text-brand-green-darkest transition-colors">
           {open ? <Minus size={22} /> : <Plus size={22} />}
         </span>
       </button>
@@ -158,7 +158,7 @@ export default function FeesContent() {
   return (
     <>
       {/* ── Sticky tab bar ── */}
-      <div className="sticky top-0 z-30 bg-[#013529] overflow-x-auto">
+      <div className="sticky top-0 z-30 bg-brand-green-darkest overflow-x-auto">
         <Container>
           <div className="flex items-stretch">
             {TABS.map(({ id, label }) => {
@@ -169,7 +169,7 @@ export default function FeesContent() {
                   onClick={() => scrollTo(id)}
                   className={`px-6 py-5 shrink-0 font-sans text-[11px] font-bold uppercase tracking-[0.96px] transition-colors whitespace-nowrap ${
                     active
-                      ? "bg-[#cdeae3] text-[#013529]"
+                      ? "bg-brand-green-light text-brand-green-darkest"
                       : "text-white hover:bg-white/10"
                   }`}
                 >
@@ -190,7 +190,7 @@ export default function FeesContent() {
               <ChevronRight size={12} className="text-gray-400" />
               <Link href="/how-to-apply" className="text-black hover:underline">Admission</Link>
               <ChevronRight size={12} className="text-gray-400" />
-              <span className="text-[#767676]">Fees, Refunds and Charges</span>
+              <span className="text-brand-gray">Fees, Refunds and Charges</span>
             </nav>
             <div className="flex items-center gap-3">
               <GreenBtn label="Apply Now" href="/how-to-apply" />
@@ -209,12 +209,12 @@ export default function FeesContent() {
               <h2 className="font-agatho text-[40px] leading-[50px] text-[#0a0a0a] mb-3">
                 Fees
               </h2>
-              <p className="font-sans text-[16px] leading-[28px] text-[#767676] mb-6">
+              <p className="font-sans text-[16px] leading-[28px] text-brand-gray mb-6">
                 Course: Bachelor of Information Technology
               </p>
 
               {/* Domestic fee box */}
-              <div className="bg-[#013529] rounded-xl px-8 py-7 mb-4">
+              <div className="bg-brand-green-darkest rounded-xl px-8 py-7 mb-4">
                 <p className="font-sans text-[16px] leading-[28px] text-white mb-1">
                   Total course fees for Domestic Students:
                 </p>
@@ -224,7 +224,7 @@ export default function FeesContent() {
               </div>
 
               {/* International fee box */}
-              <div className="bg-[#013529] rounded-xl px-8 py-7">
+              <div className="bg-brand-green-darkest rounded-xl px-8 py-7">
                 <p className="font-sans text-[16px] leading-[28px] text-white mb-1">
                   Total course fees for International Students:
                 </p>
@@ -254,7 +254,7 @@ export default function FeesContent() {
             <h2 className="font-agatho text-[40px] leading-[50px] text-[#0a0a0a] mb-6">
               Non-Tuition Fees
             </h2>
-            <div className="space-y-4 font-sans text-[16px] leading-[35px] text-[#767676]">
+            <div className="space-y-4 font-sans text-[16px] leading-[35px] text-brand-gray">
               <p className="text-[#0a0a0a]">
                 The institute charges both tuition and non-tuition fees. Non-tuition fees may
                 include, but are not limited to:
@@ -318,7 +318,7 @@ export default function FeesContent() {
                 ))}
               </div>
 
-              <div className="space-y-4 font-sans text-[16px] leading-[35px] text-[#767676]">
+              <div className="space-y-4 font-sans text-[16px] leading-[35px] text-brand-gray">
                 <p className="font-bold text-[#0a0a0a]">{refundData.heading}</p>
                 <p>{refundData.intro}</p>
                 <ol className="list-decimal pl-6 space-y-3">
@@ -345,7 +345,7 @@ export default function FeesContent() {
 
             {/* TIA Default */}
             <PolicySection id="tia-default" heading="TIA Default">
-              <div className="space-y-4 font-sans text-[16px] leading-[35px] text-[#767676]">
+              <div className="space-y-4 font-sans text-[16px] leading-[35px] text-brand-gray">
                 <p>
                   The Australian Government&apos;s Tuition Protection Service (TPS) ensures that
                   international students either receive a refund of their unspent tuition fees or
@@ -364,7 +364,7 @@ export default function FeesContent() {
 
             {/* Payment of Refunds */}
             <PolicySection id="payment-of-refunds" heading="Payment of Refunds">
-              <ol className="list-decimal pl-6 space-y-3 font-sans text-[16px] leading-[35px] text-[#767676]">
+              <ol className="list-decimal pl-6 space-y-3 font-sans text-[16px] leading-[35px] text-brand-gray">
                 <li>
                   When a decision is made to refund paid tuition fees, the refund must be paid
                   into the same bank account that was used to pay the tuition fees or deposit.
@@ -390,7 +390,7 @@ export default function FeesContent() {
                   advice contact the PRISMS Help Line at 02 6240 7647 or email{" "}
                   <a
                     href="mailto:prisms@education.gov.au"
-                    className="underline text-[#013529] hover:opacity-75"
+                    className="underline text-brand-green-darkest hover:opacity-75"
                   >
                     prisms@education.gov.au
                   </a>

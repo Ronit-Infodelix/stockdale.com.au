@@ -28,7 +28,7 @@ export default function MapSection() {
           <MapPin size={28} className="text-brand-gold-dark drop-shadow" fill="currentColor" strokeWidth={1} />
         </div>
         <div className="bg-white rounded-[8px] px-4 py-3 shadow-lg min-w-[220px]">
-          <p className="font-sans text-[10px] text-[#767676] uppercase leading-4 mb-1">
+          <p className="font-sans text-[10px] text-brand-gray uppercase leading-4 mb-1">
             Address
           </p>
           <p className="font-sans text-[14px] leading-[16px] text-[#050f0d]">

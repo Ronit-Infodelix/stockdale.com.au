@@ -36,7 +36,7 @@ function Field({
 }) {
   return (
     <motion.div variants={fieldItem} className="flex flex-col gap-1.5">
-      <label className="font-sans text-[11px] font-medium uppercase tracking-[0.08em] text-[#767676]">
+      <label className="font-sans text-[11px] font-medium uppercase tracking-[0.08em] text-brand-gray">
         {label}
       </label>
       <div className="relative">
@@ -192,7 +192,7 @@ export default function EnquiryModal() {
                   >
                     {intent === "apply" ? "Application Form" : "Enquiry Form"}
                   </h2>
-                  <p className="font-sans text-[13px] text-[#767676] mt-1">
+                  <p className="font-sans text-[13px] text-brand-gray mt-1">
                     All fields are required
                   </p>
                 </div>
@@ -265,7 +265,7 @@ export default function EnquiryModal() {
                   className="text-center font-sans text-[11px] text-[#aaa]"
                 >
                   By submitting you agree to our{" "}
-                  <a href="#" className="underline hover:text-[#013529] transition-colors">Privacy Policy</a>
+                  <a href="#" className="underline hover:text-brand-green-darkest transition-colors">Privacy Policy</a>
                 </motion.p>
               </motion.form>
             </div>

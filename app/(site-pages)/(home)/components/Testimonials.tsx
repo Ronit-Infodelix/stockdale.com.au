@@ -72,13 +72,13 @@ function TestimonialCard({ name, role, avatar, text }: (typeof testimonials)[num
     <div className="bg-white rounded-[10px] p-6 h-[308px] flex flex-col justify-between">
       <div className="flex flex-col gap-3">
         <Stars />
-        <p className="font-sans text-[12px] leading-[18px] text-[#767676] line-clamp-5">{text}</p>
+        <p className="font-sans text-[12px] leading-[18px] text-brand-gray line-clamp-5">{text}</p>
       </div>
       <div className="flex items-center gap-2">
         <Image src={avatar} alt={name} width={38} height={38} className="rounded-full object-cover flex-shrink-0" />
         <div>
           <p className="font-sans font-medium text-[12px] text-black leading-[18px]">{name}</p>
-          <p className="font-sans text-[10px] text-[#767676] leading-[18px]">{role}</p>
+          <p className="font-sans text-[10px] text-brand-gray leading-[18px]">{role}</p>
         </div>
       </div>
     </div>
@@ -127,13 +127,13 @@ export default function Testimonials() {
         >
           {/* Left: text */}
           <div>
-            <span className="bg-[#cdeae3] text-black text-[10px] font-sans px-3 py-[5px] rounded-[4px] inline-block mb-4">
+            <span className="bg-brand-green-light text-black text-[10px] font-sans px-3 py-[5px] rounded-[4px] inline-block mb-4">
               Testimonial
             </span>
             <h2 className="font-agatho text-[50px] leading-tight text-black mb-4">
               What Our Students Say
             </h2>
-            <p className="font-sans text-[16px] leading-[24px] text-[#767676] max-w-[516px]">
+            <p className="font-sans text-[16px] leading-[24px] text-brand-gray max-w-[516px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               facilisis rhoncus placerat. Suspendisse ac dui et.
             </p>

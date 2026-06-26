@@ -210,7 +210,7 @@ export default function LearnSkills() {
       {/* Header */}
       <div className="flex flex-col items-center gap-3 text-center">
         <motion.span
-          className="bg-[#cdeae3] text-black text-[10px] font-sans px-3 py-1 rounded-[4px]"
+          className="bg-brand-green-light text-black text-[10px] font-sans px-3 py-1 rounded-[4px]"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={VIEWPORT}
@@ -230,7 +230,7 @@ export default function LearnSkills() {
         </motion.h2>
 
         <motion.p
-          className="font-sans text-[16px] leading-[24px] text-[#767676] max-w-[517px]"
+          className="font-sans text-[16px] leading-[24px] text-brand-gray max-w-[517px]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VIEWPORT}

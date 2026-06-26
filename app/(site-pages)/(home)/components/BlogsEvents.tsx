@@ -49,11 +49,11 @@ function BlogCard({ date, title, excerpt, image }: (typeof blogPosts)[number]) {
       {/* Content */}
       <div className="flex flex-col justify-between flex-1 px-4 py-3">
         <div className="flex flex-col gap-1">
-          <span className="inline-flex self-start items-center bg-[#013529] text-white text-[10px] font-medium font-sans px-2 py-[2px] rounded-r-[4px]">
+          <span className="inline-flex self-start items-center bg-brand-green-darkest text-white text-[10px] font-medium font-sans px-2 py-[2px] rounded-r-[4px]">
             {date}
           </span>
           <h3 className="font-sans font-medium text-[16px] leading-[20px] text-black line-clamp-2">{title}</h3>
-          <p className="font-sans text-[10px] leading-[12px] text-[#767676] line-clamp-2">{excerpt}</p>
+          <p className="font-sans text-[10px] leading-[12px] text-brand-gray line-clamp-2">{excerpt}</p>
         </div>
         <a href="#" className="flex items-center gap-0.5 text-[#014f3d] text-[12px] font-sans">
           Read more <ChevronRight size={10} strokeWidth={2} />
@@ -72,9 +72,9 @@ function EventItem({ day, month, category, title, description }: (typeof events)
       </div>
       <div className="w-px bg-[#f2f2f2] flex-shrink-0 self-stretch my-3" />
       <div className="flex flex-col justify-center flex-1 px-4 gap-[3px]">
-        <p className="font-sans text-[11px] uppercase tracking-wide text-[#767676]">{category}</p>
+        <p className="font-sans text-[11px] uppercase tracking-wide text-brand-gray">{category}</p>
         <h3 className="font-sans font-medium text-[15px] leading-[20px] text-black line-clamp-2">{title}</h3>
-        <p className="font-sans text-[11px] leading-[14px] text-[#767676] line-clamp-2">{description}</p>
+        <p className="font-sans text-[11px] leading-[14px] text-brand-gray line-clamp-2">{description}</p>
         <a href="#" className="flex items-center gap-0.5 text-[#014f3d] text-[12px] font-sans mt-1">
           Know more <ChevronRight size={10} strokeWidth={2} />
         </a>
@@ -103,7 +103,7 @@ export default function BlogsEvents() {
       {/* Header */}
       <Container className="flex flex-col items-center text-center mb-14">
         <motion.span
-          className="bg-[#cdeae3] text-black text-[10px] font-sans px-3 py-[5px] rounded-[4px] inline-block mb-4"
+          className="bg-brand-green-light text-black text-[10px] font-sans px-3 py-[5px] rounded-[4px] inline-block mb-4"
           initial={{ opacity: 0, scale: 0.85 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={VIEWPORT}
@@ -121,7 +121,7 @@ export default function BlogsEvents() {
           Explore News, Events &amp; Student Stories
         </motion.h2>
         <motion.p
-          className="font-sans text-[16px] leading-[24px] text-[#767676] max-w-[516px] mt-4"
+          className="font-sans text-[16px] leading-[24px] text-brand-gray max-w-[516px] mt-4"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VIEWPORT}

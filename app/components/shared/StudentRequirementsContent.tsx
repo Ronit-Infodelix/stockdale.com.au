@@ -87,7 +87,7 @@ function OutlinedButton({ label, href = "#" }: { label: string; href?: string })
   return (
     <Link
       href={href}
-      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#013529] text-[#013529] text-[14px] font-sans hover:bg-[#013529] hover:text-white transition-colors"
+      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#013529] text-brand-green-darkest text-[14px] font-sans hover:bg-brand-green-darkest hover:text-white transition-colors"
     >
       {label}
       <ChevronRight size={12} strokeWidth={2} />
@@ -111,7 +111,7 @@ export default function StudentRequirementsContent({ variant }: { variant: Stude
               <ChevronRight size={12} className="text-gray-400" />
               <Link href="/how-to-apply" className="text-black hover:underline">Admission</Link>
               <ChevronRight size={12} className="text-gray-400" />
-              <span className="text-[#767676]">{cfg.breadcrumbLabel}</span>
+              <span className="text-brand-gray">{cfg.breadcrumbLabel}</span>
             </nav>
 
             {/* Action buttons */}
@@ -139,7 +139,7 @@ export default function StudentRequirementsContent({ variant }: { variant: Stude
                 <p className="font-medium text-[#0a0a0a] mb-2">
                   To qualify for admission, you must meet one of the following:
                 </p>
-                <ul className="list-disc pl-5 space-y-1 text-[#767676]">
+                <ul className="list-disc pl-5 space-y-1 text-brand-gray">
                   {cfg.entryItems.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
@@ -181,7 +181,7 @@ export default function StudentRequirementsContent({ variant }: { variant: Stude
               </h2>
               <div className="font-sans text-[16px] leading-[28px]">
                 <p className="font-medium text-[#0a0a0a] mb-2">{cfg.secondPreamble}</p>
-                <ul className="list-disc pl-5 space-y-1 text-[#767676]">
+                <ul className="list-disc pl-5 space-y-1 text-brand-gray">
                   {cfg.secondItems.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
@@ -202,7 +202,7 @@ export default function StudentRequirementsContent({ variant }: { variant: Stude
             <h2 className="font-agatho text-[40px] leading-[50px] text-[#0a0a0a] mb-3">
               {cfg.additionalSection.heading}
             </h2>
-            <p className="font-sans text-[16px] leading-[28px] text-[#767676] max-w-2xl">
+            <p className="font-sans text-[16px] leading-[28px] text-brand-gray max-w-2xl">
               {cfg.additionalSection.body}
             </p>
           </Container>
