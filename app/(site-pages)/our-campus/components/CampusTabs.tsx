@@ -49,7 +49,7 @@ export default function CampusSections() {
   return (
     <div>
       {/* ── Anchor tab bar — active tab highlighted by scroll position ── */}
-      <div className="sticky top-18 z-40 bg-brand-green-darkest">
+      <div className="bg-brand-green-darkest">
         <Container className="flex flex-wrap">
           {TABS.map(({ label, id }) => (
             <a

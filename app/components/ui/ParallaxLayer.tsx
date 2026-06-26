@@ -42,7 +42,7 @@ interface OverlayProps {
  * element's absolute document position at mount (before sticky kicks in) and
  * map raw scrollY to opacity via a transformer function.
  */
-export function ParallaxSticky({ top = "0", fade = true, children, className }: StickyProps) {
+export function ParallaxSticky({ top = "18", fade = true, children, className }: StickyProps) {
   const ref = useRef<HTMLDivElement>(null);
   const docTopRef = useRef(0);
   const heightRef = useRef(0);

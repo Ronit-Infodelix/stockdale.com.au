@@ -10,15 +10,14 @@ import CTASection from "../(home)/components/CTASection";
 export default function AboutUs() {
   return (
     <>
-      <ParallaxSticky className="bg-brand-green-darkest">
-        <PageHero
-          image="/images/home/students-empowering.png"
-          title="About Stockdale"
-          subtitle="Building a global community of scholars, one student at a time."
-          breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
-        />
-      </ParallaxSticky>
-      <ParallaxSticky className="py-20 bg-white">
+      <PageHero
+        image="/images/home/students-empowering.png"
+        title="About Stockdale"
+        subtitle="Building a global community of scholars, one student at a time."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
+      />
+
+      <ParallaxSticky className="py-18 bg-white" top="0">
         <SplitSection
           badge="Who we are?"
           title="About Us."
@@ -32,7 +31,7 @@ export default function AboutUs() {
         />
       </ParallaxSticky>
 
-      <ParallaxOverlay>
+      <ParallaxSticky>
         <SplitSection
           title="Our"
           titleAccent="Mission"
@@ -43,6 +42,8 @@ export default function AboutUs() {
           variant="dark"
           className="min-h-140"
         />
+      </ParallaxSticky>
+      <ParallaxSticky>
         <SplitSection
           title="Our"
           titleAccent="Mission"
@@ -53,9 +54,10 @@ export default function AboutUs() {
           variant="dark"
           className="min-h-140"
         />
-        <ValuesSection />
-      </ParallaxOverlay>
+      </ParallaxSticky>
+
       <div className="z-10">
+        <ValuesSection />
         <CTASection />
       </div>
     </>

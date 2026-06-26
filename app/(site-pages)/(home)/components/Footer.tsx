@@ -58,7 +58,7 @@ const colItem = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1c1c1c] text-white">
+    <footer className="bg-[#1c1c1c] text-white z-10 relative">
 
       {/* ── Links + Contact ── */}
       <Container className="py-16">

@@ -10,9 +10,8 @@ export default function SiteLayout({
     <>
       <Navbar />
       {children}
-      <div className="relative z-10">
-        <Footer />
-      </div>
+
+      <Footer />
     </>
   );
 }
