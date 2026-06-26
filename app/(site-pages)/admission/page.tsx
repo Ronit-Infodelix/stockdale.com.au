@@ -1,13 +1,6 @@
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import PageHero from "@/app/components/shared/PageHero";
-import Container from "@/app/components/ui/Container";
 import AdmissionSections from "./components/AdmissionSections";
 import InternationalStudentsCTA from "./components/InternationalStudentsCTA";
-import {
-  ParallaxOverlay,
-  ParallaxSticky,
-} from "@/app/components/ui/ParallaxLayer";
 
 export default function Admission() {
   return (
@@ -24,9 +17,8 @@ export default function Admission() {
         {/* Quick-action buttons sit inside the hero above the title */}
       </PageHero>
 
-      
       <AdmissionSections />
-      
+
       <InternationalStudentsCTA />
     </>
   );

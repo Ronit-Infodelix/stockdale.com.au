@@ -1,7 +1,6 @@
 import PageHero from "@/app/components/shared/PageHero";
 import CTASection from "../(home)/components/CTASection";
 import TeamSection from "./components/TeamSection";
-import { ParallaxOverlay } from "@/app/components/ui/ParallaxLayer";
 
 export default function OurTeam() {
   return (
@@ -17,10 +16,8 @@ export default function OurTeam() {
         ]}
       />
 
-      <ParallaxOverlay overflow={false}>
-        <TeamSection />
-        <CTASection />
-      </ParallaxOverlay>
+      <TeamSection />
+      <CTASection />
     </>
   );
 }
