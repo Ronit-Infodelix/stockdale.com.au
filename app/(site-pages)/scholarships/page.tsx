@@ -3,23 +3,28 @@ import CTASection from "../(home)/components/CTASection";
 import ScholarshipIntro from "./components/ScholarshipIntro";
 import AvailableScholarships from "./components/AvailableScholarships";
 import WhoCanApply from "./components/WhoCanApply";
+import { ParallaxOverlay, ParallaxSticky } from "@/app/components/ui/ParallaxLayer";
 
 export default function Scholarships() {
   return (
-    <>
-      <PageHero
-        image="/images/home/gallery/diverse-students-celebrating-success-throwing-note-2026-03-25-10-03-39-utc 1.png"
-        title="Scholarships"
-        subtitle="Helping you reach your potential — financial support for ambitious students."
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Scholarships" },
-        ]}
-      />
-      <ScholarshipIntro />
-      <AvailableScholarships />
-      <WhoCanApply />
-      <CTASection />
-    </>
+    <main>
+      <ParallaxSticky top="0">
+        <PageHero
+          image="/images/home/gallery/diverse-students-celebrating-success-throwing-note-2026-03-25-10-03-39-utc 1.png"
+          title="Scholarships"
+          subtitle="Helping you reach your potential — financial support for ambitious students."
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Scholarships" },
+          ]}
+        />
+      </ParallaxSticky>
+      <ParallaxOverlay>
+        <ScholarshipIntro />
+        <AvailableScholarships />
+        <WhoCanApply />
+        <CTASection />
+      </ParallaxOverlay>
+    </main>
   );
 }

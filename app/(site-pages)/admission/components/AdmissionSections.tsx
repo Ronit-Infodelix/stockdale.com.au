@@ -129,7 +129,7 @@ export default function AdmissionSections() {
       </div>
 
       {/* ── 1. Eligibility for Admission ── */}
-      <section id="eligibility" className="scroll-mt-[140px] bg-[rgba(1,79,61,0.08)] py-16">
+      <section id="eligibility" className="scroll-mt-[140px] bg-white py-16">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left — numbered list */}
