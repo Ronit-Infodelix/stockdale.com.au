@@ -85,12 +85,18 @@ export default function PageHero({
         </div>
 
         {/* Breadcrumbs — full-width frosted bar pinned to bottom of hero */}
-        {hasBread && (
+        
+
+        {/* Content */}
+        <Container className="absolute top-2/3 z-10 left-1/2 -translate-x-1/2">
+          {children}
+          <div className="w-24 h-1 bg-brand-gold-dark mb-5" />
+          {hasBread && (
           <nav
             aria-label="Breadcrumb"
-            className="absolute bottom-0 left-0 right-0 z-10 bg-white/10 backdrop-blur-sm border-t border-white/15"
+            className=" bg-white/10 backdrop-blur-sm border-t border-white/15 w-fit rounded-e-full"
           >
-            <Container className="flex items-center gap-1.5 py-3">
+            <div className="flex items-center gap-1.5 py-2 px-3">
               {breadcrumbs.map((crumb, i) => {
                 const isLast = i === breadcrumbs.length - 1;
                 const isHome = i === 0 && crumb.label.toLowerCase() === "home";
@@ -119,14 +125,9 @@ export default function PageHero({
                   </Fragment>
                 );
               })}
-            </Container>
+            </div>
           </nav>
         )}
-
-        {/* Content */}
-        <Container className="absolute top-2/3 z-10 left-1/2 -translate-x-1/2">
-          {children}
-          <div className="w-24 h-1 bg-brand-gold-dark mb-5" />
           <h1 className="font-agatho text-[80px] font-bold leading-[1.05] text-white">
             {title}
           </h1>
