@@ -43,7 +43,7 @@ function BlogCard({ date, title, excerpt, image }: (typeof blogPosts)[number]) {
   return (
     <div className="flex h-[144px] bg-white rounded-[10px] shadow-[0px_3px_5px_0px_rgba(0,0,0,0.03)] overflow-hidden">
       {/* Image */}
-      <div className="w-[149px] flex-shrink-0 relative overflow-hidden bg-[#d9d9d9]">
+      <div className="w-[149px] shrink-0 relative overflow-hidden bg-[#d9d9d9]">
         <Image src={image} alt={title} fill className="object-cover" />
       </div>
       {/* Content */}
@@ -66,11 +66,11 @@ function BlogCard({ date, title, excerpt, image }: (typeof blogPosts)[number]) {
 function EventItem({ day, month, category, title, description }: (typeof events)[number]) {
   return (
     <div className="flex h-[144px] bg-white rounded-[10px] shadow-[0px_3px_5px_0px_rgba(0,0,0,0.03)] overflow-hidden">
-      <div className="w-[80px] flex-shrink-0 flex flex-col items-center justify-center">
+      <div className="w-[80px] shrink-0 flex flex-col items-center justify-center">
         <span className="font-agatho text-[#d6a929] text-[52px] leading-none">{day}</span>
         <span className="font-sans text-[12px] uppercase text-black tracking-wide">{month}</span>
       </div>
-      <div className="w-px bg-[#f2f2f2] flex-shrink-0 self-stretch my-3" />
+      <div className="w-px bg-[#f2f2f2] shrink-0 self-stretch my-3" />
       <div className="flex flex-col justify-center flex-1 px-4 gap-[3px]">
         <p className="font-sans text-[11px] uppercase tracking-wide text-brand-gray">{category}</p>
         <h3 className="font-sans font-medium text-[15px] leading-[20px] text-black line-clamp-2">{title}</h3>

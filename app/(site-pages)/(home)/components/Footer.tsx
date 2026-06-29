@@ -137,7 +137,7 @@ export default function Footer() {
               <MapPin
                 size={20}
                 strokeWidth={1.5}
-                className="text-white flex-shrink-0 mt-0.5"
+                className="text-white shrink-0 mt-0.5"
               />
               <p className="font-sans text-[14px] leading-[24px] text-[#9ca3af]">
                 Level 2, 120 Miller Street,
@@ -149,7 +149,7 @@ export default function Footer() {
               <Phone
                 size={20}
                 strokeWidth={1.5}
-                className="text-white flex-shrink-0"
+                className="text-white shrink-0"
               />
               <p className="font-sans text-[14px] text-[#9ca3af]">
                 TBA
@@ -159,7 +159,7 @@ export default function Footer() {
               <Mail
                 size={20}
                 strokeWidth={1.5}
-                className="text-white flex-shrink-0"
+                className="text-white shrink-0"
               />
               <p className="font-sans text-[14px] text-[#9ca3af]">
                 admin@stockdale.edu.au

@@ -43,7 +43,7 @@ export default function TextLine() {
     <section className="bg-brand-green-darkest py-10 overflow-hidden select-none">
       <div className="flex flex-col gap-3 font-sans font-bold uppercase text-[clamp(2.2rem,5vw,4rem)] tracking-[-0.01em]">
         <TickerRow word="INNOVATE" direction={-1} speed={0.002} />
-        <TickerRow word="DISCOVER" direction={1}  speed={0.003} />
+        <TickerRow word="CREATE" direction={1}  speed={0.003} />
         <TickerRow word="SUCCEED"  direction={-1} speed={0.002} />
       </div>
     </section>

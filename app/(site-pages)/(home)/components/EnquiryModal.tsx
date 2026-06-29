@@ -116,7 +116,7 @@ export default function EnquiryModal() {
             transition={{ duration: 0.42, ease: SPRING }}
           >
             {/* ── Left panel ── */}
-            <div className="w-[300px] flex-shrink-0 relative flex flex-col justify-between p-9 overflow-hidden">
+            <div className="w-[300px] shrink-0 relative flex flex-col justify-between p-9 overflow-hidden">
               {/* bg image — different per intent */}
               <div className="absolute inset-0">
                 <Image

@@ -8,33 +8,29 @@ const VIEWPORT = { once: true, margin: "-60px" } as const;
 
 const cards = [
   {
-    title: "Excellence",
-    description:
-      "Highest standards in teaching and learning with a commitment to integrity and innovation.",
+    title: "Excellence in Teaching",
+    description: "Highest standards in teaching and learning with a commitment to integrity and innovation that produces industry-ready graduates.",
     icon: "/images/home/icons/icon-courses.svg",
     iconW: 40,
     iconH: 58,
   },
   {
     title: "Student-Centred",
-    description:
-      "Effective teaching paired with student support services focused on wellbeing and success.",
+    description: "Effective teaching paired with student support services focused on wellbeing, safety, outcomes, and success.",
     icon: "/images/home/icons/icon-trainers.svg",
     iconW: 62,
     iconH: 62,
   },
   {
     title: "Diversity & Inclusion",
-    description:
-      "Honouring a culturally diverse community with quality of experience for everyone.",
+    description: "Honouring a culturally diverse community and providing everyone with quality of experience, opportunities, and success.",
     icon: "/images/home/icons/icon-flexible.svg",
     iconW: 56,
     iconH: 62,
   },
   {
     title: "Academic Freedom",
-    description:
-      "Committed to freedom of speech and academic freedom as foundational principles.",
+    description: "Committed to freedom of speech and academic freedom as foundational principles underpinning all our activities.",
     icon: "/images/home/icons/icon-support.svg",
     iconW: 52,
     iconH: 66,
@@ -52,7 +48,7 @@ const C = "26vw"; // circle diameter
 const OV = "6vw"; // overlap between circles
 const VIS = "20vw"; // visible slice width per circle
 
-export default function OurValues() {
+export default function WhyChooseUs() {
   return (
     <section className="relative overflow-hidden bg-brand-green-darkest">
       {/* Shimmering video bg */}
@@ -74,7 +70,7 @@ export default function OurValues() {
           viewport={VIEWPORT}
           transition={{ duration: 0.5, ease: SPRING }}
         >
-          Our Foundation
+          Why choose us
         </motion.div>
 
         <motion.h2
@@ -84,19 +80,17 @@ export default function OurValues() {
           viewport={VIEWPORT}
           transition={{ duration: 0.75, delay: 0.1, ease: SPRING }}
         >
-          Values That <span className="text-[#d6a929]">Define Us</span>
+          Your Success Is Our <span className="text-[#d6a929]">Priority</span>
         </motion.h2>
 
         <motion.p
-          className="font-sans text-[16px] leading-[24px] text-[#64817a] max-w-200 mt-4"
+          className="font-sans text-[16px] leading-[24px] text-[#64817a] max-w-[516px] mt-4"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VIEWPORT}
           transition={{ duration: 0.65, delay: 0.2, ease: SPRING }}
         >
-          Stockdale Higher Education Institute — where academic tradition meets
-          forward-thinking innovation. Located in the heart of West Melbourne,
-          we prepare graduates to lead in a complex world.
+          At Stockdale, your success is built on academic excellence, student support, diversity, and freedom of inquiry.
         </motion.p>
       </Container>
 

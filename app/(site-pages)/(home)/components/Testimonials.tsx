@@ -32,6 +32,27 @@ const testimonials = [
     avatar: "/images/home/avatar-danial.webp",
     text: "Moving to Australia was a big decision, but Stockdale's support team made every step easy. The life in Australia guidance was invaluable.",
   },
+  {
+    id: 4,
+    name: "Priya Sharma",
+    role: "BIT Graduate 2025",
+    avatar: "/images/home/avatar-danial.webp",
+    text: "Stockdale transformed my career. The industry-relevant curriculum and supportive faculty prepared me for real-world challenges from day one.",
+  },
+  {
+    id: 5,
+    name: "James Chen",
+    role: "Current Student, Year 2",
+    avatar: "/images/home/avatar-becca.webp",
+    text: "The data analytics specialisation is world-class. I'm already working on real projects with our industry partners while still studying.",
+  },
+  {
+    id: 6,
+    name: "Amara Okonkwo",
+    role: "International Student",
+    avatar: "/images/home/avatar-danial.webp",
+    text: "Moving to Australia was a big decision, but Stockdale's support team made every step easy. The life in Australia guidance was invaluable.",
+  },
 ];
 
 function Stars() {
@@ -54,7 +75,7 @@ function TestimonialCard({ name, role, avatar, text }: (typeof testimonials)[num
         <p className="font-sans text-[12px] leading-[18px] text-brand-gray line-clamp-5">{text}</p>
       </div>
       <div className="flex items-center gap-2">
-        <Image src={avatar} alt={name} width={38} height={38} className="rounded-full object-cover flex-shrink-0" />
+        <Image src={avatar} alt={name} width={38} height={38} className="rounded-full object-cover shrink-0" />
         <div>
           <p className="font-sans font-medium text-[12px] text-black leading-[18px]">{name}</p>
           <p className="font-sans text-[10px] text-brand-gray leading-[18px]">{role}</p>
@@ -107,12 +128,12 @@ export default function Testimonials() {
           {/* Left: text */}
           <div>
             <span className="bg-brand-green-light text-black text-[10px] font-sans px-3 py-[5px] rounded-[4px] inline-block mb-4">
-              Testimonial
+              Student Voices
             </span>
             <h2 className="font-agatho text-[50px] leading-tight text-black mb-4">
-              What Our Students Say
+              Stories of Success
             </h2>
-            <p className="font-sans text-[16px] leading-[24px] text-brand-gray max-w-[516px]">
+            <p className="font-sans text-[16px] leading-[24px] text-brand-gray max-w-200">
               Hear from our students about their experience at Stockdale Higher Education Institute.
             </p>
           </div>
@@ -154,7 +175,7 @@ export default function Testimonials() {
               {testimonials.map((t, i) => (
                 <div
                   key={t.id}
-                  className="flex-shrink-0 transition-opacity duration-300 ease-in-out"
+                  className="shrink-0 transition-opacity duration-300 ease-in-out"
                   style={{ width: 285, opacity: getOpacity(i) }}
                 >
                   <TestimonialCard {...t} />

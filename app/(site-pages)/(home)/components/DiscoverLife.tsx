@@ -3,11 +3,13 @@
 import { useRef, useEffect, useCallback } from "react";
 import {
   motion,
-  useMotionValue, useTransform, useAnimationFrame,
+  useMotionValue,
+  useTransform,
+  useAnimationFrame,
 } from "framer-motion";
 import Container from "../../../components/ui/Container";
 
-const SPRING   = [0.22, 1, 0.36, 1] as const;
+const SPRING = [0.22, 1, 0.36, 1] as const;
 const VIEWPORT = { once: true, margin: "-80px" } as const;
 
 const GALLERY1 = [
@@ -43,15 +45,15 @@ type RowProps = {
 };
 
 function GalleryRow({ srcs, speed = 48, direction = -1 }: RowProps) {
-  const autoX    = useMotionValue(0);
-  const dragX    = useMotionValue(0);
+  const autoX = useMotionValue(0);
+  const dragX = useMotionValue(0);
   const trackRef = useRef<HTMLDivElement>(null);
-  const halfW    = useRef(0);
+  const halfW = useRef(0);
   const dragging = useRef(false);
-  const hovered  = useRef(false);
-  const lastPX   = useRef(0);
+  const hovered = useRef(false);
+  const lastPX = useRef(0);
   const momentum = useRef(0);
-  const rafId    = useRef(0);
+  const rafId = useRef(0);
 
   // Measure half-width after mount (content is duplicated once = 2 sets)
   useEffect(() => {
@@ -72,7 +74,7 @@ function GalleryRow({ srcs, speed = 48, direction = -1 }: RowProps) {
     const hw = halfW.current;
     if (hw > 0) {
       if (direction === -1 && nx < -hw) nx += hw;
-      if (direction ===  1 && nx >  0)  nx -= hw;
+      if (direction === 1 && nx > 0) nx -= hw;
     }
     autoX.set(nx);
   });
@@ -80,12 +82,15 @@ function GalleryRow({ srcs, speed = 48, direction = -1 }: RowProps) {
   // Combined x = looping ticker + drag offset
   const x = useTransform(
     [autoX, dragX],
-    ([a, d]) => (a as number) + (d as number)
+    ([a, d]) => (a as number) + (d as number),
   );
 
   // Momentum decay on pointer release
   const decayMomentum = useCallback(() => {
-    if (Math.abs(momentum.current) < 0.5) { momentum.current = 0; return; }
+    if (Math.abs(momentum.current) < 0.5) {
+      momentum.current = 0;
+      return;
+    }
     momentum.current *= 0.91;
     dragX.set(dragX.get() + momentum.current);
     rafId.current = requestAnimationFrame(decayMomentum);
@@ -94,18 +99,21 @@ function GalleryRow({ srcs, speed = 48, direction = -1 }: RowProps) {
   const onPointerDown = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
     cancelAnimationFrame(rafId.current);
     dragging.current = true;
-    lastPX.current   = e.clientX;
+    lastPX.current = e.clientX;
     momentum.current = 0;
     e.currentTarget.setPointerCapture(e.pointerId);
   }, []);
 
-  const onPointerMove = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
-    if (!dragging.current) return;
-    const delta      = e.clientX - lastPX.current;
-    momentum.current = delta;
-    lastPX.current   = e.clientX;
-    dragX.set(dragX.get() + delta);
-  }, [dragX]);
+  const onPointerMove = useCallback(
+    (e: React.PointerEvent<HTMLDivElement>) => {
+      if (!dragging.current) return;
+      const delta = e.clientX - lastPX.current;
+      momentum.current = delta;
+      lastPX.current = e.clientX;
+      dragX.set(dragX.get() + delta);
+    },
+    [dragX],
+  );
 
   const onPointerUp = useCallback(() => {
     dragging.current = false;
@@ -115,19 +123,27 @@ function GalleryRow({ srcs, speed = 48, direction = -1 }: RowProps) {
   const cards = srcs.map((src, i) => (
     <div
       key={i}
-      className="flex-shrink-0 rounded-[14px] overflow-hidden bg-[#e8e8e8]"
+      className="shrink-0 rounded-[14px] overflow-hidden bg-[#e8e8e8]"
       style={{ width: 340, height: 240 }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={src} alt="" className="w-full h-full object-cover pointer-events-none" />
+      <img
+        src={src}
+        alt=""
+        className="w-full h-full object-cover pointer-events-none"
+      />
     </div>
   ));
 
   return (
     <div
       className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
-      onMouseEnter={() => { hovered.current = true; }}
-      onMouseLeave={() => { hovered.current = false; }}
+      onMouseEnter={() => {
+        hovered.current = true;
+      }}
+      onMouseLeave={() => {
+        hovered.current = false;
+      }}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
@@ -139,7 +155,8 @@ function GalleryRow({ srcs, speed = 48, direction = -1 }: RowProps) {
         className="flex gap-3 will-change-transform"
         style={{ x }}
       >
-        {cards}{cards}
+        {cards}
+        {cards}
       </motion.div>
     </div>
   );
@@ -147,10 +164,8 @@ function GalleryRow({ srcs, speed = 48, direction = -1 }: RowProps) {
 
 // ── Section ───────────────────────────────────────────────────────────────────
 export default function DiscoverLife() {
-
   return (
     <section className="relative w-full bg-white pt-10 pb-10 overflow-hidden">
-
       {/* Header */}
       <Container className="flex flex-col items-center text-center mb-14">
         <motion.div
@@ -174,23 +189,23 @@ export default function DiscoverLife() {
         </motion.h2>
 
         <motion.p
-          className="font-sans text-[16px] leading-[24px] text-brand-gray max-w-[516px] mt-4"
+          className="font-sans text-[16px] leading-[24px] text-brand-gray max-w-200 mt-4"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VIEWPORT}
           transition={{ duration: 0.65, delay: 0.2, ease: SPRING }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          facilisis rhoncus placerat. Suspendisse ac dui et.
+          Stockdale Higher Education Institute — where academic tradition meets
+          forward-thinking innovation. Located in the heart of West Melbourne,
+          we prepare graduates to lead in a complex world.
         </motion.p>
       </Container>
 
       {/* Two looping rows — opposite directions */}
       <div className="flex flex-col gap-3">
         <GalleryRow srcs={ROW_1} speed={44} direction={-1} />
-        <GalleryRow srcs={ROW_2} speed={36} direction={1}  />
+        <GalleryRow srcs={ROW_2} speed={36} direction={1} />
       </div>
-
     </section>
   );
 }
