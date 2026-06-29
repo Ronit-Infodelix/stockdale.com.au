@@ -13,45 +13,24 @@ const VIEWPORT = { once: true, margin: "-60px" } as const;
 const testimonials = [
   {
     id: 1,
-    name: "Danial Rooh",
-    role: "Student",
+    name: "Priya Sharma",
+    role: "BIT Graduate 2025",
     avatar: "/images/home/avatar-danial.webp",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
+    text: "Stockdale transformed my career. The industry-relevant curriculum and supportive faculty prepared me for real-world challenges from day one.",
   },
   {
     id: 2,
-    name: "Becca William",
-    role: "Student",
+    name: "James Chen",
+    role: "Current Student, Year 2",
     avatar: "/images/home/avatar-becca.webp",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
+    text: "The data analytics specialisation is world-class. I'm already working on real projects with our industry partners while still studying.",
   },
   {
     id: 3,
-    name: "Marcus Chen",
-    role: "Student",
+    name: "Amara Okonkwo",
+    role: "International Student",
     avatar: "/images/home/avatar-danial.webp",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
-  },
-  {
-    id: 4,
-    name: "Sarah Johnson",
-    role: "Student",
-    avatar: "/images/home/avatar-becca.webp",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
-  },
-  {
-    id: 5,
-    name: "Aisha Kumar",
-    role: "Student",
-    avatar: "/images/home/avatar-danial.webp",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
-  },
-  {
-    id: 6,
-    name: "Tom Williams",
-    role: "Student",
-    avatar: "/images/home/avatar-becca.webp",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
+    text: "Moving to Australia was a big decision, but Stockdale's support team made every step easy. The life in Australia guidance was invaluable.",
   },
 ];
 
@@ -134,8 +113,7 @@ export default function Testimonials() {
               What Our Students Say
             </h2>
             <p className="font-sans text-[16px] leading-[24px] text-brand-gray max-w-[516px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              facilisis rhoncus placerat. Suspendisse ac dui et.
+              Hear from our students about their experience at Stockdale Higher Education Institute.
             </p>
           </div>
 

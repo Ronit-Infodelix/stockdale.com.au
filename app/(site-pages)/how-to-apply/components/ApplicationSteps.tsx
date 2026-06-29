@@ -3,23 +3,23 @@ import Container from "@/app/components/ui/Container";
 const STEPS = [
   {
     n: "01",
-    title: "Choose Your Course",
-    body: "Browse our undergraduate, graduate and short courses. Check entry requirements and intake dates that suit you.",
+    title: "Check Requirements",
+    body: "Review the entry requirements for the Bachelor of Information Technology to confirm you are eligible to apply.",
   },
   {
     n: "02",
-    title: "Submit Application",
-    body: "Complete the online form and upload your academic transcripts, ID and English-language test results.",
+    title: "Complete Application",
+    body: "Fill out the online application form with your personal and academic details.",
   },
   {
     n: "03",
-    title: "Receive Your Offer",
-    body: "Successful applicants receive a Letter of Offer within 5–7 business days, with full details on next steps.",
+    title: "Submit Documents",
+    body: "Provide required supporting evidence including academic transcripts, identification, and English language results.",
   },
   {
     n: "04",
-    title: "Enrol & Start",
-    body: "Accept your offer, pay the deposit, complete enrolment and join us at orientation — your journey begins!",
+    title: "Receive Offer",
+    body: "Successful applicants receive a Letter of Offer. Accept and complete enrolment to begin your journey.",
   },
 ];
 

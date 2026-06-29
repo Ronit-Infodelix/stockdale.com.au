@@ -8,9 +8,7 @@ export default function CourseIntro() {
           Find the Right Course for Your Future
         </h2>
         <p className="font-sans text-[16px] leading-7 text-white/75 max-w-2xl">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          We are currently offering the Bachelor of Information Technology, specialising in Data Analytics. New programs in Business, Health, and Education are in development — register your interest to stay informed.
         </p>
       </Container>
     </section>

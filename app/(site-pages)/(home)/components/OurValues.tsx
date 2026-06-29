@@ -8,29 +8,29 @@ const VIEWPORT = { once: true, margin: "-60px" } as const;
 
 const cards = [
   {
-    title: "Industry-Relevant Courses",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Excellence in Teaching",
+    description: "Highest standards in teaching and learning with a commitment to integrity and innovation that produces industry-ready graduates.",
     icon: "/images/home/icons/icon-courses.svg",
     iconW: 40,
     iconH: 58,
   },
   {
-    title: "Experienced Trainers",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Student-Centred",
+    description: "Effective teaching paired with student support services focused on wellbeing, safety, outcomes, and success.",
     icon: "/images/home/icons/icon-trainers.svg",
     iconW: 62,
     iconH: 62,
   },
   {
-    title: "Flexible Learning Options",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Diversity & Inclusion",
+    description: "Honouring a culturally diverse community and providing everyone with quality of experience, opportunities, and success.",
     icon: "/images/home/icons/icon-flexible.svg",
     iconW: 56,
     iconH: 62,
   },
   {
-    title: "Student Support Services",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Academic Freedom",
+    description: "Committed to freedom of speech and academic freedom as foundational principles underpinning all our activities.",
     icon: "/images/home/icons/icon-support.svg",
     iconW: 52,
     iconH: 66,
@@ -48,7 +48,7 @@ const C = "26vw"; // circle diameter
 const OV = "6vw"; // overlap between circles
 const VIS = "20vw"; // visible slice width per circle
 
-export default function WhyChooseUs() {
+export default function OurValues() {
   return (
     <section className="relative overflow-hidden bg-brand-green-darkest">
       {/* Shimmering video bg */}
@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
           viewport={VIEWPORT}
           transition={{ duration: 0.5, ease: SPRING }}
         >
-          Why choose us
+          Our Foundation
         </motion.div>
 
         <motion.h2
@@ -80,7 +80,7 @@ export default function WhyChooseUs() {
           viewport={VIEWPORT}
           transition={{ duration: 0.75, delay: 0.1, ease: SPRING }}
         >
-          Your Success Is Our <span className="text-[#d6a929]">Priority</span>
+          Values That <span className="text-[#d6a929]">Define Us</span>
         </motion.h2>
 
         <motion.p
@@ -90,8 +90,7 @@ export default function WhyChooseUs() {
           viewport={VIEWPORT}
           transition={{ duration: 0.65, delay: 0.2, ease: SPRING }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          facilisis rhoncus placerat. Suspendisse ac dui et.
+          The principles that guide our teaching, our partnerships, and our community — shaping every decision we make.
         </motion.p>
       </Container>
 

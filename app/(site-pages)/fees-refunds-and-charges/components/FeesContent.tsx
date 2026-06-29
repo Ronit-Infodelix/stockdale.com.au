@@ -10,7 +10,7 @@ import Container from "@/app/components/ui/Container";
 const TABS = [
   { id: "fees", label: "Fees" },
   { id: "refunds", label: "Refunds" },
-  { id: "tia-default", label: "TIA Default" },
+  { id: "tia-default", label: "Stockdale Default" },
   { id: "payment-of-refunds", label: "Payment of Refunds" },
 ];
 
@@ -24,44 +24,44 @@ const REFUND_CONTENT: Record<
   domestic: {
     heading: "Eligibility for Refunds:",
     intro:
-      "Once a student becomes enrolled in a course at TIA, they are liable for tuition, student amenities, and service fees. Students who apply for a refund must follow the procedures detailed below.",
+      "Once a student becomes enrolled in a course at Stockdale, they are liable for tuition, student amenities, and service fees. Students who apply for a refund must follow the procedures detailed below.",
     items: [
       "Student contributions, tuition fees, and services fees must be paid on or before the due date for an enrolment period.",
       {
-        text: "If applying for a refund, deferment, or withdrawal, all applications must be made on the Application for Refund Form or Application for Deferment of Withdrawal Form and emailed to admin@tridentinstitute.org",
+        text: "If applying for a refund, deferment, or withdrawal, all applications must be made on the Application for Refund Form or Application for Deferment of Withdrawal Form and emailed to admin@stockdale.edu.au",
       },
       "If a refund is sought because of a variation in enrolment, students must first seek advice from Student Administration, and any variations must comply with the Student Enrolment Variation Policy and Procedure.",
       {
         text: "A full refund of fees will be paid when one of the following occurs:",
         sub: [
           "A student withdraws from a unit or course before the applicable census date.",
-          "An offer of enrolment is withdrawn by TIA (unless the offer was made based on incorrect or incomplete information being supplied by the applicant).",
-          "TIA is unable to provide the course or unit in which the student is enrolled.",
+          "An offer of enrolment is withdrawn by Stockdale (unless the offer was made based on incorrect or incomplete information being supplied by the applicant).",
+          "Stockdale is unable to provide the course or unit in which the student is enrolled.",
         ],
       },
-      "A fee refund is not automatic; applications must be made on the requisite form and submitted to TIA at the time of withdrawal.",
+      "A fee refund is not automatic; applications must be made on the requisite form and submitted to Stockdale at the time of withdrawal.",
       "No refund is payable when a student withdraws after the Census Date for that course or unit of study.",
     ],
   },
   international: {
     heading: "Eligibility for Refunds:",
     intro:
-      "Once a student becomes enrolled in a course at TIA, they are liable for tuition, student amenities, and service fees. Students who apply for a refund must follow the procedures detailed below. International students are also entitled to protections under the ESOS Act.",
+      "Once a student becomes enrolled in a course at Stockdale, they are liable for tuition, student amenities, and service fees. Students who apply for a refund must follow the procedures detailed below. International students are also entitled to protections under the ESOS Act.",
     items: [
       "Student contributions, tuition fees, and services fees must be paid on or before the due date for an enrolment period.",
       {
-        text: "If applying for a refund, deferment, or withdrawal, all applications must be made on the Application for Refund Form or Application for Deferment of Withdrawal Form and emailed to admin@tridentinstitute.org",
+        text: "If applying for a refund, deferment, or withdrawal, all applications must be made on the Application for Refund Form or Application for Deferment of Withdrawal Form and emailed to admin@stockdale.edu.au",
       },
       "If a refund is sought because of a variation in enrolment, students must first seek advice from Student Administration, and any variations must comply with the Student Enrolment Variation Policy and Procedure.",
       {
         text: "A full refund of fees will be paid when one of the following occurs:",
         sub: [
           "A student withdraws from a unit or course before the applicable census date.",
-          "An offer of enrolment is withdrawn by TIA (unless the offer was made based on incorrect or incomplete information being supplied by the applicant).",
-          "TIA is unable to provide the course or unit in which the student is enrolled.",
+          "An offer of enrolment is withdrawn by Stockdale (unless the offer was made based on incorrect or incomplete information being supplied by the applicant).",
+          "Stockdale is unable to provide the course or unit in which the student is enrolled.",
         ],
       },
-      "A fee refund is not automatic; applications must be made on the requisite form and submitted to TIA at the time of withdrawal.",
+      "A fee refund is not automatic; applications must be made on the requisite form and submitted to Stockdale at the time of withdrawal.",
       "No refund is payable when a student withdraws after the Census Date for that course or unit of study.",
     ],
   },
@@ -343,21 +343,21 @@ export default function FeesContent() {
               </div>
             </PolicySection>
 
-            {/* TIA Default */}
-            <PolicySection id="tia-default" heading="TIA Default">
+            {/* Stockdale Default */}
+            <PolicySection id="tia-default" heading="Stockdale Default">
               <div className="space-y-4 font-sans text-[16px] leading-[35px] text-brand-gray">
                 <p>
                   The Australian Government&apos;s Tuition Protection Service (TPS) ensures that
                   international students either receive a refund of their unspent tuition fees or
                   complete their studies in another course or with another education provider if
-                  TIA is unable to fully deliver the course of study.
+                  Stockdale is unable to fully deliver the course of study.
                 </p>
                 <p>
-                  TIA may be considered in default if the course does not start on the agreed
+                  Stockdale may be considered in default if the course does not start on the agreed
                   starting date; the course ceases to be provided at any time after it commenced
                   but before its conclusion; the course is not provided because of a condition
                   imposed by TEQSA or CRICOS, or the registration has been suspended or
-                  cancelled, or TIA withdraws the offer of enrolment.
+                  cancelled, or Stockdale withdraws the offer of enrolment.
                 </p>
               </div>
             </PolicySection>
@@ -375,7 +375,7 @@ export default function FeesContent() {
                 </li>
                 <li>
                   Fees by overseas banking institutions will be deducted from the refund payment
-                  and are beyond TIA&apos;s control. TIA is not responsible for any amounts
+                  and are beyond Stockdale&apos;s control. Stockdale is not responsible for any amounts
                   deducted or exchange rate differences that have occurred during foreign currency
                   exchange.
                 </li>

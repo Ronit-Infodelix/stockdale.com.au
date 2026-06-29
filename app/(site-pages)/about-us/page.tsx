@@ -10,21 +10,21 @@ import CTASection from "../(home)/components/CTASection";
 export default function AboutUs() {
   return (
     <main>
-      <ParallaxSticky className="bg-brand-green-darkest">
+      <ParallaxSticky className="bg-brand-green-darkest" top="0">
         <PageHero
           image="/images/about/hero.webp"
           title="About Stockdale"
-          subtitle="Building a global community of scholars, one student at a time."
+          subtitle="Stockdale Higher Education Institute is an Australian higher education provider committed to delivering rigorous, industry-relevant qualifications."
           breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
         />
       </ParallaxSticky>
       <ParallaxSticky className="py-20 bg-white" top="0">
         <SplitSection
-          badge="Who we are?"
-          title="About Us."
+          badge="Who We Are"
+          title="About Us"
           body={[
-            "Stockdale Higher Education Institute was established in the year 2022 in accordance with its constitution. Stockdale purpose is to gain registration as and in the category of Institute of Higher Education and deliver higher education to domestic and international students.",
-            "TIA commits to deliver higher education in line with its vision and mission which are supported by set of values. TIA commits to freedom of speech and academic freedom as underlying principles to all its activities.",
+            "Stockdale Higher Education Institute is an Australian higher education provider based in West Melbourne, Victoria, delivering professional qualifications to domestic and international students.",
+            "Established in 2026, the Institute is registered with the Tertiary Education Quality and Standards Agency (TEQSA). We are committed to freedom of speech and academic freedom as principles that underpin everything we do — from teaching and research to the way we engage with students, staff, and the wider community.",
           ]}
           image="/images/about/hero.webp"
           imageAlt="Students outside Stockdale campus"
@@ -36,7 +36,7 @@ export default function AboutUs() {
         <SplitSection
           title="Our"
           titleAccent="Mission"
-          body="To empower students with industry-relevant skills, global perspectives, and the personal support they need to succeed — academically, professionally, and personally — long after graduation."
+          body="To deliver rigorous, industry-relevant higher education that develops capable graduates, supports student wellbeing and success, and contributes to the advancement of the professions we serve."
           image="/images/about/mission.webp"
           imageAlt="Students walking on campus"
           imagePosition="right"
@@ -47,8 +47,8 @@ export default function AboutUs() {
       <ParallaxSticky>
         <SplitSection
           title="Our"
-          titleAccent="Mission"
-          body="To empower students with industry-relevant skills, global perspectives, and the personal support they need to succeed — academically, professionally, and personally — long after graduation."
+          titleAccent="Vision"
+          body="To be recognised for leadership in delivering professional education that prepares students to make an impactful contribution to industry and society."
           image="/images/about/vision.webp"
           imageAlt="Students walking on campus"
           imagePosition="left"

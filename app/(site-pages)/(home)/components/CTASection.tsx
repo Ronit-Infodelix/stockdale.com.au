@@ -34,7 +34,7 @@ export default function CTASection() {
             viewport={VIEWPORT}
             transition={{ duration: 0.8, delay: 0.1, ease: SPRING }}
           >
-            Ready to Start Your Journey?
+            Your Higher Education Starts Here
           </motion.h2>
 
           <motion.p
@@ -44,8 +44,7 @@ export default function CTASection() {
             viewport={VIEWPORT}
             transition={{ duration: 0.7, delay: 0.2, ease: SPRING }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            facilisis rhoncus placerat. Suspendisse ac dui et.
+            Join a global community of scholars. Applications are now open for our Bachelor of Information Technology program.
           </motion.p>
 
           <motion.button

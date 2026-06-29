@@ -5,7 +5,7 @@ import StatsSection from "./components/StatsSection";
 import FeaturedProgram from "./components/FeaturedProgram";
 import LearnSkills from "./components/LearnSkills";
 import EmpoweringStudents from "./components/EmpoweringStudents";
-import WhyChooseUs from "./components/WhyChooseUs";
+import OurValues from "./components/OurValues";
 import DiscoverLife from "./components/DiscoverLife";
 import Testimonials from "./components/Testimonials";
 import BlogsEvents from "./components/BlogsEvents";
@@ -37,13 +37,13 @@ export default function Home() {
         <LearnSkills />
       </ParallaxOverlay>
 
-      {/* EmpoweringStudents pins — WhyChooseUs scrolls over it */}
+      {/* EmpoweringStudents pins — OurValues scrolls over it */}
       <ParallaxSticky top="18">
         <EmpoweringStudents />
       </ParallaxSticky>
 
       <ParallaxOverlay className="mt-40">
-        <WhyChooseUs />
+        <OurValues />
       </ParallaxOverlay>
 
       <ParallaxSticky top="18">

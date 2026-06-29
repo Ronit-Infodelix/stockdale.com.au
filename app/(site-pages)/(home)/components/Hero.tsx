@@ -196,7 +196,7 @@ export default function Hero() {
                   backgroundClip: "text",
                 }}
               >
-                • Ranked #1 in Graduate outcome •
+                TEQSA Registered Provider · Est. 2026
               </span>
             </motion.div>
 

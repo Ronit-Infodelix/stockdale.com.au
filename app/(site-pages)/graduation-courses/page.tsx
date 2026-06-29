@@ -11,7 +11,7 @@ export default function GraduationCourses() {
         <PageHero
           image="/images/graduation/hero.webp"
           title="Graduation Courses"
-          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing"
+          subtitle="Industry-relevant qualifications designed to prepare graduates for a complex, rapidly evolving world."
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Admission", href: "/admission" },

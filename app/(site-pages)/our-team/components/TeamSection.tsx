@@ -26,7 +26,7 @@ const GROUPS: TeamGroup[] = [
     label: "Board of Directors",
     heading: "Board of Directors",
     description:
-      "The Board is responsible for setting the strategic direction of HEA and ensuring the institution fulfils its legal, regulatory, financial, and ethical obligations. The Board oversees institutional performance, sustainability, and risk management.",
+      "The Board is responsible for setting the strategic direction of Stockdale and ensuring the institution fulfils its legal, regulatory, financial, and ethical obligations. The Board oversees institutional performance, sustainability, and risk management.",
     members: [
       { name: "Professor Janet Verbyla",          role: "Independent Director and Chair", image: BASE + "image 6.webp" },
       { name: "Associate Professor Justin Pierce", role: "Independent Director",           image: BASE + "image 7.webp" },
@@ -96,7 +96,7 @@ export default function TeamSection() {
         const top = Object.entries(ratios).sort(([, a], [, b]) => b - a)[0];
         if (top && top[1] > 0) setActiveId(top[0]);
       },
-      { threshold: Array.from({ length: 21 }, (_, i) => i * 0.05) },
+      { threshold: Array.from({ length: 8 }, (_, i) => i * 0.05) },
     );
 
     GROUPS.forEach(({ id }) => {

@@ -49,32 +49,32 @@ type UnitTab = "core" | "specialisation" | "elective";
 const UNITS: Record<UnitTab, { code: string; name: string }[]> = {
   core: [
     { code: "BIT101", name: "IT Professional Skills" },
-    { code: "BIT102", name: "Database Management Systems" },
-    { code: "BIT103", name: "Networking Fundamentals" },
-    { code: "BIT104", name: "Information Security" },
-    { code: "BIT105", name: "Web & Cloud Systems" },
-    { code: "BIT106", name: "Programming Fundamentals" },
-    { code: "BIT107", name: "Systems Analysis & Design" },
-    { code: "BIT108", name: "Project Management in IT" },
-    { code: "BIT109", name: "Software Engineering" },
-    { code: "BIT110", name: "IT Ethics & Society" },
-    { code: "BIT499", name: "Capstone Project" },
+    { code: "BIT102", name: "Business Information Systems" },
+    { code: "BIT103", name: "Introduction to Programming" },
+    { code: "BIT104", name: "Discrete Mathematics" },
+    { code: "BIT105", name: "Database Systems" },
+    { code: "BIT106", name: "Introduction to Information Security" },
+    { code: "BIT107", name: "Networking Fundamentals" },
+    { code: "BIT108", name: "Web and Cloud Systems" },
+    { code: "BIT203", name: "Systems Analysis and Design" },
+    { code: "BIT206", name: "Project Management" },
+    { code: "BIT305", name: "Capstone Project" },
   ],
   specialisation: [
-    { code: "BDA201", name: "Data Visualisation & Communication" },
-    { code: "BDA202", name: "Statistical Analysis Methods" },
-    { code: "BDA203", name: "Data Mining Techniques" },
-    { code: "BDA204", name: "Machine Learning Fundamentals" },
-    { code: "BDA205", name: "Predictive Modelling" },
-    { code: "BDA206", name: "Big Data Analytics" },
-    { code: "BDA207", name: "Business Intelligence Systems" },
-    { code: "BDA208", name: "Applied Data Science Project" },
+    { code: "BIT201", name: "Statistics for Data Analysis" },
+    { code: "BIT202", name: "Data Modelling and Analysis" },
+    { code: "BIT204", name: "Business Analytics" },
+    { code: "BIT205", name: "Data Analytics Programming" },
+    { code: "BIT301", name: "Machine Learning" },
+    { code: "BIT302", name: "Predictive Analytics" },
+    { code: "BIT303", name: "Data Mining and Visualisation" },
+    { code: "BIT304", name: "Big Data Analytics" },
   ],
   elective: [
-    { code: "BEL301", name: "eCommerce & Digital Business Models" },
-    { code: "BEL302", name: "Digital Marketing & Analytics" },
-    { code: "BEL303", name: "Human-Computer Interaction" },
-    { code: "BEL304", name: "Artificial Intelligence in Business" },
+    { code: "BIT208", name: "eCommerce and Digital Business Models" },
+    { code: "BIT209", name: "Digital Marketing and Analytics" },
+    { code: "BIT306", name: "Human Computer Interaction and User Experience" },
+    { code: "BIT308", name: "Artificial Intelligence in Business" },
   ],
 };
 
@@ -83,26 +83,26 @@ type EntryTab = "domestic" | "international";
 const ENTRY: Record<EntryTab, { requirements: string[]; bullets: string[] }> = {
   domestic: {
     requirements: [
-      "In accordance with TIA's Admissions Policy and Procedure, the following minimum entry thresholds have been assigned for entry to this course. The institution has defined certain minimum entry requirements that applicants must meet to gain admission to this course. These thresholds are designed to ensure that students enrolling in the program have the necessary qualifications and skills to succeed in their studies.",
+      "In accordance with Stockdale's Admissions Policy and Procedure, the following minimum entry thresholds have been assigned for entry to this course. These thresholds ensure that students enrolling have the necessary qualifications and skills to succeed in their studies.",
     ],
     bullets: [
       "Must be above 18 years of age",
-      "Completion of year 12 in Australia",
-      "Successful completion of year 10 mathematics subject (or equivalent)",
+      "Completion of Year 12 in Australia",
+      "Successful completion of Year 10 Mathematics subject (or equivalent)",
       "School leavers should have successfully completed VCE (or equivalent)",
-      "Access to a laptop device during studies at TIA.",
+      "Access to a laptop device during studies at Stockdale.",
     ],
   },
   international: {
     requirements: [
-      "In accordance with TIA's Admissions Policy and Procedure, the following minimum entry thresholds have been assigned for entry to this course. International students must also meet English language requirements in addition to the academic entry requirements listed for domestic students.",
+      "In accordance with Stockdale's Admissions Policy and Procedure, the following minimum entry thresholds have been assigned for entry to this course. International students must also meet English language requirements in addition to the academic entry requirements listed for domestic students.",
     ],
     bullets: [
       "Must be above 18 years of age",
-      "Completion of a qualification equivalent to Australian Year 12",
-      "Successful completion of year 10 mathematics (or equivalent)",
-      "IELTS Academic: 6.5 overall (no band below 6.0)",
-      "Access to a laptop device during studies at TIA.",
+      "Completion of Year 12 or equivalent",
+      "Successful completion of Year 10 Mathematics subject (or equivalent)",
+      "IELTS Academic 6.5 (no band less than 6.0); TOEFL iBT 79 (writing no less than 21); PTE 58 (no section less than 50); or Cambridge English Advanced (CAE) 176",
+      "Access to a laptop device during studies at Stockdale.",
     ],
   },
 };
@@ -391,10 +391,10 @@ export default function BITContent() {
               heading="Entry Requirement & Admissions Criteria"
             >
               <p className="font-sans text-[14px] leading-[20px] text-brand-gray mb-6">
-                In accordance with TIA&apos;s Admissions Policy and Procedure, the following
-                minimum entry thresholds have been assigned for entry to this course. The
-                institution has defined certain minimum entry requirements that applicants must
-                meet to gain admission to this course.
+                In accordance with Stockdale&apos;s Admissions Policy and Procedure, the following
+                minimum entry thresholds have been assigned for entry to this course. These
+                thresholds ensure that students enrolling have the necessary qualifications and
+                skills to succeed in their studies.
               </p>
 
               {/* Domestic / International tabs */}

@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { ChevronRight, Check } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Section from "../../../components/ui/Section";
@@ -73,6 +74,15 @@ export default function FeaturedProgram() {
         whileInView="show"
         viewport={VIEWPORT}
       >
+        {/* Label */}
+        <motion.p
+          variants={slideUp}
+          className="font-sans text-[10px] font-medium uppercase tracking-[2px] text-[#a6860d] -mb-3"
+        >
+          Now Accepting Applications
+        </motion.p>
+
+        {/* Heading */}
         <motion.h2
           variants={slideUp}
           className="font-agatho font-bold text-[45px] leading-tight text-[#014f3d]"
@@ -82,30 +92,52 @@ export default function FeaturedProgram() {
           Information Technology
         </motion.h2>
 
+        {/* Body */}
         <motion.p
           variants={slideUp}
           className="font-sans text-[16px] text-brand-gray max-w-100"
         >
-          In today&apos;s rapidly evolving digital landscape, data analytics has
-          become a crucial skill across various industries. The Bachelor of
-          Information Technology (BIT) with a specialisation in Data Analytics
-          addresses the growing need for professionals who can harness the power
-          of data to drive business innovation and decision-making.
+          Specialising in Data Analytics. Industry-relevant curriculum with real-world projects and expert faculty.
         </motion.p>
 
-        <motion.button
-          variants={btnSlide}
-          whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
-          whileTap={{ scale: 0.97 }}
-          className="self-start flex items-center gap-2 px-5 py-[14px] rounded-[8px] text-white text-[14px] font-sans whitespace-nowrap"
-          style={{
-            background:
-              "linear-gradient(177.19deg, #43A48E 0.56%, #014F3D 36.4%, #013529 89.05%)",
-          }}
-        >
-          Know more
-          <ChevronRight size={14} strokeWidth={2} />
-        </motion.button>
+        {/* Bullets */}
+        <motion.ul variants={slideUp} className="flex flex-col gap-2">
+          {[
+            "3 Years Full Time",
+            "West Melbourne Campus",
+            "AQF Level 7 Qualification",
+            "Domestic & International Students",
+          ].map((item) => (
+            <li key={item} className="flex items-center gap-3">
+              <span className="w-5 h-5 rounded-full bg-[#014f3d] flex items-center justify-center shrink-0">
+                <Check size={11} strokeWidth={2.5} className="text-white" />
+              </span>
+              <span className="font-sans text-[14px] text-[#2d2d2d]">{item}</span>
+            </li>
+          ))}
+        </motion.ul>
+
+        {/* CTA */}
+        <motion.div variants={btnSlide} className="flex items-center gap-3">
+          <Link
+            href="/bachelor-of-it"
+            className="inline-flex items-center gap-2 px-5 py-[13px] rounded-[8px] text-white text-[14px] font-sans whitespace-nowrap hover:opacity-90 transition-opacity"
+            style={{
+              background:
+                "linear-gradient(177.19deg, #43A48E 0.56%, #014F3D 36.4%, #013529 89.05%)",
+            }}
+          >
+            Explore Course
+            <ChevronRight size={14} strokeWidth={2} />
+          </Link>
+          <Link
+            href="/how-to-apply"
+            className="inline-flex items-center gap-2 px-5 py-[13px] rounded-[8px] border border-[#014f3d] text-[#014f3d] text-[14px] font-sans whitespace-nowrap hover:bg-[#014f3d] hover:text-white transition-colors"
+          >
+            Apply Now
+            <ChevronRight size={14} strokeWidth={2} />
+          </Link>
+        </motion.div>
       </motion.div>
     </Section>
     </div>

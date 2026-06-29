@@ -8,22 +8,22 @@ const CONTACT_ITEMS = [
   {
     icon: MapPin,
     title: "Main Campus",
-    lines: ["Level 1, 120 Miller Street,", "West Melbourne, VIC 3003, Australia"],
+    lines: ["Level 2, 120 Miller Street,", "West Melbourne VIC 3003, Australia"],
   },
   {
     icon: Phone,
     title: "Phone",
-    lines: ["1800 902 480 — Mon to Fri, 9am – 5pm AEST"],
+    lines: ["TBA"],
   },
   {
     icon: Mail,
     title: "Email",
-    lines: ["info@stockdaleinstitute.edu.au", "admissions@stockdaleinstitute.edu.au"],
+    lines: ["admin@stockdale.edu.au", "admissions@stockdale.edu.au"],
   },
   {
     icon: Clock,
     title: "Office Hours",
-    lines: ["Monday – Friday: 9:00 AM – 5:00 PM", "Weekends: By appointment"],
+    lines: ["Mon–Fri: 9:00am – 5:00pm", "Saturday: 10:00am – 2:00pm · Sunday: Closed"],
   },
 ];
 

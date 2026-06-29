@@ -1,7 +1,8 @@
 "use client";
 
-import { Briefcase, GraduationCap, Users, MapPin } from "lucide-react";
+import { Briefcase, GraduationCap, Users, BookOpen, ChevronRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Container from "../../../components/ui/Container";
 import PointerGrid from "../../../components/ui/PointerGrid";
@@ -17,18 +18,18 @@ const stats: {
 }[] = [
   {
     icon: Briefcase,
-    value: 95,
+    value: 94,
     suffix: "%",
-    label: "Graduate employment rate within 6 months",
+    label: "Graduate Employability",
   },
   {
     icon: GraduationCap,
-    value: 15000,
+    value: 500,
     suffix: "+",
-    label: "Students from 80+ countries",
+    label: "Students Enrolled",
   },
-  { icon: Users, value: 200, suffix: "+", label: "Industry partnerships" },
-  { icon: MapPin, value: 15, label: "International locations" },
+  { icon: Users, value: 25, suffix: "+", label: "Industry Partners" },
+  { icon: BookOpen, value: 40, suffix: "+", label: "Academic Staff" },
 ];
 
 // Card stagger
@@ -68,29 +69,54 @@ export default function StatsSection() {
 
       <Container className="z-100 relative">
       {/* Heading + description */}
-      <div className="flex items-end justify-between mb-12">
-        <motion.h2
-          className="font-agatho font-bold text-[50px] leading-tight text-black shrink-0"
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={VIEWPORT}
-          transition={{ duration: 0.8, ease: SPRING }}
-        >
-          Shaping Careers,
-          <br />
-          Empowering Success
-        </motion.h2>
+      <div className="flex items-start justify-between gap-16 mb-12">
 
-        <motion.p
-          className="text-brand-gray text-[16px] leading-[24px] max-w-[472px] mt-3"
+        {/* Left — eyebrow + heading + CTA */}
+        <div className="flex flex-col gap-5 shrink-0 max-w-[420px]">
+          <motion.h2
+            className="font-agatho font-bold text-[48px] leading-[1.1] text-black"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={VIEWPORT}
+            transition={{ duration: 0.8, delay: 0.05, ease: SPRING }}
+          >
+            Shaping the Future of
+            <br />
+            Australian Higher Education
+          </motion.h2>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={VIEWPORT}
+            transition={{ duration: 0.6, delay: 0.2, ease: SPRING }}
+          >
+            <Link
+              href="/about-us"
+              className="inline-flex items-center gap-2 font-sans text-[14px] font-medium text-brand-green-darkest hover:text-brand-gold-dark transition-colors group"
+            >
+              Discover Our Story
+              <ChevronRight size={14} strokeWidth={2} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Right — two body paragraphs */}
+        <motion.div
+          className="flex flex-col gap-4 max-w-[500px] pt-1"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={VIEWPORT}
           transition={{ duration: 0.8, delay: 0.15, ease: SPRING }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </motion.p>
+          <p className="text-brand-gray text-[16px] leading-[28px]">
+            Stockdale Higher Education Institute is an Australian higher education provider based in West Melbourne, Victoria. Established in 2026 and registered with TEQSA, we deliver professional qualifications to domestic and international students.
+          </p>
+          <p className="text-brand-gray text-[16px] leading-[28px]">
+            We are committed to freedom of speech and academic freedom as principles that underpin everything we do — from teaching and research to the way we engage with students, staff, and the wider community.
+          </p>
+        </motion.div>
+
       </div>
 
       {/* Stat cards */}

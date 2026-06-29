@@ -32,10 +32,10 @@ export default function MapSection() {
             Address
           </p>
           <p className="font-sans text-[14px] leading-[16px] text-[#050f0d]">
-            Level 1, 120 Miller Street,
+            Level 2, 120 Miller Street,
           </p>
           <p className="font-sans text-[14px] leading-[16px] text-[#050f0d]">
-            West Melbourne, VIC 3003
+            West Melbourne VIC 3003
           </p>
         </div>
       </div>
