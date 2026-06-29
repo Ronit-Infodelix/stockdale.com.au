@@ -120,7 +120,7 @@ export default function FeaturedProgram() {
         {/* CTA */}
         <motion.div variants={btnSlide} className="flex items-center gap-3">
           <Link
-            href="/bachelor-of-it"
+            href="/bachelor-of-information-technology"
             className="inline-flex items-center gap-2 px-5 py-[13px] rounded-[8px] text-white text-[14px] font-sans whitespace-nowrap hover:opacity-90 transition-opacity"
             style={{
               background:

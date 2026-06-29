@@ -183,7 +183,7 @@ export default function RPLContent() {
           </div>
 
           {/* How to Apply continuation */}
-          <div className="max-w-[720px] space-y-4 font-sans text-[16px] leading-[28px] text-brand-gray">
+          <div className="max-w-200 space-y-4 font-sans text-[16px] leading-[28px] text-brand-gray">
             <p>
               Students will be informed that if their application for credit is successful they
               will not be disadvantaged in achieving the expected course learning outcomes.
@@ -215,7 +215,7 @@ export default function RPLContent() {
       {/* ── Accordion sections ── */}
       <div className="bg-white py-12">
         <Container>
-          <div className="max-w-[720px] space-y-10">
+          <div className="max-w-200 space-y-10">
 
             {/* Evidence of Informal or Non-Formal Learning */}
             <PolicySection

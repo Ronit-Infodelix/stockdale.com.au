@@ -201,7 +201,7 @@ export default function FeesContent() {
       </div>
 
       {/* ── Section 1: Fees ── */}
-      <section id="fees" className="bg-[#f8f5eb] py-14 scroll-mt-20">
+      <section id="fees" className="bg-[#f8f5eb] scroll-mt-20">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left: fee info */}

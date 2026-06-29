@@ -32,7 +32,7 @@ const navLinks = [
   {
     label: "Study With Us",
     items: [
-      { label: "Bachelor of IT", href: "/bachelor-of-it" },
+      { label: "Bachelor of Information Technology", href: "/bachelor-of-information-technology" },
       { label: "Graduation Courses", href: "/graduation-courses" },
       { label: "Graduate Attributes", href: "/graduate-attributes" },
       { label: "Learning & Teaching", href: "/learning-and-teaching" },

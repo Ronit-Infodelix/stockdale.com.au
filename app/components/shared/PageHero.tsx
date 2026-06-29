@@ -106,15 +106,20 @@ export default function PageHero({
         </div>
 
         {/* Content */}
-        <Container className="absolute 2xl:top-2/3 top-3/5 z-10 left-1/2 -translate-x-1/2">
-          {children}
-
+        <Container className="absolute bottom-1/10 z-10 left-1/2 -translate-x-1/2">
           <motion.div
             variants={stagger}
             initial="hidden"
             animate="show"
             className="flex flex-col"
           >
+            {/* Eyebrow / children */}
+            {children && (
+              <motion.div variants={fadeUp} className="mb-1">
+                {children}
+              </motion.div>
+            )}
+
             {/* Gold bar */}
             <motion.div
               variants={barReveal}
@@ -124,7 +129,7 @@ export default function PageHero({
             {/* Title — word curtain reveal */}
             <motion.h1
               variants={wordMask}
-              className="font-agatho text-[80px] font-bold leading-[1.05] text-white flex flex-wrap gap-x-[0.22em]"
+              className="font-agatho text-[80px] font-bold leading-[1.05] text-white flex flex-wrap gap-x-[0.22em] max-w-200"
             >
               {words.map((word, i) => (
                 <span key={i} className="inline-block overflow-hidden leading-[1.1]">
