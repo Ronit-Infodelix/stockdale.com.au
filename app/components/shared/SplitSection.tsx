@@ -100,7 +100,7 @@ export default function SplitSection({
         column starts exactly where the image ends.
       */}
       <Container
-        className={`relative flex gap-20 ${imageLeft ? "" : "flex-row-reverse"}`}
+        className={`relative flex gap-10 ${imageLeft ? "" : "flex-row-reverse"}`}
       >
         {/* Spacer — mirrors image column width, invisible */}
         <div className="hidden lg:block lg:w-[55%] shrink-0" aria-hidden="true" />

@@ -7,24 +7,24 @@ const CARD_GRADIENT =
 
 const VALUES = [
   {
-    title: "Student-centred",
+    title: "Student-Centred",
     description:
-      "Providing effective and innovative teaching methods with a diverse range of student support services that focus on student wellbeing, safety, outcomes and success.",
+      "Effective and innovative teaching paired with student support services focused on wellbeing, safety, outcomes, and success.",
   },
   {
-    title: "Excellence in teaching & learning",
+    title: "Excellence in Teaching & Learning",
     description:
-      "Demonstrating the highest personal and professional standards in delivery of education and a commitment to integrity, innovation and creativity in its teaching and research.",
+      "The highest personal and professional standards in delivery, with a commitment to integrity, innovation, and creativity that produces industry- and world-ready graduates.",
   },
   {
-    title: "Equity, Diversity, and Inclusivity",
+    title: "Equity, Diversity & Inclusivity",
     description:
-      "Honouring a culturally diverse community and providing everyone with quality of experience, opportunities and success.",
+      "Honouring a culturally diverse community and providing everyone with quality of experience, opportunities, and success.",
   },
   {
-    title: "Ethically minded",
+    title: "Ethically Minded",
     description:
-      "Upholding the highest ethical standards with commitment to transparency and accountability and responsible management of finances and environment.",
+      "Upholding the highest ethical standards with transparency, accountability, and responsible management of finances and environment.",
   },
 ];
 
@@ -32,24 +32,14 @@ export default function ValuesSection() {
   return (
     <Section className="bg-white">
       {/* ── Centred header ── */}
-      <Container className="text-center mb-12">
+      <Container className="text-center mb-4">
         <h2 className="font-agatho text-[40px] leading-tight text-black tracking-tight">
           Our <span className="text-brand-gold-dark">Values</span>
         </h2>
-        <p className="font-sans text-[13px] text-gray-500 mt-3">
+        <p className="font-sans text-[13px] text-gray-500">
           The principles that guide our teaching, our partnerships and our
           community.
         </p>
-        <div className="mt-6 flex flex-col gap-1 mx-auto">
-          <p className="font-sans text-[16px] leading-7 text-black">
-            Stockdale is built on a solid foundation of core values guiding it
-            in its achievement of its vision and mission.
-          </p>
-          <p className="font-sans text-[16px] leading-7 text-black">
-            Our values reflect what we stand for and our responsibilities as a
-            Higher Education Provider and they inform our decision making.
-          </p>
-        </div>
       </Container>
 
       {/* ── Image + overlapping cards ── */}

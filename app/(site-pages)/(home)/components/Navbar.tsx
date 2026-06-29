@@ -23,7 +23,7 @@ const navLinks = [
   {
     label: "About us",
     items: [
-      { label: "About Us", href: "/about-us" },
+      { label: "About Stockdale", href: "/about-us" },
       { label: "Our Team", href: "/our-team" },
       { label: "Our Campus", href: "/our-campus" },
       { label: "News & Events", href: "/news-and-events" },

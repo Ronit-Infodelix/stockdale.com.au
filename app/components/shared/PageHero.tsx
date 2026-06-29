@@ -1,25 +1,49 @@
+"use client";
+
 import { Fragment, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, Home } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 import Container from "@/app/components/ui/Container";
+
+const SPRING = [0.22, 1, 0.36, 1] as const;
+
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.13, delayChildren: 0.35 } },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 22 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.75, ease: SPRING } },
+};
+
+const barReveal = {
+  hidden: { scaleX: 0, originX: 0 },
+  show: { scaleX: 1, transition: { duration: 0.6, ease: SPRING } },
+};
+
+const wordMask = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+};
+
+const wordReveal = {
+  hidden: { y: "110%" },
+  show: { y: "0%", transition: { duration: 0.7, ease: SPRING } },
+};
 
 export interface Crumb {
   label: string;
-  /** Omit for the current (last) page — renders as plain text */
   href?: string;
 }
 
 interface PageHeroProps {
-  /** Page title (e.g. "About Stockdale") */
   title: string;
-  /** Optional subtitle shown below the title */
   subtitle?: string;
-  /** Background image URL */
   image: string;
-  /** Breadcrumb trail rendered in the white strip below the hero */
   breadcrumbs?: Crumb[];
-  /** Optional content rendered above the title — use for tags, badges, etc. */
   children?: ReactNode;
   className?: string;
 }
@@ -33,14 +57,11 @@ export default function PageHero({
   className = "",
 }: PageHeroProps) {
   const hasBread = breadcrumbs && breadcrumbs.length > 0;
-  // const sectionHeight = !hasBread ? "min-h-screen" : "min-h-[calc(100vh-72px)]";
-  const sectionHeight = !hasBread ? "min-h-screen" : "min-h-screen";
+  const words = title.split(" ");
+
   return (
     <div className={`w-full ${className}`}>
-      {/* ── Hero image area ── */}
-      <section
-        className={`relative w-full overflow-hidden bg-[#050e1a] ${sectionHeight}`}
-      >
+      <section className="relative w-full overflow-hidden bg-[#050e1a] min-h-screen">
         {/* Background image */}
         <div className="absolute inset-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -52,12 +73,12 @@ export default function PageHero({
           />
         </div>
 
-        {/* Gradient — transparent at top, dark at bottom where text lives */}
+        {/* Gradient */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.55) 38%, rgba(0,0,0,0) 68%)",
+              "linear-gradient(to top, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.5) 58%, rgba(0,0,0,0) 82%)",
           }}
         />
 
@@ -84,25 +105,50 @@ export default function PageHero({
           </div>
         </div>
 
-        {/* Breadcrumbs — full-width frosted bar pinned to bottom of hero */}
-
         {/* Content */}
-        <Container className="absolute top-2/3 z-10 left-1/2 -translate-x-1/2">
+        <Container className="absolute 2xl:top-2/3 top-3/5 z-10 left-1/2 -translate-x-1/2">
           {children}
-          <div className="w-24 h-1 bg-brand-gold-dark mb-5" />
 
-          <h1 className="font-agatho text-[80px] font-bold leading-[1.05] text-white">
-            {title}
-          </h1>
-          {subtitle && (
-            <p className="font-sans text-[16px] leading-6 text-white/80 max-w-130">
-              {subtitle}
-            </p>
-          )}
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            animate="show"
+            className="flex flex-col"
+          >
+            {/* Gold bar */}
+            <motion.div
+              variants={barReveal}
+              className="w-24 h-1 bg-brand-gold-dark mb-3"
+            />
+
+            {/* Title — word curtain reveal */}
+            <motion.h1
+              variants={wordMask}
+              className="font-agatho text-[80px] font-bold leading-[1.05] text-white flex flex-wrap gap-x-[0.22em]"
+            >
+              {words.map((word, i) => (
+                <span key={i} className="inline-block overflow-hidden leading-[1.1]">
+                  <motion.span className="inline-block" variants={wordReveal}>
+                    {word}
+                  </motion.span>
+                </span>
+              ))}
+            </motion.h1>
+
+            {/* Subtitle */}
+            {subtitle && (
+              <motion.p
+                variants={fadeUp}
+                className="font-sans text-[16px] leading-6 text-white/75 max-w-130"
+              >
+                {subtitle}
+              </motion.p>
+            )}
+          </motion.div>
         </Container>
       </section>
 
-      {/* ── Breadcrumb strip ── */}
+      {/* Breadcrumb strip */}
       {hasBread && (
         <nav
           aria-label="Breadcrumb"
@@ -111,7 +157,6 @@ export default function PageHero({
           <Container className="flex items-center gap-1.5 py-3 px-3">
             {breadcrumbs.map((crumb, i) => {
               const isLast = i === breadcrumbs.length - 1;
-              // const isHome = i === 0 && crumb.label.toLowerCase() === "home";
               return (
                 <Fragment key={crumb.label}>
                   {i > 0 && (
@@ -129,7 +174,7 @@ export default function PageHero({
                       {crumb.label}
                     </Link>
                   ) : (
-                    <span className="flex items-center  justify-center font-sans text-xs text-white whitespace-nowrap">
+                    <span className="flex items-center justify-center font-sans text-xs text-white whitespace-nowrap">
                       {crumb.label}
                     </span>
                   )}

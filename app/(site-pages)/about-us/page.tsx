@@ -1,6 +1,7 @@
 import PageHero from "@/app/components/shared/PageHero";
 import SplitSection from "@/app/components/shared/SplitSection";
 import ValuesSection from "./components/ValuesSection";
+import CredentialsSection from "./components/CredentialsSection";
 import {
   ParallaxOverlay,
   ParallaxSticky,
@@ -12,7 +13,7 @@ export default function AboutUs() {
     <main>
       <ParallaxSticky className="bg-brand-green-darkest" top="0">
         <PageHero
-          image="/images/about/hero.webp"
+          image="/images/home/students-empowering.webp"
           title="About Stockdale"
           subtitle="Stockdale Higher Education Institute is an Australian higher education provider committed to delivering rigorous, industry-relevant qualifications."
           breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
@@ -20,11 +21,12 @@ export default function AboutUs() {
       </ParallaxSticky>
       <ParallaxSticky className="py-20 bg-white" top="0">
         <SplitSection
-          badge="Who We Are"
-          title="About Us"
+          badge="About Stockdale"
+          title="About Stockdale Higher Education Institute"
           body={[
             "Stockdale Higher Education Institute is an Australian higher education provider based in West Melbourne, Victoria, delivering professional qualifications to domestic and international students.",
-            "Established in 2026, the Institute is registered with the Tertiary Education Quality and Standards Agency (TEQSA). We are committed to freedom of speech and academic freedom as principles that underpin everything we do — from teaching and research to the way we engage with students, staff, and the wider community.",
+            "Established in 2026, the Institute is registered with the Tertiary Education Quality and Standards Agency (TEQSA).",
+            "We are committed to freedom of speech and academic freedom as principles that underpin everything we do — from teaching and research to the way we engage with students, staff, and the wider community.",
           ]}
           image="/images/about/hero.webp"
           imageAlt="Students outside Stockdale campus"
@@ -52,12 +54,23 @@ export default function AboutUs() {
           image="/images/about/vision.webp"
           imageAlt="Students walking on campus"
           imagePosition="left"
-          variant="dark"
           className="min-h-140"
+        />
+      </ParallaxSticky>
+      <ParallaxSticky>
+        <SplitSection
+          title="Our"
+          titleAccent="Promise"
+          body="Innovate, Create, Succeed — your higher education starts here."
+          image="/images/about/hero.webp"
+          imageAlt="Students at Stockdale"
+          imagePosition="right"
+          variant="dark"
         />
       </ParallaxSticky>
       <ParallaxOverlay>
         <ValuesSection />
+        <CredentialsSection />
         <CTASection />
       </ParallaxOverlay>
     </main>
