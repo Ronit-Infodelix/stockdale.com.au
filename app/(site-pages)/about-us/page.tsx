@@ -66,6 +66,7 @@ export default function AboutUs() {
           imageAlt="Students at Stockdale"
           imagePosition="right"
           variant="dark"
+          className="min-h-140"
         />
       </ParallaxSticky>
       <ParallaxOverlay>

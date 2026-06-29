@@ -173,7 +173,7 @@ export default function Footer() {
       <div className="border-t border-[#2d2d2d]" />
 
       {/* ── Social icons ── */}
-      <motion.div
+      {/* <motion.div
         className="flex items-center justify-center gap-4 py-10"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -209,7 +209,7 @@ export default function Footer() {
             </motion.div>
           ),
         )}
-      </motion.div>
+      </motion.div> */}
 
       {/* ── Logo + watermark + bottom bar ── */}
       <div className="relative overflow-hidden group">

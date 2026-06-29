@@ -15,10 +15,10 @@ const TABS = [
 type TabId = (typeof TABS)[number]["id"];
 
 const FACILITY_IMAGES = [
-  "/images/campus/tab-1.webp",
-  "/images/campus/tab-2.webp",
-  "/images/campus/tab-3.webp",
   "/images/campus/tab-4.webp",
+  "/images/campus/tab-2.webp",
+  "/images/campus/tab-1b.webp",
+  "/images/campus/tab-3.webp",
 ];
 
 export default function CampusSections() {
@@ -69,7 +69,7 @@ export default function CampusSections() {
       </div>
 
       {/* ── Campus ── */}
-      <section id="campus" className="scroll-mt-[140px]">
+      <section id="campus" className="scroll-mt-[140px] py-10 bg-white">
         <SplitSection
           badge="Our Campus"
           title="Campus"
@@ -77,19 +77,19 @@ export default function CampusSections() {
             "The initial campus will be fit for purpose and accommodate projected student growth over five years. Stockdale's campus is located at Level 2, 120 Miller Street, West Melbourne, Victoria 3003. This campus ensures proximity to affordable housing, dining and transportation options.",
             "The campus will be staffed and accessible to students weekdays and weekends. To ensure security and safety, students will be required to swipe their unique student ID card to gain access to the campus outside of office hours.",
           ]}
-          image="/images/campus/section.webp"
+          image="/images/campus/tab-1.webp"
           imageAlt="Stockdale campus"
           imagePosition="right"
         />
       </section>
 
       {/* ── Teaching Spaces ── */}
-      <section id="teaching-spaces" className="scroll-mt-[140px]">
+      <section id="teaching-spaces" className="scroll-mt-[140px] pb-10 bg-white">
         <SplitSection
           badge="Teaching Spaces"
           title="Teaching Spaces"
           body="The campus features modern classrooms equipped with ample seating and desk space to accommodate laptops and will include whiteboards and digital projectors/screens, fostering an interactive learning environment and encouraging academic collaboration within classes."
-          image="/images/campus/tab-1.webp"
+          image="/images/campus/section.webp"
           imageAlt="Teaching spaces"
           imagePosition="left"
         />

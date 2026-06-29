@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import Container from "../../../components/ui/Container";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -232,43 +233,37 @@ export default function Hero() {
 
             {/* CTA buttons — staggered */}
             <motion.div className="flex items-center gap-4" variants={btnRow}>
-              <motion.button
+              <motion.div
                 variants={btnItem}
-                className="flex items-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white font-sans border border-white whitespace-nowrap"
-                onClick={() =>
-                  window.dispatchEvent(new CustomEvent("open-enquiry"))
-                }
-                whileHover={{
-                  scale: 1.05,
-                  backgroundColor: "rgba(255,255,255,0.12)",
-                  transition: { duration: 0.2 },
-                }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 whileTap={{ scale: 0.96 }}
               >
-                Enquire
-                <ChevronRight size={14} strokeWidth={2} />
-              </motion.button>
+                <Link
+                  href="/bachelor-of-information-technology"
+                  className="flex items-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white font-sans border border-white whitespace-nowrap hover:bg-white/10 transition-colors"
+                >
+                  Explore Courses
+                  <ChevronRight size={14} strokeWidth={2} />
+                </Link>
+              </motion.div>
 
-              <motion.button
+              <motion.div
                 variants={btnItem}
-                className="flex items-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white font-sans whitespace-nowrap"
-                style={{
-                  background:
-                    "linear-gradient(176.49deg, #F0C41A 0.56%, #D6A929 36.4%, #a6860d 89.05%)",
-                }}
-                onClick={() =>
-                  window.dispatchEvent(new CustomEvent("open-apply"))
-                }
-                whileHover={{
-                  scale: 1.05,
-                  opacity: 0.92,
-                  transition: { duration: 0.2 },
-                }}
+                whileHover={{ scale: 1.05, opacity: 0.92, transition: { duration: 0.2 } }}
                 whileTap={{ scale: 0.96 }}
               >
-                Apply Now
-                <ChevronRight size={14} strokeWidth={2} />
-              </motion.button>
+                <Link
+                  href="/how-to-apply"
+                  className="flex items-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white font-sans whitespace-nowrap"
+                  style={{
+                    background:
+                      "linear-gradient(176.49deg, #F0C41A 0.56%, #D6A929 36.4%, #a6860d 89.05%)",
+                  }}
+                >
+                  Apply Now
+                  <ChevronRight size={14} strokeWidth={2} />
+                </Link>
+              </motion.div>
             </motion.div>
           </motion.div>
         </Container>
