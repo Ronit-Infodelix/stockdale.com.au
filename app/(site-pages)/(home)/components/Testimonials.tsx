@@ -67,12 +67,12 @@ const features: Feature[] = [
 
 function FeatureCard({ title, text, Icon }: Feature) {
   return (
-    <div className="bg-white rounded-[10px] p-6 h-[308px] flex flex-col">
+    <div className="bg-white rounded-[10px] p-6 h-auto md:h-[308px] flex flex-col">
       <div className="w-12 h-12 rounded-full bg-brand-green-light flex items-center justify-center mb-5 shrink-0">
         <Icon size={22} strokeWidth={1.75} className="text-brand-green-darkest" />
       </div>
       <h3 className="font-agatho text-[22px] leading-tight text-black mb-3">{title}</h3>
-      <p className="font-sans text-[13px] leading-[20px] text-brand-gray">{text}</p>
+      <p className="font-sans text-[13px] leading-5 text-brand-gray">{text}</p>
     </div>
   );
 }
@@ -106,12 +106,12 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="relative bg-[#f8f5eb] py-20 overflow-hidden">
+    <section className="relative bg-[#f8f5eb] py-14 md:py-20 overflow-hidden">
       <Container>
 
-        {/* ── Header row + controls in same row ── */}
+        {/* ── Header: stacked on mobile, side-by-side on md+ ── */}
         <motion.div
-          className="flex items-end justify-between mb-14"
+          className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-14"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VIEWPORT}
@@ -119,20 +119,20 @@ export default function Testimonials() {
         >
           {/* Left: text */}
           <div>
-            <span className="bg-brand-green-light text-black text-[10px] font-sans px-3 py-[5px] rounded-[4px] inline-block mb-4">
+            <span className="bg-brand-green-light text-black text-[10px] font-sans px-3 py-0.5 rounded-sm inline-block mb-4">
               Our Commitment to You
             </span>
-            <h2 className="font-agatho text-[50px] leading-tight text-black mb-4">
+            <h2 className="font-agatho text-[28px] sm:text-[36px] md:text-[50px] leading-tight text-black mb-3 md:mb-4">
               What to Expect at Stockdale
             </h2>
-            <p className="font-sans text-[16px] leading-[24px] text-brand-gray max-w-200">
+            <p className="font-sans text-[14px] md:text-[16px] leading-6 text-brand-gray max-w-[520px]">
               As a new institute opening in 2026, here is what our employment-connected model is designed to deliver for every student.
             </p>
           </div>
 
-          {/* Right: prev / next - never touch the cards */}
+          {/* Prev / next buttons — below text on mobile, beside on md+ */}
           <motion.div
-            className="flex items-center gap-3 shrink-0 mb-1"
+            className="flex items-center gap-3 shrink-0 mt-6 md:mt-0 md:mb-1"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={VIEWPORT}
@@ -155,7 +155,7 @@ export default function Testimonials() {
           </motion.div>
         </motion.div>
 
-        {/* ── Carousel - no positioned buttons inside ── */}
+        {/* ── Carousel ── */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -163,12 +163,14 @@ export default function Testimonials() {
           transition={{ duration: 0.8, delay: 0.15, ease: SPRING }}
         >
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-[33px]">
+            <div className="flex gap-4 md:gap-[33px]">
               {features.map((f, i) => (
                 <div
                   key={f.id}
-                  className="shrink-0 transition-opacity duration-300 ease-in-out"
-                  style={{ width: 285, opacity: getOpacity(i) }}
+                  /* 85vw on mobile shows 1 card + peek of next;
+                     fixed 285px on md+ matches the original 3-visible layout */
+                  className="shrink-0 transition-opacity duration-300 ease-in-out w-[85vw] md:w-[285px]"
+                  style={{ opacity: getOpacity(i) }}
                 >
                   <FeatureCard {...f} />
                 </div>
@@ -179,7 +181,7 @@ export default function Testimonials() {
 
         {/* ── Dot pagination ── */}
         <motion.div
-          className="flex items-center justify-center gap-[6px] mt-10"
+          className="flex items-center justify-center gap-1.5 mt-8 md:mt-10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={VIEWPORT}

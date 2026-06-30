@@ -116,13 +116,11 @@ const listItem = {
 
 /* ─── main section ──────────────────────────────────────────── */
 export default function BlogsEvents() {
-  const cardStackH = 3 * 144 + 2 * 16;
-
   return (
-    <section className="relative w-full bg-[#f9f9f9] py-20">
+    <section className="relative w-full bg-[#f9f9f9] py-12 md:py-16 lg:py-20">
 
       {/* Header */}
-      <Container className="flex flex-col items-center text-center mb-14">
+      <Container className="flex flex-col items-center text-center mb-8 md:mb-12 lg:mb-14">
         <motion.span
           className="bg-brand-green-light text-black text-[10px] font-sans px-3 py-1.25 rounded-sm inline-block mb-4"
           initial={{ opacity: 0, scale: 0.85 }}
@@ -133,7 +131,7 @@ export default function BlogsEvents() {
           Blogs &amp; Events
         </motion.span>
         <motion.h2
-          className="font-agatho text-[50px] leading-tight text-black"
+          className="font-agatho text-[28px] sm:text-[36px] md:text-[44px] lg:text-[50px] leading-tight text-black"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VIEWPORT}
@@ -142,7 +140,7 @@ export default function BlogsEvents() {
           Explore News, Events &amp; Student Stories
         </motion.h2>
         <motion.p
-          className="font-sans text-[16px] leading-6 text-brand-gray max-w-[516px] mt-4"
+          className="font-sans text-[14px] md:text-[16px] leading-6 text-brand-gray max-w-[516px] mt-4"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VIEWPORT}
@@ -155,15 +153,14 @@ export default function BlogsEvents() {
 
       {/* 3-column grid */}
       <Container>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6">
 
           {/* ── Col 1: Featured card ── */}
           <motion.a
             href={featured.href}
             target={featured.href.startsWith("http") ? "_blank" : undefined}
             rel={featured.href.startsWith("http") ? "noopener noreferrer" : undefined}
-            className="group relative rounded-[10px] overflow-hidden"
-            style={{ height: cardStackH }}
+            className="group relative rounded-[10px] overflow-hidden h-[260px] lg:h-[464px]"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={VIEWPORT}

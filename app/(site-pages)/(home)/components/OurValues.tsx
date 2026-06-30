@@ -42,15 +42,22 @@ const cards = [
 ];
 
 /*
-  5 items (4 cards + 1 ghost), each 26 vw wide.
-  Overlap = 6 vw  →  visible slice per circle = 20 vw = 100 vw / 5.
-  Total row = 5 × 26 vw − 4 × 6 vw = 106 vw → bleeds 3 vw each side.
-  Centering: margin-left −3 vw so bleed is equal on both sides.
-  Section overflow-hidden clips the bleed cleanly.
+  Desktop — horizontal row:
+    5 items (4 cards + 1 ghost), each 26 vw wide.
+    Overlap = 6 vw → visible slice = 20 vw = 100 vw / 5.
+
+  Mobile — vertical column:
+    4 circles, each 76 vw diameter.
+    Vertical overlap = 22 vw → visible slice per circle = 54 vw.
+    Content anchored just below the overlap line (top: 24 vw).
 */
-const C = "26vw"; // circle diameter
-const OV = "6vw"; // overlap between circles
-const VIS = "20vw"; // visible slice width per circle
+const C   = "26vw";   // desktop diameter
+const OV  = "6vw";    // desktop horizontal overlap
+const VIS = "20vw";   // desktop visible slice
+
+const CM   = "76vw";  // mobile diameter
+const OVM  = "22vw";  // mobile vertical overlap
+const VISC = "54vw";  // mobile visible slice
 
 export default function OurValues() {
   return (
@@ -66,9 +73,9 @@ export default function OurValues() {
       />
 
       {/* ── Header ── */}
-      <Container className="relative z-10 flex flex-col items-center text-center pt-20">
+      <Container className="relative z-10 flex flex-col items-center text-center pt-16 md:pt-20">
         <motion.div
-          className="bg-brand-green-light text-black text-[10px] font-sans px-3 py-[5px] rounded-[4px] mb-6"
+          className="bg-brand-green-light text-black text-[10px] font-sans px-3 py-0.5 rounded-sm mb-6"
           initial={{ opacity: 0, scale: 0.85 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={VIEWPORT}
@@ -78,31 +85,76 @@ export default function OurValues() {
         </motion.div>
 
         <motion.h2
-          className="font-agatho text-[50px] leading-tight text-white"
+          className="font-agatho text-[30px] sm:text-[38px] md:text-[50px] leading-tight text-white"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VIEWPORT}
           transition={{ duration: 0.75, delay: 0.1, ease: SPRING }}
         >
-          Values That <span className="text-[#d6a929]">Define Us</span>
+          Values That <span className="text-brand-gold-dark">Define Us</span>
         </motion.h2>
 
         <motion.p
-          className="font-sans text-[16px] leading-[24px] text-[#64817a] max-w-200 mt-4"
+          className="font-sans text-[14px] md:text-[16px] leading-6 text-[#64817a] max-w-150 mt-4"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VIEWPORT}
           transition={{ duration: 0.65, delay: 0.2, ease: SPRING }}
         >
-          From our home in the heart of West Melbourne, Stockdale Higher
-          Education Institute pairs academic tradition with forward-thinking
-          innovation and a genuine commitment to its students - designed to
-          prepare graduates to lead in a complex world.
+          From our home in the heart of West Melbourne, Stockdale Higher Education
+          Institute pairs academic tradition with forward-thinking innovation and a
+          genuine commitment to its students - designed to prepare graduates to lead
+          in a complex world.
         </motion.p>
       </Container>
 
-      {/* ── Circles row ── */}
-      <div className="relative z-10 flex scale-110 origin-top-left -left-10 -bottom-20">
+      {/* ── Mobile: vertical circles column ── */}
+      <div className="md:hidden relative z-10 flex flex-col items-center mt-6">
+        {cards.map(({ title, description, icon, iconW, iconH }, i) => (
+          <motion.div
+            key={title}
+            className="relative shrink-0 rounded-full bg-[#012a20]"
+            style={{
+              width: CM,
+              height: CM,
+              marginTop: i === 0 ? 0 : `calc(-${OVM})`,
+              border: "2px solid #055744",
+              zIndex: cards.length - i,
+            }}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={VIEWPORT}
+            transition={{ duration: 0.85, delay: i * 0.2, ease: SPRING }}
+          >
+            {/*
+              Content sits in the visible (non-overlapped) slice.
+              Top OVM is covered by the previous circle, so we pad
+              just below that line. Width is safe at ~52vw centered.
+            */}
+            <div
+              className="absolute flex flex-col"
+              style={{
+                top: `calc(${OVM} + 1vw)`,
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: `calc(${VISC} - 4vw)`,
+                gap: "2.5vw",
+              }}
+            >
+              <h3 className="font-agatho text-[5.5vw] leading-tight text-(--color-brand-gold)">
+                {title}
+              </h3>
+              <p className="font-sans text-[3.8vw] leading-[1.5] text-[#64817a]">
+                {description}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+
+      </div>
+
+      {/* ── Desktop: horizontal circles row (unchanged) ── */}
+      <div className="hidden md:flex relative z-10 scale-110 origin-top-left -left-10 xl:-bottom-20 -bottom-10">
         {cards.map(({ title, description, icon, iconW, iconH }, i) => (
           <motion.div
             key={title}
@@ -119,11 +171,6 @@ export default function OurValues() {
             viewport={VIEWPORT}
             transition={{ duration: 0.85, delay: i * 0.28, ease: SPRING }}
           >
-            {/*
-              Content anchored in the visible (non-overlapped) slice.
-              Each slice = VIS = 20vw. Pad 1.5vw from the left of visible area.
-              For the first circle, visible area starts at 3vw (bleed).
-            */}
             <div
               className="absolute flex flex-col gap-[1.1vw]"
               style={{
@@ -141,19 +188,17 @@ export default function OurValues() {
                 height={iconH}
                 style={{ width: "2.8vw", height: "auto", objectFit: "contain" }}
               />
-
               <h3 className="font-agatho text-[1.4vw] leading-tight text-white">
                 {title}
               </h3>
-
-              <p className="font-sans text-[0.85vw] leading-[1.5] text-[#64817a]">
+              <p className="font-sans text-[0.85vw] leading-normal text-[#64817a]">
                 {description}
               </p>
             </div>
           </motion.div>
         ))}
 
-        {/* Ghost circle — border only, bleeds off right */}
+        {/* Ghost circle — bleeds off right */}
         <motion.div
           className="shrink-0 rounded-full"
           style={{
@@ -165,16 +210,12 @@ export default function OurValues() {
           initial={{ opacity: 0, x: 80 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={VIEWPORT}
-          transition={{
-            duration: 0.85,
-            delay: cards.length * 0.18,
-            ease: SPRING,
-          }}
+          transition={{ duration: 0.85, delay: cards.length * 0.18, ease: SPRING }}
         />
       </div>
 
       {/* Bottom breathing room */}
-      <div className="h-[3vw]" />
+      <div className="hidden md:block h-[3vw]" />
     </section>
   );
 }

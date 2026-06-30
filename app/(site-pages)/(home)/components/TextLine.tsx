@@ -40,8 +40,8 @@ function TickerRow({ word, direction, speed }: TickerRowProps) {
 
 export default function TextLine() {
   return (
-    <section className="bg-brand-green-darkest py-10 overflow-hidden select-none">
-      <div className="flex flex-col gap-3 font-sans font-bold uppercase text-[clamp(2.2rem,5vw,4rem)] tracking-[-0.01em]">
+    <section className="bg-brand-green-darkest py-6 md:py-10 overflow-hidden select-none">
+      <div className="flex flex-col gap-2 md:gap-3 font-sans font-bold uppercase text-[clamp(1.8rem,5vw,4rem)] tracking-[-0.01em]">
         <TickerRow word="INNOVATE" direction={-1} speed={0.002} />
         <TickerRow word="CREATE" direction={1}  speed={0.003} />
         <TickerRow word="SUCCEED"  direction={-1} speed={0.002} />

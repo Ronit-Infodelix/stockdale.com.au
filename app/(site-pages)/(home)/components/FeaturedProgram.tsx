@@ -68,34 +68,35 @@ export default function FeaturedProgram() {
 
         {/* Text content */}
         <motion.div
-          className="relative z-10 flex flex-col gap-6 w-full lg:max-w-120"
+          className="relative z-10 flex flex-col lg:gap-6 gap-3 w-full lg:max-w-120"
           variants={textStagger}
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT}
         >
           {/* Label */}
-          <motion.p
-            variants={slideUp}
-            className="font-sans text-[10px] font-medium uppercase tracking-[2px] text-[#a6860d] -mb-3"
-          >
-            Now Accepting Applications
-          </motion.p>
+          <div>
+            <motion.p
+              variants={slideUp}
+              className="font-sans text-badge font-medium uppercase tracking-[2px] text-[#a6860d] md:mb-4 mb-2"
+            >
+              Now Accepting Applications
+            </motion.p>
 
-          {/* Heading */}
-          <motion.h2
-            variants={slideUp}
-            className="font-agatho font-bold text-[45px] leading-tight text-[#014f3d]"
-          >
-            Bachelor of
-            <br />
-            Information Technology
-          </motion.h2>
-
+            {/* Heading */}
+            <motion.h2
+              variants={slideUp}
+              className="font-agatho font-bold text-subheading text-[#014f3d]"
+            >
+              Bachelor of
+              <br />
+              Information Technology
+            </motion.h2>
+          </div>
           {/* Body */}
           <motion.p
             variants={slideUp}
-            className="font-sans text-[16px] text-brand-gray max-w-100"
+            className="font-sans text-subtitle text-brand-gray max-w-100"
           >
             Specialising in Data Analytics. Industry-relevant curriculum with
             real-world projects and expert faculty.
@@ -114,7 +115,7 @@ export default function FeaturedProgram() {
                   <span className="w-5 h-5 rounded-full bg-[#014f3d] flex items-center justify-center shrink-0">
                     <Check size={11} strokeWidth={2.5} className="text-white" />
                   </span>
-                  <span className="font-sans text-[14px] text-[#2d2d2d]">
+                  <span className="font-sans text-para text-[#2d2d2d]">
                     {item}
                   </span>
                 </li>
@@ -125,7 +126,7 @@ export default function FeaturedProgram() {
             <motion.div variants={btnSlide} className="flex items-center gap-3">
               <Link
                 href="/bachelor-of-information-technology"
-                className="inline-flex items-center gap-2 px-5 py-[13px] rounded-[8px] text-white text-[14px] font-sans whitespace-nowrap hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 px-5 py-[13px] rounded-[8px] text-white text-para font-sans whitespace-nowrap hover:opacity-90 transition-opacity"
                 style={{
                   background:
                     "linear-gradient(177.19deg, #43A48E 0.56%, #014F3D 36.4%, #013529 89.05%)",
@@ -136,7 +137,7 @@ export default function FeaturedProgram() {
               </Link>
               <Link
                 href="/how-to-apply"
-                className="inline-flex items-center gap-2 px-5 py-[13px] rounded-[8px] border border-[#014f3d] text-[#014f3d] text-[14px] font-sans whitespace-nowrap hover:bg-[#014f3d] hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-[13px] rounded-[8px] border border-[#014f3d] text-[#014f3d] text-para font-sans whitespace-nowrap hover:bg-[#014f3d] hover:text-white transition-colors"
               >
                 Apply Now
                 <ChevronRight size={14} strokeWidth={2} />
@@ -147,7 +148,7 @@ export default function FeaturedProgram() {
           {/* Mobile image — shown below text, hidden on desktop */}
           <motion.div
             variants={slideUp}
-            className="block lg:hidden relative w-full aspect-[16/9] rounded-xl overflow-hidden"
+            className="block lg:hidden relative w-full aspect-16/9 rounded-xl overflow-hidden"
           >
             <Image
               src="/images/home/about/students-outdoor.webp"
