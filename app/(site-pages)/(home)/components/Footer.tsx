@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   CircleCheckBigIcon,
-  type LucideIcon,
   Mail,
   MapPin,
   Phone,
@@ -18,7 +17,7 @@ const VIEWPORT = { once: true, margin: "-40px" } as const;
 const quickLinks = [
   { label: "About Us", href: "/about-us" },
   { label: "Our Campus", href: "/our-campus" },
-  { label: "Our Team", href: "/our-team" },
+  // { label: "Our Team", href: "/our-team" },
   { label: "News & Events", href: "/news-and-events" },
   { label: "Contact", href: "/contact" },
 ];

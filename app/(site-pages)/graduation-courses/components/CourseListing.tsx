@@ -27,7 +27,7 @@ function CourseCard({ course }: { course: Course }) {
   return (
     <div className="bg-white border border-[#d9d9d9] rounded-[19px] p-8 flex gap-6">
       <div className="flex-1 min-w-0">
-        <h3 className="font-agatho text-[40px] leading-[44px] text-brand-gold-dark mb-4">
+        <h3 className="font-agatho text-[40px] leading-11 text-brand-gold-dark mb-4">
           {course.title}
         </h3>
         <p className="font-sans text-[14px] leading-5 text-brand-gray mb-6">
@@ -43,28 +43,32 @@ function CourseCard({ course }: { course: Course }) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 shrink-0">
+      <div className="flex flex-col gap-3 shrink-0 w-50 justify-end">
         <Link
-          href="/graduation-courses/bachelor-of-information-technology/domestic"
-          className="inline-flex items-center justify-between gap-3 px-5 py-3 rounded-lg text-white text-[14px] font-sans min-w-[160px]"
+          href="/bachelor-of-information-technology/domestic"
+          className="group flex flex-col gap-0 px-4 py-3 rounded-xl text-white font-sans transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
           style={{
-            background:
-              "linear-gradient(177.19deg, #43A48E 0.56%, #014F3D 36.4%, #013529 89.05%)",
+            background: "linear-gradient(177.19deg, #43A48E 0.56%, #014F3D 36.4%, #013529 89.05%)",
           }}
         >
-          Domestic
-          <ChevronRight size={12} strokeWidth={2} />
+          <span className="text-[9px] uppercase text-white/60">AU & NZ citizens</span>
+          <span className="flex items-center justify-between text-base font-semibold font-agatho">
+            Domestic Students
+            <ChevronRight size={11} strokeWidth={2.5} className="transition-transform duration-200 group-hover:translate-x-0.5" />
+          </span>
         </Link>
         <Link
-          href="/graduation-courses/bachelor-of-information-technology/international"
-          className="inline-flex items-center justify-between gap-3 px-5 py-3 rounded-lg text-white text-[14px] font-sans min-w-[160px]"
+          href="/bachelor-of-information-technology/international"
+          className="group flex flex-col gap-0 px-4 py-3 rounded-xl text-white font-sans transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
           style={{
-            background:
-              "linear-gradient(177.19deg, #43A48E 0.56%, #014F3D 36.4%, #013529 89.05%)",
+            background: "linear-gradient(177.19deg, #43A48E 0.56%, #014F3D 36.4%, #013529 89.05%)",
           }}
         >
-          International
-          <ChevronRight size={12} strokeWidth={2} />
+          <span className="text-[9px] uppercase text-white/60">Overseas & visa</span>
+          <span className="flex items-center justify-between text-base font-semibold font-agatho">
+            International Students
+            <ChevronRight size={11} strokeWidth={2.5} className="transition-transform duration-200 group-hover:translate-x-0.5" />
+          </span>
         </Link>
       </div>
     </div>
@@ -76,9 +80,9 @@ export default function CourseListing() {
     <section className="bg-white py-12">
       <Container>
         <div className="flex items-baseline gap-8 mb-8 border-b border-gray-100 pb-4">
-          <span className="font-sans font-medium text-[20px] text-black shrink-0">
+          {/* <span className="font-sans font-medium text-[20px] text-black shrink-0">
             Graduate Course
-          </span>
+          </span> */}
           <nav className="flex items-center gap-1 font-sans text-[14px]">
             <Link href="/" className="text-black hover:underline">
               Home

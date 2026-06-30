@@ -109,8 +109,8 @@ function PartnersContent() {
             </h2>
             <p className="font-sans text-[16px] leading-[28px] text-brand-gray mb-5">
               Note: Partnership applications opening mid-2026. Contact us at{" "}
-              <a href="mailto:admin@heau.edu.au" className="underline text-brand-green-darkest hover:opacity-75">
-                admin@heau.edu.au
+              <a href="mailto:admin@stockdale.edu.au" className="underline text-brand-green-darkest hover:opacity-75">
+                admin@stockdale.edu.au
               </a>{" "}
               for more information.
             </p>
@@ -118,13 +118,13 @@ function PartnersContent() {
               Building pathways through partnership
             </p>
             <p className="font-sans text-[16px] leading-[35px] text-brand-gray">
-              HEA brings together student sources and professional readiness partners to create
+              Stockdale brings together student sources and professional readiness partners to create
               end-to-end pathways from learning to work.
             </p>
           </section>
 
           {/* Student Sources */}
-          <AccordionSection id="student-sources" heading="Student sources">
+          <AccordionSection id="student-sources" heading="Student Sources">
             <ul className="list-disc pl-6 space-y-1 font-sans text-[16px] leading-[35px] text-brand-gray mb-8">
               <li>International education agents</li>
               <li>VET and pathway providers</li>
@@ -150,7 +150,7 @@ function PartnersContent() {
                 </p>
               </div>
               <div>
-                <p className="font-bold text-[#0a0a0a]">3. Large corporates</p>
+                <p className="font-medium text-[#0a0a0a]">3. Large corporates</p>
                 <p className="text-brand-gray">
                   Provide structured roles and custom cohorts that align to workforce capability
                   needs and create clear professional pathways.
@@ -187,7 +187,8 @@ function PartnersContent() {
                     Options for employer-funded cohorts, custom degree streams, and microcredentials
                   </li>
                   <li>
-                    Transparent data and reporting on learner capability, progress, and outcomes
+                    A commitment to transparent reporting on learner capability, progress, and
+                    outcomes as cohorts complete
                   </li>
                 </ul>
               </div>
@@ -199,13 +200,14 @@ function PartnersContent() {
                 </p>
                 <ul className="list-disc pl-6 space-y-1">
                   <li>
-                    Clear, credit-mapped pathways from vocational/capability programs into HEA degrees
+                    Clear, credit-mapped pathways from vocational/capability programs into Stockdale degrees
                   </li>
                   <li>
                     Co-branded, employment-linked offers you can market to students and employers
                   </li>
                   <li>
-                    Transparent outcomes data to support student counselling and decision-making
+                    A commitment to transparent reporting on learner progress and outcomes as cohorts
+                    complete, to support student counselling and decision-making
                   </li>
                   <li>
                     Long-term partnership approach with co-marketing support and ethical recruitment
@@ -228,7 +230,7 @@ function PartnersContent() {
                   <li>
                     Support for placement coordination and learner wrap-around services
                   </li>
-                  <li>Reportable outcomes data for funders and stakeholders</li>
+                  <li>We will provide reportable data on learner progress and outcomes for funders and stakeholders as cohorts complete</li>
                 </ul>
               </div>
             </div>
@@ -307,8 +309,8 @@ function IndustryContent() {
                     Provide meaningful career progression tied to recognised qualifications.
                   </li>
                   <li>
-                    Track and measure outcomes: capability development, internal mobility,
-                    retention, and productivity gains.
+                    Designed to track and report on outcomes over time: capability development,
+                    internal mobility, retention, and productivity gains.
                   </li>
                 </ul>
               </div>
@@ -318,7 +320,7 @@ function IndustryContent() {
                 <ul className="list-disc pl-6 space-y-1 text-brand-gray">
                   <li>Shorter time-to-productivity and lower onboarding costs.</li>
                   <li>Stronger internal capability and reduced reliance on external hiring.</li>
-                  <li>Transparent reporting and data on learner outcomes.</li>
+                  <li>A commitment to transparent reporting on learner progress and outcomes as cohorts complete.</li>
                   <li>Co-creation rights: help shape curriculum, assessment, and pathways.</li>
                 </ul>
               </div>

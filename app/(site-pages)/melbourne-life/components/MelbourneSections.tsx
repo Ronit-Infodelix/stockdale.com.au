@@ -124,10 +124,10 @@ export default function MelbourneSections() {
           </h2>
           <ul className="list-disc pl-6 space-y-3 max-w-2xl">
             {[
-              { label: "Accommodation:", value: "A$200–400 (shared) to A$400–600 (private)" },
-              { label: "Food and groceries:", value: "A$100–150" },
-              { label: "Transport:", value: "A$50–70 (public transport concession available for students)" },
-              { label: "Personal and entertainment:", value: "A$80–150" },
+              { label: "Accommodation:", value: "A$200-400 (shared) to A$400-600 (private)" },
+              { label: "Food and groceries:", value: "A$100-150" },
+              { label: "Transport:", value: "A$50-70 (public transport concession available for students)" },
+              { label: "Personal and entertainment:", value: "A$80-150" },
             ].map(({ label, value }, i) => (
               <li key={i} className="font-sans text-[16px] leading-[35px] text-brand-gray pl-1">
                 <span className="font-medium text-black">{label}</span> {value}
@@ -144,8 +144,9 @@ export default function MelbourneSections() {
             Work opportunities
           </h2>
           <div className="flex flex-col gap-5 max-w-3xl">
+            {/* TODO(client): verify current Department of Home Affairs work-hour cap */}
             <p className="font-sans text-[16px] leading-[35px] text-brand-gray">
-              International students on a student visa can work up to 48 hours per fortnight during study periods and unlimited hours during breaks. Melbourne's strong economy offers part-time and casual work opportunities in retail, hospitality, administration, and more.
+              International students on a student visa can work up to 48 hours per fortnight during study periods, subject to current visa conditions, and unlimited hours during breaks. Melbourne's strong economy offers part-time and casual work opportunities in retail, hospitality, administration, and more.
             </p>
             <p className="font-sans text-[16px] leading-[35px] text-brand-gray">
               At Stockdale, many students combine study and work, making Melbourne an ideal place to build both experience and qualifications at the same time.

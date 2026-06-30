@@ -7,14 +7,24 @@ import Container from "@/app/components/ui/Container";
 
 const SPRING = [0.22, 1, 0.36, 1] as const;
 
-const FEES = [
+type FeeAudience = "domestic" | "international";
+
+const FEES: {
+  audience: FeeAudience;
+  type: string;
+  total: string;
+  perYear: string;
+  note: string;
+}[] = [
   {
+    audience: "domestic",
     type: "Domestic Students",
     total: "$43,200",
     perYear: "$14,400 per year",
     note: "Citizens & permanent residents",
   },
   {
+    audience: "international",
     type: "International Students",
     total: "$50,400",
     perYear: "$16,800 per year",
@@ -22,8 +32,13 @@ const FEES = [
   },
 ];
 
-export default function BITFees() {
+/**
+ * `variant` limits the table to a single audience (used on the Domestic and
+ * International pages). With no variant, both rows show (the course page).
+ */
+export default function BITFees({ variant }: { variant?: FeeAudience }) {
   const [open, setOpen] = useState(true);
+  const fees = variant ? FEES.filter((f) => f.audience === variant) : FEES;
 
   return (
     <section id="fees" className="bg-white py-14 scroll-mt-20">
@@ -61,7 +76,7 @@ export default function BITFees() {
                 style={{ overflow: "hidden" }}
               >
                 <div className="divide-y divide-gray-100 border-t border-gray-100 mb-6">
-                  {FEES.map(({ type, total, perYear, note }) => (
+                  {fees.map(({ type, total, perYear, note }) => (
                     <div key={type} className="flex items-center justify-between py-5 gap-6">
                       <div>
                         <p className="font-sans text-[13px] font-medium text-[#0a0a0a]">{type}</p>

@@ -24,7 +24,7 @@ export default function BITPathways() {
               <p>• Graduate Diploma (Grad Dip) programs</p>
             </div>
             <p className="font-sans text-[16px] leading-6 text-[#050505] pt-2">
-              Students should refer to the course seeker and compare ED websites: courseseeker.edu.au and compared.edu.au
+              Students should refer to the course seeker and ComparED websites: courseseeker.edu.au and compared.edu.au
             </p>
             <div className="flex items-center gap-3 pt-2">
               <Link
@@ -34,7 +34,7 @@ export default function BITPathways() {
                 How to Apply <ChevronRight size={12} strokeWidth={2} />
               </Link>
               <Link
-                href="#"
+                href="/student-handbook"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#013529] text-brand-green-darkest bg-white text-[14px] font-sans hover:bg-brand-green-darkest hover:text-white transition-colors"
               >
                 Handbook <ChevronRight size={12} strokeWidth={2} />

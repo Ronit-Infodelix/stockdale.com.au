@@ -19,7 +19,7 @@ function CountAnimation({
   const isInView = useInView(ref, { once: true, margin: "0px 0px -80px 0px" });
 
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (v) => Math.round(v).toLocaleString() + suffix);
+  const rounded = useTransform(count, (v) => Math.round(v).toString() + suffix);
 
   useEffect(() => {
     if (!isInView) return;

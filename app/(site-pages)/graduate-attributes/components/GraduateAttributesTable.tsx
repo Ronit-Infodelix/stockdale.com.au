@@ -25,7 +25,7 @@ const ATTRIBUTES = [
   {
     attribute: "Cultural and global competency",
     description:
-      "Acknowledge and respect diverse cultures of peoples and their approaches to work and/or problem solving and/or consulting, within the broader global content.",
+      "Acknowledge and respect diverse cultures of peoples and their approaches to work and/or problem solving and/or consulting, within the broader global context.",
   },
   {
     attribute: "Professionalism and professional leadership",

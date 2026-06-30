@@ -4,9 +4,9 @@ import { ChevronRight } from "lucide-react";
 import Container from "@/app/components/ui/Container";
 
 const BULLETS = [
-  "3 intakes per year — Feb, Jul, Oct",
-  "Up to 30% scholarship for high-achieving applicants",
-  "Flexible payment plans & interest-free instalments",
+  "Two intakes per year - February and July",
+  "Scholarships may be available for eligible students",
+  "Flexible payment plans",
   "Dedicated student visa & arrival support",
 ];
 
@@ -34,14 +34,15 @@ export default function IntakesSection() {
             </h2>
             <div className="space-y-4 font-sans text-[16px] leading-[29px] text-[#6b7280]">
               <p>
-                Stockdale offers three main intakes each year — February, July and October — across
-                most undergraduate and graduate programs. Short courses and professional
-                certificates have rolling intakes.
+                Stockdale offers two intakes each year - February and July - for the Bachelor of
+                Information Technology (Data Analytics).
               </p>
               <p>
-                We&apos;re proud to offer a range of merit-based scholarships, early-bird discounts
-                and country-specific bursaries to support outstanding students. Speak with our team
-                to find out which you may be eligible for.
+                Scholarships may be available to support eligible students. Visit our{" "}
+                <Link href="/scholarships" className="text-[#0a3e30] underline hover:no-underline">
+                  scholarships
+                </Link>{" "}
+                page or speak with our team to find out more.
               </p>
             </div>
 

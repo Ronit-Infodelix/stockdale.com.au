@@ -23,9 +23,9 @@ export default function AdmissionsIntro() {
                 here to guide you through every step of the process.
               </p>
               <p>
-                Most applications are reviewed within 5–7 business days, and successful applicants
+                We aim to respond to most applications within 5 business days, and successful applicants
                 receive an official Letter of Offer that they can use to plan enrolment,
-                accommodation and — for international students — their student visa.
+                accommodation and - for international students - their student visa.
               </p>
             </div>
             <div className="pt-2">

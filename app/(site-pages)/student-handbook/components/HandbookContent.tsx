@@ -36,6 +36,7 @@ export default function HandbookContent() {
           <p className="font-sans text-[20px] leading-7 text-black">
             Students are encouraged to familiarise themselves with the Handbook.
           </p>
+          {/* TODO(client): link the official Student Handbook PDF */}
           <a
             href="#"
             className="shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-lg text-white text-[14px] font-sans hover:opacity-90 transition-opacity"
@@ -50,6 +51,7 @@ export default function HandbookContent() {
         </div>
 
         {/* PDF preview placeholder */}
+        {/* TODO(client): replace with real handbook preview */}
         <div className="relative w-full bg-[#d9d9d9] rounded-sm" style={{ minHeight: 580 }}>
           <div className="absolute inset-[10px] bg-[#f6f6f6] flex items-end justify-center pb-16">
             <span className="font-sans text-[72px] font-normal leading-none text-[#e0e0e0] select-none">

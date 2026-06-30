@@ -10,7 +10,7 @@ import Container from "@/app/components/ui/Container";
 const TABS = [
   { id: "fees", label: "Fees" },
   { id: "refunds", label: "Refunds" },
-  { id: "tia-default", label: "Stockdale Default" },
+  { id: "stockdale-default", label: "Stockdale Default" },
   { id: "payment-of-refunds", label: "Payment of Refunds" },
 ];
 
@@ -219,7 +219,7 @@ export default function FeesContent() {
                   Total course fees for Domestic Students:
                 </p>
                 <p className="font-sans text-[16px] leading-[28px] text-[#d6a929]">
-                  AUD 43,200 (AUD 1,800 per unit and AUD 7,200 per semester)
+                  AUD 43,200 (AUD 7,200 per semester)
                 </p>
               </div>
 
@@ -229,7 +229,7 @@ export default function FeesContent() {
                   Total course fees for International Students:
                 </p>
                 <p className="font-sans text-[16px] leading-[28px] text-[#d6a929]">
-                  AUD 50,400 (AUD 2,100 per unit and AUD 8,400 per semester)
+                  AUD 50,400 (AUD 8,400 per semester)
                 </p>
               </div>
             </div>
@@ -344,7 +344,7 @@ export default function FeesContent() {
             </PolicySection>
 
             {/* Stockdale Default */}
-            <PolicySection id="tia-default" heading="Stockdale Default">
+            <PolicySection id="stockdale-default" heading="Stockdale Default">
               <div className="space-y-4 font-sans text-[16px] leading-[35px] text-brand-gray">
                 <p>
                   The Australian Government&apos;s Tuition Protection Service (TPS) ensures that

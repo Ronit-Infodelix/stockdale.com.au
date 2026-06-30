@@ -42,10 +42,11 @@ export default function LibraryContent() {
 
         {/* For Current Students */}
         <h3 className="font-agatho text-[40px] leading-[50px] text-black mb-4">
-          For Current Student
+          For Current Students
         </h3>
         <p className="font-sans text-[16px] leading-10 text-black">
-          Digital resources and databases are accessible via the Support Hub
+          Digital resources and databases are accessible via the learning
+          management system (Moodle) and the Support Hub.
         </p>
       </Container>
     </Section>

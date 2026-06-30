@@ -23,7 +23,7 @@ const LEARNING_ROWS = [
   },
   {
     title: "Portfolio-based assessment",
-    body: "Your assessments create real outputs — reports, code, dashboards, and presentations — that you can use in job applications.",
+    body: "Your assessments create real outputs - reports, code, dashboards, and presentations - that you can use in job applications.",
     bg: "bg-[#efefef]",
   },
   {
@@ -62,14 +62,14 @@ const JOURNEY_STEPS = [
   {
     n: 5,
     title: "Alumni and ongoing support",
-    body: "Access career services, mentorship, and professional development for up to 12 months post-graduation.",
+    body: "Access career services, mentorship, and ongoing professional development support after graduation.",
   },
 ];
 
 const RESOURCES = [
-  "Canvas – Unit materials, assessments, announcements, and online collaboration tools",
-  "Library – On-campus and online access to core textbooks, eBooks, journals, academic databases, and study spaces",
-  "Academic skills support – Workshops and one-on-one support for writing, research, critical thinking, and presentation skills",
+  "Canvas - Unit materials, assessments, announcements, and online collaboration tools",
+  "Library - On-campus and online access to core textbooks, eBooks, journals, academic databases, and study spaces",
+  "Academic skills support - Workshops and one-on-one support for writing, research, critical thinking, and presentation skills",
 ];
 
 export default function LearningTabs() {
@@ -148,8 +148,9 @@ export default function LearningTabs() {
                   support.
                 </p>
                 <p>
-                  This integrated approach helps you move into meaningful work faster, becoming
-                  productive in 6–9 months rather than the traditional 18–24 months.
+                  This integrated approach is designed to help you move into meaningful work
+                  sooner, applying what you learn from the very start of your studies rather than
+                  waiting until after you graduate.
                 </p>
               </div>
             </div>

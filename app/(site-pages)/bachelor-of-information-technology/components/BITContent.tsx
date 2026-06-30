@@ -6,16 +6,25 @@ import BITCoreUnits from "./BITCoreUnits";
 import BITEntryRequirements from "./BITEntryRequirements";
 import BITFees from "./BITFees";
 
-export default function BITContent() {
+/**
+ * `variant` tailors the audience-specific bits (Key Features fee cell, Entry
+ * Requirements default tab, Fees table) for the Domestic and International
+ * pages. With no variant, everything shows both audiences (the course page).
+ */
+export default function BITContent({
+  variant,
+}: {
+  variant?: "domestic" | "international";
+}) {
   return (
     <>
       <BITTabBar />
-      <BITKeyFacts />
+      <BITKeyFacts variant={variant} />
       <BITCourseOverview />
       <BITCourseStructure />
       <BITCoreUnits />
-      <BITEntryRequirements />
-      <BITFees />
+      <BITEntryRequirements defaultTab={variant} />
+      <BITFees variant={variant} />
     </>
   );
 }

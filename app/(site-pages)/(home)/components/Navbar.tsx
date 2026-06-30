@@ -13,6 +13,7 @@ import {
 } from "framer-motion";
 
 const utilityLinks = [
+  { label: "Blogs", href: "/blogs" },
   { label: "Agents", href: "/agent-login" },
   { label: "Contact Us", href: "/contact" },
   { label: "Scholarships", href: "/scholarships" },
@@ -24,7 +25,7 @@ const navLinks = [
     label: "About us",
     items: [
       { label: "About Stockdale", href: "/about-us" },
-      { label: "Our Team", href: "/our-team" },
+      // { label: "Our Team", href: "/our-team" },
       { label: "Our Campus", href: "/our-campus" },
       { label: "News & Events", href: "/news-and-events" },
     ],
@@ -32,7 +33,6 @@ const navLinks = [
   {
     label: "Study With Us",
     items: [
-      { label: "Bachelor of IT", href: "/bachelor-of-it" },
       { label: "Graduation Courses", href: "/graduation-courses" },
       { label: "Graduate Attributes", href: "/graduate-attributes" },
       { label: "Learning & Teaching", href: "/learning-and-teaching" },

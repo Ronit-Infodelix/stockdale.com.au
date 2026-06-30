@@ -31,14 +31,15 @@ export default function ScholarshipIntro() {
 
             <div className="space-y-4 font-sans text-[16px] leading-7 text-brand-gray">
               <p>
-                Financial barriers should never stand between an ambitious student and a world-class
-                education. Our scholarship programmes are designed to recognise excellence, support
+                Financial barriers should never stand between an ambitious student and a high-quality
+                education. Our scholarship programs are designed to recognise excellence, support
                 equity, and open doors for students from all backgrounds.
               </p>
               <p>
-                Scholarships are awarded annually across our undergraduate and postgraduate
-                programmes. Eligible students can receive partial or full fee waivers, along with
-                access to additional career and mentoring support.
+                Scholarships are offered for our Bachelor of Information Technology, with further
+                awards to follow for postgraduate programs as they become available. Eligible
+                students may receive partial fee support, subject to application and selection
+                criteria, along with access to additional career and mentoring support.
               </p>
             </div>
 

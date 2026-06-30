@@ -79,8 +79,12 @@ function AccordionSection({ heading, children }: { heading: string; children: Re
   );
 }
 
-export default function BITEntryRequirements() {
-  const [entryTab, setEntryTab] = useState<EntryTab>("domestic");
+export default function BITEntryRequirements({
+  defaultTab = "domestic",
+}: {
+  defaultTab?: EntryTab;
+}) {
+  const [entryTab, setEntryTab] = useState<EntryTab>(defaultTab);
 
   return (
     <section id="entry-requirements" className="bg-white scroll-mt-20">

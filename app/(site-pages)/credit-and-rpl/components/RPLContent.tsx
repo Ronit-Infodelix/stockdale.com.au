@@ -256,10 +256,11 @@ export default function RPLContent() {
             >
               <NumberedList
                 items={[
-                  "Once an application is received, all applications are assessed by Student Administration delegated to deal with Admission applications and RPL and Credit requests. Students will be informed that the result of their application will be given to them in writing within twenty one (21) business days.",
-                  "Assessment for RPL may be more complex due to the variable nature of learning and a thorough check if it matches standards set out in the AQF.",
-                  "A recommendation will be made to the Course Coordinator who will decide the application including the amount of Credit to be awarded.",
-                  "All decisions must be recorded including reasons for any non-approval. Students are to be given written advice of the outcome of their application. The decision will be kept on the Students' relevant records.",
+                  "Prior learning must be sufficiently current and relevant. Credit will generally only be granted where the learning was completed within the preceding ten (10) years, unless the applicant can demonstrate that the knowledge and skills remain current and relevant to the course.",
+                  "Credit is granted only where the prior learning is assessed as equivalent in content, depth and learning outcomes to the relevant units, and is aligned with the Australian Qualifications Framework (AQF) level of the course.",
+                  "The total amount of Credit that may be granted is limited so that students complete a substantial part of the course at Stockdale. As a general rule, Credit will not exceed two-thirds (66%) of the total credit points required for the qualification.",
+                  "To satisfy the residency requirement, students must complete a minimum of one-third (33%) of the course credit points through study at Stockdale, including the Capstone Project, to ensure achievement of the course learning outcomes.",
+                  "Credit will not be granted twice for the same learning, and Credit awarded for one qualification cannot be transferred or reused towards another qualification at Stockdale.",
                 ]}
               />
             </PolicySection>

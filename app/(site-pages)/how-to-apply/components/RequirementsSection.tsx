@@ -7,9 +7,7 @@ const REQUIREMENTS = [
   "Certified academic transcripts & certificates",
   "Proof of English proficiency (IELTS / PTE / equivalent)",
   "Valid passport or government-issued photo ID",
-  "Personal statement (graduate programs)",
   "Two academic or professional references",
-  "CV / résumé (graduate & professional programs)",
 ];
 
 function GoldBullet({ text }: { text: string }) {
@@ -45,9 +43,9 @@ export default function RequirementsSection() {
               What You&apos;ll Need
             </h2>
             <p className="font-sans text-[16px] leading-[29px] text-[#6b7280]">
-              Entry requirements vary by course and level, but most applications will need the
-              following documents. Our admissions team can guide you on anything you&apos;re unsure
-              about.
+              To apply for the Bachelor of Information Technology (Data Analytics), you&apos;ll
+              typically need the following documents. Our admissions team can guide you on anything
+              you&apos;re unsure about.
             </p>
 
             <ul className="flex flex-col mt-1">

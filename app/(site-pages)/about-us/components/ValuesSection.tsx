@@ -50,7 +50,6 @@ export default function ValuesSection() {
           style={{ height: 500 }}
         >
           <div className="absolute right-0 inset-y-0 w-full">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <Image
               src="/images/about/value.webp"
               alt="Students on campus"
@@ -67,7 +66,7 @@ export default function ValuesSection() {
               <div
                 key={v.title}
                 className="rounded-[13px] border border-brand-gold-dark flex flex-col gap-4 p-6"
-                style={{ background: CARD_GRADIENT, minHeight: 340 }}
+                style={{ background: CARD_GRADIENT, minHeight: 300 }}
               >
                 <h3 className="font-agatho text-[24px] leading-tight text-white">
                   {v.title}

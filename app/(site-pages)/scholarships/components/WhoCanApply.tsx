@@ -18,9 +18,9 @@ const CRITERIA = [
       "Students must maintain satisfactory academic progress and unit completion rates to retain their scholarship.",
   },
   {
-    title: "Chosen Network",
+    title: "Community or Professional Involvement",
     description:
-      "Some scholarships prioritise students who have demonstrated involvement in their professional or community network.",
+      "Some scholarships prioritise students who have demonstrated active involvement in their professional field or local community.",
   },
   {
     title: "Supporting Statement",
@@ -30,7 +30,7 @@ const CRITERIA = [
   {
     title: "Application Deadline",
     description:
-      "Applications close 6 weeks before the start of each semester. Late submissions will not be considered.",
+      "Applications typically close several weeks before each intake. Late submissions will not be considered.",
   },
 ];
 

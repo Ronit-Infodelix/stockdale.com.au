@@ -27,7 +27,7 @@ export default function BITDomesticStudents() {
           breadcrumbs={CRUMBS}
         />
       </ParallaxSticky>
-      <ParallaxOverlay overflow={false}>
+      <ParallaxOverlay overflow={false} className="bg-white">
         <BITContent variant="domestic" />
       </ParallaxOverlay>
       <BITPathways />
