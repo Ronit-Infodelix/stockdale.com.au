@@ -244,9 +244,10 @@ export default function Footer() {
               textAnchor="middle"
               className="font-agatho font-bold tracking-[0.18em]"
               fontSize="190"
-              fill="rgba(255,255,255,0.04)"
             >
-              STOCKDALE
+              <tspan fill="rgba(255,255,255,0.04)">STO</tspan>
+              <tspan fill="rgba(255,255,255,0.04)">CKD</tspan>
+              <tspan fill="rgba(255,255,255,0.04)">ALE</tspan>
             </text>
 
             {/* Hover border only */}
@@ -265,7 +266,11 @@ export default function Footer() {
               stroke="url(#stockdaleStrokeGradient)"
               strokeWidth="2"
             >
-              STOCKDALE
+              <tspan strokeOpacity="1">STO</tspan>
+              <tspan strokeOpacity="0.3">C</tspan>
+              <tspan strokeOpacity="0.1">K</tspan>
+              <tspan strokeOpacity="0.3">D</tspan>
+              <tspan strokeOpacity="1">ALE</tspan>
             </text>
           </svg>
         </div>
