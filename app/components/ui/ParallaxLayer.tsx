@@ -7,7 +7,7 @@ import { cn } from "@/app/lib/utils";
 // Full class names kept as string literals so Tailwind's scanner picks them up.
 const TOP: Record<string, string> = {
   "0": "top-0",
-  "18": "top-18",
+  "18": "md:top-18 top-13",
 };
 
 interface StickyProps {

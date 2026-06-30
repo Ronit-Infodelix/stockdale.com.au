@@ -32,7 +32,7 @@ const navLinks = [
   {
     label: "Study With Us",
     items: [
-      { label: "Bachelor of Information Technology", href: "/bachelor-of-information-technology" },
+      { label: "Bachelor of IT", href: "/bachelor-of-it" },
       { label: "Graduation Courses", href: "/graduation-courses" },
       { label: "Graduate Attributes", href: "/graduate-attributes" },
       { label: "Learning & Teaching", href: "/learning-and-teaching" },
@@ -78,6 +78,7 @@ export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   const { scrollY } = useScroll();
 
@@ -86,9 +87,14 @@ export default function Navbar() {
   useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 24));
 
   const utilBarH   = useTransform(scrollY, [0, 50], [40, 0]);
+  // Desktop
   const navBarH    = useTransform(scrollY, [0, 50], [100, 72]);
   const logoW      = useTransform(scrollY, [0, 50], [300, 240]);
   const logoH      = useTransform(scrollY, [0, 50], [88, 66]);
+  // Mobile — smaller range
+  const navBarH_m  = useTransform(scrollY, [0, 50], [64, 54]);
+  const logoW_m    = useTransform(scrollY, [0, 50], [150, 120]);
+  const logoH_m    = useTransform(scrollY, [0, 50], [44, 36]);
   const actMaxW    = useTransform(scrollY, [24, 70], [0, 280]);
   const actOpacity = useTransform(scrollY, [24, 70], [0, 1]);
   const navBg      = useTransform(
@@ -104,6 +110,13 @@ export default function Navbar() {
     const t = Math.min(1, Math.max(0, y / 50));
     return t > 0 ? `blur(${(t * 12).toFixed(1)}px)` : "none";
   });
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 1024);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   useEffect(() => {
     let frame: number;
@@ -127,9 +140,9 @@ export default function Navbar() {
       animate={mounted ? { y: 0, opacity: 1 } : {}}
       transition={{ duration: 0.65, ease: SPRING }}
     >
-      {/* Utility bar */}
+      {/* Utility bar — desktop only */}
       <motion.div
-        className="bg-brand-green-darkest overflow-hidden"
+        className="bg-brand-green-darkest overflow-hidden hidden lg:block"
         style={{ height: utilBarH }}
       >
         <Container className="h-10 flex items-center justify-end">
@@ -169,7 +182,7 @@ export default function Navbar() {
       {/* Main nav */}
       <motion.div
         style={{
-          height: navBarH,
+          height: isMobile ? navBarH_m : navBarH,
           backgroundColor: navBg,
           boxShadow: navShadow,
           backdropFilter: navBlur,
@@ -184,7 +197,7 @@ export default function Navbar() {
               animate={mounted ? { scale: 1, opacity: 1 } : {}}
               transition={{ duration: 0.7, ease: SPRING, delay: 0.06 }}
             >
-              <motion.div className="relative" style={{ width: logoW, height: logoH }}>
+              <motion.div className="relative" style={{ width: isMobile ? logoW_m : logoW, height: isMobile ? logoH_m : logoH }}>
                 <Image
                   src="/images/logo/main.svg"
                   alt="Stockdale"

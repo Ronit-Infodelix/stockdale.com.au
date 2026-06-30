@@ -82,7 +82,7 @@ export default function Hero() {
   const headline = "A Global Community of Scholars".split(" ");
 
   return (
-    <section className="sticky top-0 z-0 w-full h-screen overflow-hidden bg-[#050e1a] pt-30">
+    <section className="sticky top-0 z-0 w-full h-screen overflow-hidden bg-[#050e1a] pt-16 sm:pt-24 lg:pt-30">
       {/* ── All background visuals — fade out together as page scrolls ── */}
       <motion.div className="absolute inset-0" style={{ opacity: bgOpacity }}>
         {/* Background entrance wrapper → parallax wrapper */}
@@ -103,7 +103,7 @@ export default function Hero() {
             <img
               src="/images/home/hero/banner.webp"
               alt=""
-              className="absolute inset-0 w-full h-full object-cover object-[center_-8%] pointer-events-none"
+              className="absolute inset-0 w-full h-full object-cover object-[center_-28%] pointer-events-none"
               aria-hidden="true"
             />
             <video
@@ -131,9 +131,9 @@ export default function Hero() {
         />
 
         {/* ── Decorative corner images — slide in from sides ── */}
-        <div className="h-1/3 absolute w-full bottom-0 grid grid-cols-3 pointer-events-none">
+        <div className="h-1/3 absolute w-full bottom-0 grid-cols-3 pointer-events-none grid">
           <motion.div
-            className="relative -left-1/2 top-1/3 will-change-transform"
+            className="relative -left-1/3 -bottom-1/3 md:-bottom-1/2 will-change-transform"
             style={{ y: leftY }}
             initial={{ opacity: 0, x: -70 }}
             animate={{ opacity: 1, x: 0 }}
@@ -151,7 +151,7 @@ export default function Hero() {
           <div />
 
           <motion.div
-            className="relative -right-1/2 top-1/2 will-change-transform"
+            className="relative -right-1/3 -bottom-1/2 md:-bottom-3/5 will-change-transform"
             style={{ y: rightY }}
             initial={{ opacity: 0, x: 70 }}
             animate={{ opacity: 1, x: 0 }}
@@ -170,7 +170,7 @@ export default function Hero() {
 
       {/* ── Hero content ── */}
       <motion.div
-        className="relative z-10 w-full py-16 will-change-transform"
+        className="relative z-10 w-full py-8 sm:py-12 lg:py-16 will-change-transform"
         style={{ y: contentY, opacity: contentOpacity }}
       >
         <Container className="flex flex-col items-center text-center">
@@ -188,7 +188,7 @@ export default function Hero() {
               style={{ background: "rgba(234,196,88,0.2)" }}
             >
               <span
-                className="font-sans text-[13px] font-medium uppercase tracking-wide"
+                className="font-sans text-[10px] md:text-xs font-medium uppercase tracking-wide"
                 style={{
                   background:
                     "linear-gradient(90deg, #8b732f 14.6%, #eac458 43.5%, #8b732f 101.7%)",
@@ -203,7 +203,7 @@ export default function Hero() {
 
             {/* Headline — word-by-word curtain reveal */}
             <motion.h1
-              className="font-agatho text-[70px] leading-[1.05] text-white max-w-[936px] flex flex-wrap justify-center gap-x-[0.28em]"
+              className="font-agatho text-[42px] sm:text-[54px] lg:text-[70px] leading-[1.05] text-white max-w-[936px] flex flex-wrap justify-center gap-x-[0.28em]"
               variants={wordMask}
             >
               {headline.map((word, i) => (
@@ -221,7 +221,7 @@ export default function Hero() {
             {/* Subheading — typewriter, hollow outlined */}
             <motion.p
               variants={twContainer}
-              className="font-sans text-[24px] uppercase mt-2 mb-8 tracking-[4px] text-white"
+              className="font-sans text-[13px] sm:text-[18px] lg:text-[24px] uppercase mt-2 mb-6 sm:mb-8 tracking-[2px] sm:tracking-[4px] text-white"
               // style={{ color: "transparent", WebkitTextStroke: "0.8px #fff" }}
             >
               {SUBHEADING.split("").map((char, i) => (
@@ -232,15 +232,16 @@ export default function Hero() {
             </motion.p>
 
             {/* CTA buttons — staggered */}
-            <motion.div className="flex items-center gap-4" variants={btnRow}>
+            <motion.div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto max-w-60 md:max-w-full" variants={btnRow}>
               <motion.div
+              className="w-full"
                 variants={btnItem}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 whileTap={{ scale: 0.96 }}
               >
                 <Link
                   href="/bachelor-of-information-technology"
-                  className="flex items-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white font-sans border border-white whitespace-nowrap hover:bg-white/10 transition-colors"
+                  className="flex items-center justify-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white font-sans border border-white whitespace-nowrap hover:bg-white/10 transition-colors w-full sm:w-auto"
                 >
                   Explore Courses
                   <ChevronRight size={14} strokeWidth={2} />
@@ -248,13 +249,14 @@ export default function Hero() {
               </motion.div>
 
               <motion.div
+              className="w-full"
                 variants={btnItem}
                 whileHover={{ scale: 1.05, opacity: 0.92, transition: { duration: 0.2 } }}
                 whileTap={{ scale: 0.96 }}
               >
                 <Link
                   href="/how-to-apply"
-                  className="flex items-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white font-sans whitespace-nowrap"
+                  className="flex items-center justify-center gap-[10px] px-[17px] py-[10px] rounded-[8px] text-white font-sans whitespace-nowrap w-full sm:w-auto"
                   style={{
                     background:
                       "linear-gradient(176.49deg, #F0C41A 0.56%, #D6A929 36.4%, #a6860d 89.05%)",

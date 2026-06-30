@@ -68,7 +68,7 @@ export default function Footer() {
       {/* ── Links + Contact ── */}
       <Container className="py-16">
         <motion.div
-          className="grid grid-cols-[1.5fr_1fr_1fr_1.6fr] gap-8"
+          className="grid md:grid-cols-[1.5fr_1fr_1fr_1.6fr] gap-8"
           variants={colVariants}
           initial="hidden"
           whileInView="show"
@@ -151,9 +151,7 @@ export default function Footer() {
                 strokeWidth={1.5}
                 className="text-white shrink-0"
               />
-              <p className="font-sans text-[14px] text-[#9ca3af]">
-                TBA
-              </p>
+              <p className="font-sans text-[14px] text-[#9ca3af]">TBA</p>
             </div>
             <div className="flex items-center gap-3">
               <Mail
@@ -212,7 +210,7 @@ export default function Footer() {
       </motion.div> */}
 
       {/* ── Logo + watermark + bottom bar ── */}
-      <div className="relative overflow-hidden group">
+      <div className="relative overflow-hidden group transition-all duration-300 ease-in-out">
         {/* Watermark */}
         <div
           aria-hidden
@@ -267,9 +265,9 @@ export default function Footer() {
               strokeWidth="2"
             >
               <tspan strokeOpacity="1">STO</tspan>
-              <tspan strokeOpacity="0.3">C</tspan>
+              <tspan strokeOpacity="0.5">C</tspan>
               <tspan strokeOpacity="0.1">K</tspan>
-              <tspan strokeOpacity="0.3">D</tspan>
+              <tspan strokeOpacity="0.5">D</tspan>
               <tspan strokeOpacity="1">ALE</tspan>
             </text>
           </svg>
@@ -277,9 +275,10 @@ export default function Footer() {
 
         {/* Logo */}
         <motion.div
-          className="relative flex flex-col items-center py-10 gap-3 z-10 group-hover:-z-10"
+          className="relative flex flex-col items-center py-10 gap-3 z-10"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
+          whileHover={{ y: -18, scale: 0.8 }}
           viewport={VIEWPORT}
           transition={{ duration: 0.7, ease: SPRING }}
         >
@@ -303,7 +302,8 @@ export default function Footer() {
           <Container>
             <div className="flex items-center justify-between py-5">
               <p className="font-sans text-[12px] text-[#6b7280]">
-                &copy;&nbsp;2026 Stockdale Higher Education Institute. All rights reserved.
+                &copy;&nbsp;2026 Stockdale Higher Education Institute. All
+                rights reserved.
               </p>
               <div className="flex items-center gap-8">
                 {legalLinks.map((l) => (
