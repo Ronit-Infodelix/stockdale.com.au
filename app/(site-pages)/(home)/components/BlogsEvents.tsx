@@ -4,82 +4,103 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Container from "../../../components/ui/Container";
+import { ARTICLES } from "../../../lib/news";
 
 const SPRING   = [0.22, 1, 0.36, 1] as const;
 const VIEWPORT = { once: true, margin: "-60px" } as const;
 
 /* ─── data ─────────────────────────────────────────────────── */
 
-const blogPosts = [
-  {
-    date: "26 Oct 2026",
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing.",
-    excerpt: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad",
-    image: "/images/home/gallery/gallery-3.webp",
-  },
-  {
-    date: "26 Oct 2026",
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing.",
-    excerpt: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad",
-    image: "/images/home/gallery/gallery-1.webp",
-  },
-  {
-    date: "26 Oct 2026",
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing.",
-    excerpt: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad",
-    image: "/images/home/gallery/gallery-4.webp",
-  },
-];
+const featured = (() => {
+  const a = ARTICLES.News[0];
+  return {
+    date: `${a.day} ${a.month} 2026`,
+    title: a.title,
+    excerpt: a.excerpt,
+    image: a.image,
+    href: a.href ?? "/news-and-events",
+  };
+})();
 
-const events = [
-  { day: "21", month: "May", category: "Sed Do Eiusmod", title: "Lorem ipsum dolor sit amet", description: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad" },
-  { day: "21", month: "May", category: "Sed Do Eiusmod", title: "Lorem ipsum dolor sit amet", description: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad" },
-  { day: "21", month: "May", category: "Sed Do Eiusmod", title: "Lorem ipsum dolor sit amet", description: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad" },
-];
+const blogPosts = ARTICLES.News.slice(1, 4).map((a) => ({
+  date: `${a.day} ${a.month} 2026`,
+  title: a.title,
+  excerpt: a.excerpt,
+  image: a.image,
+  href: a.href ?? "/news-and-events",
+}));
+
+const events = ARTICLES.Events.slice(0, 3).map((a) => ({
+  day: a.day,
+  month: a.month,
+  category: a.category,
+  title: a.title,
+  description: a.excerpt,
+  href: a.href ?? "/news-and-events",
+}));
 
 /* ─── sub-components ────────────────────────────────────────── */
 
-function BlogCard({ date, title, excerpt, image }: (typeof blogPosts)[number]) {
+function BlogCard({ date, title, excerpt, image, href }: (typeof blogPosts)[number]) {
+  const external = href.startsWith("http");
   return (
-    <div className="flex h-[144px] bg-white rounded-[10px] shadow-[0px_3px_5px_0px_rgba(0,0,0,0.03)] overflow-hidden">
-      {/* Image */}
+    <a
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="group flex h-36 bg-white rounded-[10px] shadow-[0px_3px_5px_0px_rgba(0,0,0,0.03)] overflow-hidden hover:shadow-md transition-shadow"
+    >
       <div className="w-[149px] shrink-0 relative overflow-hidden bg-[#d9d9d9]">
-        <Image src={image} alt={title} fill className="object-cover" />
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
+        />
       </div>
-      {/* Content */}
       <div className="flex flex-col justify-between flex-1 px-4 py-3">
         <div className="flex flex-col gap-1">
-          <span className="inline-flex self-start items-center bg-brand-green-darkest text-white text-[10px] font-medium font-sans px-2 py-[2px] rounded-r-[4px]">
+          <span className="inline-flex self-start items-center bg-brand-green-darkest text-white text-[10px] font-medium font-sans px-2 py-0.5 rounded-r-sm">
             {date}
           </span>
-          <h3 className="font-sans font-medium text-[16px] leading-[20px] text-black line-clamp-2">{title}</h3>
-          <p className="font-sans text-[10px] leading-[12px] text-brand-gray line-clamp-2">{excerpt}</p>
+          <h3 className="font-sans font-medium text-[16px] leading-5 text-black line-clamp-2 group-hover:text-brand-green-dark transition-colors">
+            {title}
+          </h3>
+          <p className="font-sans text-[10px] leading-3 text-brand-gray line-clamp-2">{excerpt}</p>
         </div>
-        <a href="#" className="flex items-center gap-0.5 text-[#014f3d] text-[12px] font-sans">
+        <span className="flex items-center gap-0.5 text-brand-green-dark text-[12px] font-sans">
           Read more <ChevronRight size={10} strokeWidth={2} />
-        </a>
+        </span>
       </div>
-    </div>
+    </a>
   );
 }
 
-function EventItem({ day, month, category, title, description }: (typeof events)[number]) {
+function EventItem({ day, month, category, title, description, href }: (typeof events)[number]) {
+  const external = href.startsWith("http");
   return (
-    <div className="flex h-[144px] bg-white rounded-[10px] shadow-[0px_3px_5px_0px_rgba(0,0,0,0.03)] overflow-hidden">
-      <div className="w-[80px] shrink-0 flex flex-col items-center justify-center">
-        <span className="font-agatho text-[#d6a929] text-[52px] leading-none">{day}</span>
+    <a
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="group flex h-36 bg-white rounded-[10px] shadow-[0px_3px_5px_0px_rgba(0,0,0,0.03)] overflow-hidden hover:shadow-md transition-shadow"
+    >
+      <div className="w-20 shrink-0 flex flex-col items-center justify-center">
+        <span className="font-agatho text-brand-gold-dark text-[52px] leading-none">{day}</span>
         <span className="font-sans text-[12px] uppercase text-black tracking-wide">{month}</span>
       </div>
       <div className="w-px bg-[#f2f2f2] shrink-0 self-stretch my-3" />
       <div className="flex flex-col justify-center flex-1 px-4 gap-[3px]">
         <p className="font-sans text-[11px] uppercase tracking-wide text-brand-gray">{category}</p>
-        <h3 className="font-sans font-medium text-[15px] leading-[20px] text-black line-clamp-2">{title}</h3>
+        <h3 className="font-sans font-medium text-[15px] leading-5 text-black line-clamp-2 group-hover:text-brand-green-dark transition-colors">
+          {title}
+        </h3>
         <p className="font-sans text-[11px] leading-[14px] text-brand-gray line-clamp-2">{description}</p>
-        <a href="#" className="flex items-center gap-0.5 text-[#014f3d] text-[12px] font-sans mt-1">
+        <span className="flex items-center gap-0.5 text-brand-green-dark text-[12px] font-sans mt-1">
           Know more <ChevronRight size={10} strokeWidth={2} />
-        </a>
+        </span>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -103,7 +124,7 @@ export default function BlogsEvents() {
       {/* Header */}
       <Container className="flex flex-col items-center text-center mb-14">
         <motion.span
-          className="bg-brand-green-light text-black text-[10px] font-sans px-3 py-[5px] rounded-[4px] inline-block mb-4"
+          className="bg-brand-green-light text-black text-[10px] font-sans px-3 py-1.25 rounded-sm inline-block mb-4"
           initial={{ opacity: 0, scale: 0.85 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={VIEWPORT}
@@ -121,14 +142,14 @@ export default function BlogsEvents() {
           Explore News, Events &amp; Student Stories
         </motion.h2>
         <motion.p
-          className="font-sans text-[16px] leading-[24px] text-brand-gray max-w-[516px] mt-4"
+          className="font-sans text-[16px] leading-6 text-brand-gray max-w-[516px] mt-4"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VIEWPORT}
           transition={{ duration: 0.65, delay: 0.18, ease: SPRING }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          facilisis rhoncus placerat. Suspendisse ac dui et.
+          Stay up to date with the latest news, upcoming events, and insights
+          from the Stockdale community.
         </motion.p>
       </Container>
 
@@ -136,9 +157,12 @@ export default function BlogsEvents() {
       <Container>
         <div className="grid grid-cols-3 gap-6">
 
-          {/* ── Col 1: Featured article with students.png ── */}
-          <motion.div
-            className="relative rounded-[10px] overflow-hidden"
+          {/* ── Col 1: Featured card ── */}
+          <motion.a
+            href={featured.href}
+            target={featured.href.startsWith("http") ? "_blank" : undefined}
+            rel={featured.href.startsWith("http") ? "noopener noreferrer" : undefined}
+            className="group relative rounded-[10px] overflow-hidden"
             style={{ height: cardStackH }}
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -146,31 +170,31 @@ export default function BlogsEvents() {
             transition={{ duration: 0.8, ease: SPRING }}
           >
             <Image
-              src="/images/home/students.webp"
-              alt="Featured article"
+              src={featured.image}
+              alt={featured.title}
               fill
-              className="object-cover object-center"
+              className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
               priority
             />
             <div
-              className="absolute inset-0"
+              className="absolute inset-0 group-hover:bg-black/10 transition-colors duration-300"
               style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.08) 29%, rgba(0,0,0,0.80) 100%)" }}
             />
             <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col gap-2">
-              <span className="inline-flex self-start items-center bg-[#f0c41a] text-black text-[10px] font-medium font-sans px-2 py-[2px] rounded-r-[4px]">
-                26 Oct 2026
+              <span className="inline-flex self-start items-center bg-brand-gold text-black text-[10px] font-medium font-sans px-2 py-0.5 rounded-r-sm">
+                {featured.date}
               </span>
-              <h3 className="font-sans font-medium text-[16px] leading-[24px] text-white max-w-[305px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing.
+              <h3 className="font-sans font-medium text-[16px] leading-6 text-white max-w-[305px]">
+                {featured.title}
               </h3>
-              <p className="font-sans text-[10px] leading-[12px] text-[#d9d9d9] max-w-[304px]">
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              <p className="font-sans text-[10px] leading-3 text-[#d9d9d9] max-w-[304px]">
+                {featured.excerpt}
               </p>
-              <a href="#" className="flex items-center gap-0.5 text-[#43a48e] text-[12px] font-sans mt-1">
+              <span className="flex items-center gap-0.5 text-brand-green text-[12px] font-sans mt-1">
                 Read more <ChevronRight size={10} strokeWidth={2} />
-              </a>
+              </span>
             </div>
-          </motion.div>
+          </motion.a>
 
           {/* ── Col 2: Blog cards with stagger ── */}
           <motion.div
