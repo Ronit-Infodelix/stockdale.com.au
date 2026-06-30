@@ -137,7 +137,7 @@ export default function CampusSections() {
             {[
               "Through their Stockdale accounts students will have access to all necessary resources, including email, the learning management system (LMS), ebooks and electronic learning materials and learning support material.",
               "Academics will ensure comprehensive learning resources, internal and external, are available for each subject offering via the LMS.",
-              "Staff and students will be able to access learning resources both on campus via WIFI and externally via the remote login.",
+              "Staff and students will be able to access learning resources both on campus via Wi-Fi and externally via the remote login.",
             ].map((item, i) => (
               <li key={i} className="font-sans text-[16px] leading-7 text-white/90 pl-1">{item}</li>
             ))}
@@ -149,10 +149,10 @@ export default function CampusSections() {
       <section id="health-safety" className="scroll-mt-[140px] bg-white py-16">
         <Container>
           <h2 className="font-agatho text-[40px] leading-[50px] text-black mb-6">
-            Students Health and Safety
+            Student Health and Safety
           </h2>
           <p className="font-sans text-[16px] leading-[35px] text-brand-gray max-w-3xl mb-8">
-            Health and Safety are regarded as a joint responsibility of all Personnel of Stockdale and Students. Each individual will take responsibility for their own safety, that of fellow Staff and Students, by working and operating in a safe, respectful and appropriate manner.
+            Health and safety is a shared responsibility of all Stockdale personnel and students. Each individual will take responsibility for their own safety, that of fellow Staff and Students, by working and operating in a safe, respectful and appropriate manner.
           </p>
           <div className="space-y-10 max-w-3xl">
             <div>

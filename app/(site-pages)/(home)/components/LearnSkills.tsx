@@ -3,11 +3,7 @@
 import { useState, useRef } from "react";
 import { ChevronRight, GraduationCap, BookOpen, Network } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import {
-  motion, animate,
-  useMotionValue,
-  type Variants,
-} from "framer-motion";
+import { motion, animate, useMotionValue, type Variants } from "framer-motion";
 import Section from "../../../components/ui/Section";
 import Image from "next/image";
 
@@ -27,21 +23,25 @@ const cards: Card[] = [
   {
     icon: GraduationCap,
     title: "Employment-connected Degrees",
-    gradient: "linear-gradient(197.37deg, #43A48E 6.72%, #014F3D 33.41%, #013529 76.76%)",
-    backHeading: "Real outcomes, built in.",
-    backBody: "Every degree is co-designed with industry so your qualification translates directly to career success.",
+    gradient:
+      "linear-gradient(197.37deg, #43A48E 6.72%, #014F3D 33.41%, #013529 76.76%)",
+    backHeading: "Designed around your career.",
+    backBody:
+      "Every degree is co-designed with industry so your study, work, and support are connected from the very start.",
     bullets: [
       "Work-integrated learning from Year 1",
-      "Guaranteed internship placement",
-      "95% employed within 6 months",
+      "Industry-designed assessment",
+      "Career-ready portfolio",
     ],
   },
   {
     icon: BookOpen,
     title: "The Stockdale Integrated Capability Framework",
-    gradient: "linear-gradient(174.01deg, #43A48E 0.56%, #014F3D 36.40%, #013529 89.05%)",
+    gradient:
+      "linear-gradient(174.01deg, #43A48E 0.56%, #014F3D 36.40%, #013529 89.05%)",
     backHeading: "A framework for life.",
-    backBody: "Twelve core capability domains benchmarked against industry standards, evolving with you throughout your career.",
+    backBody:
+      "Twelve core capability domains benchmarked against industry standards, evolving with you throughout your career.",
     bullets: [
       "12 cross-disciplinary capability domains",
       "Continuous industry-benchmarked assessment",
@@ -50,14 +50,16 @@ const cards: Card[] = [
   },
   {
     icon: Network,
-    title: "An Education–Employment Ecosystem",
-    gradient: "linear-gradient(156.39deg, #43A48E 7.21%, #014F3D 42.32%, #013529 80.25%)",
+    title: "An Education-Employment Ecosystem",
+    gradient:
+      "linear-gradient(156.39deg, #43A48E 7.21%, #014F3D 42.32%, #013529 80.25%)",
     backHeading: "Study where industry lives.",
-    backBody: "Our 200+ partner network embeds live projects, mentors, and career pathways directly into your studies.",
+    backBody:
+      "Our model embeds live projects, mentors, and career pathways directly into your studies through partner organisations.",
     bullets: [
-      "200+ active industry partnerships",
-      "Live briefs from partner organisations",
-      "Global career placement network",
+      "Live projects with partner organisations",
+      "Industry mentors and guest practitioners",
+      "Career pathways built into the curriculum",
     ],
   },
 ];
@@ -72,7 +74,6 @@ function FlipCard({ card, variants }: { card: Card; variants: Variants }) {
 
   // Rotation MotionValue — lets us derive shadow from the live angle
   const rotateY = useMotionValue(0);
-
 
   const onEnter = () => {
     clearTimeout(leaveTimer.current);
@@ -94,12 +95,16 @@ function FlipCard({ card, variants }: { card: Card; variants: Variants }) {
   };
 
   // Delays for back-face content stagger — only active when flipping IN
-  const d = (base: number) => ({ duration: 0.36, delay: flipped ? base : 0, ease: SPRING });
+  const d = (base: number) => ({
+    duration: 0.36,
+    delay: flipped ? base : 0,
+    ease: SPRING,
+  });
 
   return (
     <motion.div
       variants={variants}
-      className="h-[300px] cursor-pointer relative"
+      className="h-75 cursor-pointer relative"
       style={{ perspective: "1200px" }}
       whileHover={{ y: -10 }}
       transition={{ duration: 0.35, ease: SPRING }}
@@ -129,14 +134,18 @@ function FlipCard({ card, variants }: { card: Card; variants: Variants }) {
             </h3>
           </div>
           <span className="flex items-center gap-1.5 text-white/80 text-[13px] font-sans">
-            Hover to explore <ChevronRight size={12} strokeWidth={2} />
+            Explore <ChevronRight size={12} strokeWidth={2} />
           </span>
         </div>
 
         {/* ── Back ── */}
         <div
           className="rounded-[30px] border-b-4 border-[#d6a929] p-8 flex flex-col justify-between h-full overflow-hidden"
-          style={{ ...faceBase, transform: "rotateY(180deg)", background: gradient }}
+          style={{
+            ...faceBase,
+            transform: "rotateY(180deg)",
+            background: gradient,
+          }}
         >
           <div className="flex flex-col gap-3">
             <motion.h4
@@ -191,12 +200,20 @@ const cardGrid = {
 
 const cardItem = {
   hidden: { opacity: 0, y: 50, scale: 0.96 },
-  show:   { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: SPRING } },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.8, ease: SPRING },
+  },
 };
 
 export default function LearnSkills() {
   return (
-    <Section className="bg-[#f9f9f9]" containerClassName="flex flex-col items-center gap-12">
+    <Section
+      className="bg-[#f9f9f9]"
+      containerClassName="flex flex-col items-center gap-12"
+    >
       <div className="absolute inset-0 w-full h-full">
         <Image
           src="/images/bg/map.webp"
@@ -210,7 +227,7 @@ export default function LearnSkills() {
       {/* Header */}
       <div className="flex flex-col items-center gap-3 text-center">
         <motion.span
-          className="bg-brand-green-light text-black text-[10px] font-sans px-3 py-1 rounded-[4px]"
+          className="bg-brand-green-light text-black text-[10px] font-sans px-3 py-1 rounded-md"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={VIEWPORT}
@@ -230,13 +247,15 @@ export default function LearnSkills() {
         </motion.h2>
 
         <motion.p
-          className="font-sans text-[16px] leading-[24px] text-brand-gray max-w-[517px]"
+          className="font-sans text-[16px] leading-[24px] text-brand-gray max-w-200"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VIEWPORT}
           transition={{ duration: 0.65, delay: 0.22, ease: SPRING }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing eli.
+          Our employment-connected model brings study, work, and support
+          together - so you build real-world capability while you learn, guided
+          by an industry-designed curriculum.
         </motion.p>
       </div>
 

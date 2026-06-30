@@ -8,10 +8,10 @@ const VIEWPORT = { once: true, margin: "-60px" } as const;
 
 const credentials = [
   { label: "TEQSA Provider ID", value: "PRV14409" },
-  { label: "CRICOS Provider", value: "TBA" },
+  { label: "CRICOS Provider Code", value: "04467K" },
   { label: "ABN", value: "30 657 190 193" },
   { label: "Established", value: "2026" },
-  { label: "Tagline", value: "A Global Community of Scholars" },
+  { label: "Tagline", value: "Innovate, Create, Succeed" },
 ];
 
 export default function CredentialsSection() {

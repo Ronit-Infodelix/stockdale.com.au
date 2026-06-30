@@ -94,9 +94,10 @@ export default function OurValues() {
           viewport={VIEWPORT}
           transition={{ duration: 0.65, delay: 0.2, ease: SPRING }}
         >
-          Stockdale Higher Education Institute — where academic tradition meets
-          forward-thinking innovation. Located in the heart of West Melbourne,
-          we prepare graduates to lead in a complex world.
+          From our home in the heart of West Melbourne, Stockdale Higher
+          Education Institute pairs academic tradition with forward-thinking
+          innovation and a genuine commitment to its students - designed to
+          prepare graduates to lead in a complex world.
         </motion.p>
       </Container>
 

@@ -1,8 +1,17 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
+import {
+  ChevronLeft,
+  ChevronRight,
+  GraduationCap,
+  Users,
+  LifeBuoy,
+  Briefcase,
+  Route,
+  Globe,
+  type LucideIcon,
+} from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Container from "../../../components/ui/Container";
@@ -10,77 +19,60 @@ import Container from "../../../components/ui/Container";
 const SPRING   = [0.22, 1, 0.36, 1] as const;
 const VIEWPORT = { once: true, margin: "-60px" } as const;
 
-const testimonials = [
+interface Feature {
+  id: number;
+  title: string;
+  text: string;
+  Icon: LucideIcon;
+}
+
+const features: Feature[] = [
   {
     id: 1,
-    name: "Priya Sharma",
-    role: "BIT Graduate 2025",
-    avatar: "/images/home/avatar-danial.webp",
-    text: "Stockdale transformed my career. The industry-relevant curriculum and supportive faculty prepared me for real-world challenges from day one.",
+    title: "Quality Education",
+    text: "A TEQSA-registered higher education provider delivering an industry-relevant curriculum built to a rigorous academic standard.",
+    Icon: GraduationCap,
   },
   {
     id: 2,
-    name: "James Chen",
-    role: "Current Student, Year 2",
-    avatar: "/images/home/avatar-becca.webp",
-    text: "The data analytics specialisation is world-class. I'm already working on real projects with our industry partners while still studying.",
+    title: "Expert Trainers",
+    text: "Learn from experienced educators and industry practitioners who bring real-world knowledge into every class.",
+    Icon: Users,
   },
   {
     id: 3,
-    name: "Amara Okonkwo",
-    role: "International Student",
-    avatar: "/images/home/avatar-danial.webp",
-    text: "Moving to Australia was a big decision, but Stockdale's support team made every step easy. The life in Australia guidance was invaluable.",
+    title: "Student Support",
+    text: "From your first day, our dedicated team is here to help you settle in, stay on track, and make the most of studying in Australia.",
+    Icon: LifeBuoy,
   },
   {
     id: 4,
-    name: "Priya Sharma",
-    role: "BIT Graduate 2025",
-    avatar: "/images/home/avatar-danial.webp",
-    text: "Stockdale transformed my career. The industry-relevant curriculum and supportive faculty prepared me for real-world challenges from day one.",
+    title: "Industry-Connected Learning",
+    text: "An employment-connected model with work-integrated learning, so your studies stay closely linked to the careers you're working towards.",
+    Icon: Briefcase,
   },
   {
     id: 5,
-    name: "James Chen",
-    role: "Current Student, Year 2",
-    avatar: "/images/home/avatar-becca.webp",
-    text: "The data analytics specialisation is world-class. I'm already working on real projects with our industry partners while still studying.",
+    title: "Flexible Pathways",
+    text: "Credit and Recognition of Prior Learning let you build on previous study and experience and progress towards your qualification sooner.",
+    Icon: Route,
   },
   {
     id: 6,
-    name: "Amara Okonkwo",
-    role: "International Student",
-    avatar: "/images/home/avatar-danial.webp",
-    text: "Moving to Australia was a big decision, but Stockdale's support team made every step easy. The life in Australia guidance was invaluable.",
+    title: "Global Community",
+    text: "A welcoming community built around our promise to innovate, create, and succeed - open to domestic and international students alike.",
+    Icon: Globe,
   },
 ];
 
-function Stars() {
+function FeatureCard({ title, text, Icon }: Feature) {
   return (
-    <div className="flex gap-1">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} width="19" height="19" viewBox="0 0 19 19" fill="#F0C41A" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9.5 1.5L11.941 6.514L17.5 7.282L13.5 11.18L14.441 17L9.5 14.264L4.559 17L5.5 11.18L1.5 7.282L7.059 6.514L9.5 1.5Z" />
-        </svg>
-      ))}
-    </div>
-  );
-}
-
-function TestimonialCard({ name, role, avatar, text }: (typeof testimonials)[number]) {
-  return (
-    <div className="bg-white rounded-[10px] p-6 h-[308px] flex flex-col justify-between">
-      <div className="flex flex-col gap-3">
-        <Stars />
-        <p className="font-sans text-[12px] leading-[18px] text-brand-gray line-clamp-5">{text}</p>
+    <div className="bg-white rounded-[10px] p-6 h-[308px] flex flex-col">
+      <div className="w-12 h-12 rounded-full bg-brand-green-light flex items-center justify-center mb-5 shrink-0">
+        <Icon size={22} strokeWidth={1.75} className="text-brand-green-darkest" />
       </div>
-      <div className="flex items-center gap-2">
-        <Image src={avatar} alt={name} width={38} height={38} className="rounded-full object-cover shrink-0" />
-        <div>
-          <p className="font-sans font-medium text-[12px] text-black leading-[18px]">{name}</p>
-          <p className="font-sans text-[10px] text-brand-gray leading-[18px]">{role}</p>
-        </div>
-      </div>
+      <h3 className="font-agatho text-[22px] leading-tight text-black mb-3">{title}</h3>
+      <p className="font-sans text-[13px] leading-[20px] text-brand-gray">{text}</p>
     </div>
   );
 }
@@ -108,7 +100,7 @@ export default function Testimonials() {
   const scrollTo   = useCallback((i: number) => emblaApi?.scrollTo(i), [emblaApi]);
 
   function getOpacity(index: number) {
-    const total = testimonials.length;
+    const total = features.length;
     const dist  = (((index - selectedIndex) % total) + total) % total;
     return dist === 0 || dist === 1 ? 1 : 0.4;
   }
@@ -128,17 +120,17 @@ export default function Testimonials() {
           {/* Left: text */}
           <div>
             <span className="bg-brand-green-light text-black text-[10px] font-sans px-3 py-[5px] rounded-[4px] inline-block mb-4">
-              Student Voices
+              Our Commitment to You
             </span>
             <h2 className="font-agatho text-[50px] leading-tight text-black mb-4">
-              Stories of Success
+              What to Expect at Stockdale
             </h2>
             <p className="font-sans text-[16px] leading-[24px] text-brand-gray max-w-200">
-              Hear from our students about their experience at Stockdale Higher Education Institute.
+              As a new institute opening in 2026, here is what our employment-connected model is designed to deliver for every student.
             </p>
           </div>
 
-          {/* Right: prev / next — never touch the cards */}
+          {/* Right: prev / next - never touch the cards */}
           <motion.div
             className="flex items-center gap-3 shrink-0 mb-1"
             initial={{ opacity: 0, x: 20 }}
@@ -163,7 +155,7 @@ export default function Testimonials() {
           </motion.div>
         </motion.div>
 
-        {/* ── Carousel — no positioned buttons inside ── */}
+        {/* ── Carousel - no positioned buttons inside ── */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -172,13 +164,13 @@ export default function Testimonials() {
         >
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex gap-[33px]">
-              {testimonials.map((t, i) => (
+              {features.map((f, i) => (
                 <div
-                  key={t.id}
+                  key={f.id}
                   className="shrink-0 transition-opacity duration-300 ease-in-out"
                   style={{ width: 285, opacity: getOpacity(i) }}
                 >
-                  <TestimonialCard {...t} />
+                  <FeatureCard {...f} />
                 </div>
               ))}
             </div>

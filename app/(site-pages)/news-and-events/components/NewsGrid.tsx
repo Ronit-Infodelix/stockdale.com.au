@@ -5,152 +5,7 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import Container from "@/app/components/ui/Container";
 import SplitSection from "@/app/components/shared/SplitSection";
-
-interface Article {
-  title: string;
-  excerpt: string;
-  category: string;
-  day: string;
-  month: string;
-  image: string;
-  href?: string;
-}
-
-const TABS = ["News", "Events"] as const;
-type Tab = (typeof TABS)[number];
-
-const ARTICLES: Record<Tab, Article[]> = {
-  Events: [
-    {
-      day: "21",
-      month: "May",
-      category: "Campus Life",
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      excerpt:
-        "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-      image:
-        "/images/home/gallery/students-group.webp",
-    },
-    {
-      day: "21",
-      month: "May",
-      category: "Events",
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      excerpt:
-        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image:
-        "/images/home/gallery/students-celebrating.webp",
-    },
-    {
-      day: "21",
-      month: "May",
-      category: "Academic",
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      excerpt:
-        "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-      image: "/images/home/students.webp",
-    },
-    {
-      day: "21",
-      month: "May",
-      category: "Community",
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      excerpt:
-        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "/images/home/students-empowering.webp",
-    },
-    {
-      day: "21",
-      month: "May",
-      category: "Campus Life",
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      excerpt:
-        "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-      image:
-        "/images/home/gallery/students-group.webp",
-    },
-    {
-      day: "14",
-      month: "Jun",
-      category: "Events",
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      excerpt:
-        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image:
-        "/images/home/gallery/students-celebrating.webp",
-    },
-    {
-      day: "02",
-      month: "Jul",
-      category: "Academic",
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      excerpt:
-        "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-      image: "/images/home/students.webp",
-    },
-  ],
-  News: [
-    {
-      day: "10",
-      month: "Apr",
-      category: "Announcement",
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      excerpt:
-        "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-      image: "/images/home/students-empowering.webp",
-    },
-    {
-      day: "05",
-      month: "May",
-      category: "Research",
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      excerpt:
-        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "/images/home/students.webp",
-    },
-    {
-      day: "21",
-      month: "May",
-      category: "Campus Life",
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      excerpt:
-        "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-      image:
-        "/images/home/gallery/students-group.webp",
-    },
-    {
-      day: "03",
-      month: "Jun",
-      category: "Announcement",
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      excerpt:
-        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image:
-        "/images/home/gallery/students-celebrating.webp",
-    },
-    {
-      day: "18",
-      month: "Jun",
-      category: "Research",
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      excerpt:
-        "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-      image: "/images/home/students-empowering.webp",
-    },
-  ],
-};
+import { ARTICLES, TABS, type Article, type Tab } from "@/app/lib/news";
 
 const PER_PAGE_EVENTS = 5;
 const PER_PAGE_NEWS = 9;
@@ -163,14 +18,21 @@ function ArticleRow({
   title,
   excerpt,
   image,
-  href = "#",
+  href = "/contact",
 }: Article) {
   return (
-    <div className="flex items-center gap-0 border-t border-b border-gray-200 bg-white py-[9px]">
+    <div className="relative flex items-center gap-0 border-t border-b border-gray-200 bg-white py-[9px] group cursor-pointer transition-colors duration-200 hover:bg-[#f5faf8]">
+      <Link
+        href={href}
+        target={href.startsWith("http") ? "_blank" : undefined}
+        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+        className="absolute inset-0 z-10"
+        aria-label={title}
+      />
       {/* Thumbnail */}
       <div className="shrink-0 w-[165px] h-[148px] rounded-[10px] overflow-hidden shadow-[0px_3px_5px_rgba(0,0,0,0.03)] mr-5">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={image} alt={title} className="w-full h-full object-cover" />
+        <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
       </div>
 
       {/* Date */}
@@ -188,19 +50,16 @@ function ArticleRow({
         <p className="font-sans text-[12px] font-medium uppercase text-brand-green-darkest tracking-wide">
           {category}
         </p>
-        <p className="font-sans text-[16px] font-medium leading-[23px] text-black">
+        <p className="font-sans text-[16px] font-medium leading-[23px] text-black group-hover:text-brand-green-dark transition-colors duration-200">
           {title}
         </p>
         <p className="font-sans text-[12px] leading-[14px] text-brand-gray">
           {excerpt}
         </p>
-        <Link
-          href={href}
-          className="inline-flex items-center gap-1 font-sans text-[12px] text-brand-green-dark mt-1"
-        >
+        <span className="inline-flex items-center gap-1 font-sans text-[12px] text-brand-green-dark mt-1">
           Know more
-          <ChevronRight size={12} strokeWidth={2} />
-        </Link>
+          <ChevronRight size={12} strokeWidth={2} className="transition-transform duration-200 group-hover:translate-x-1" />
+        </span>
       </div>
     </div>
   );
@@ -214,16 +73,23 @@ function ArticleCard({
   title,
   excerpt,
   image,
-  href = "#",
+  href = "/contact",
 }: Article) {
   return (
-    <div className="rounded-[10px] border border-gray-200 overflow-hidden flex flex-col">
-      <div className="relative h-[272px] bg-gray-100 shrink-0">
+    <div className="relative rounded-[10px] border border-gray-200 overflow-hidden flex flex-col group cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-brand-green-dark/30">
+      <Link
+        href={href}
+        target={href.startsWith("http") ? "_blank" : undefined}
+        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+        className="absolute inset-0 z-10"
+        aria-label={title}
+      />
+      <div className="relative h-[272px] bg-gray-100 shrink-0 overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={image}
           alt={title}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute bottom-0 left-0">
           <div className="bg-brand-green-darkest rounded-r-sm px-3 py-1 inline-block">
@@ -237,16 +103,13 @@ function ArticleCard({
         <p className="font-sans text-[12px] font-medium uppercase text-brand-green-darkest tracking-wide">
           {category}
         </p>
-        <p className="font-sans text-[16px] font-medium leading-5 text-black">
+        <p className="font-sans text-[16px] font-medium leading-5 text-black group-hover:text-brand-green-dark transition-colors duration-200">
           {title}
         </p>
         <p className="font-sans text-[10px] text-brand-gray">{excerpt}</p>
-        <Link
-          href={href}
-          className="inline-flex items-center gap-1 font-sans text-[12px] text-brand-green-dark mt-auto pt-2"
-        >
-          Read more <ChevronRight size={12} strokeWidth={2} />
-        </Link>
+        <span className="inline-flex items-center gap-1 font-sans text-[12px] text-brand-green-dark mt-auto pt-2">
+          Read more <ChevronRight size={12} strokeWidth={2} className="transition-transform duration-200 group-hover:translate-x-1" />
+        </span>
       </div>
     </div>
   );
@@ -326,15 +189,15 @@ export default function NewsGrid() {
       <div className="py-14">
         {/* News: featured split article above the grid */}
         {!isEvents && (
-          <div className="-mx-4 sm:-mx-6 lg:-mx-6 mb-14">
+          <div className="mb-14">
             <SplitSection
               badge="News"
-              title="Lorem ipsum dolor simet, consectetur adipiscing elit"
-              body="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              title="A new chapter for higher education in West Melbourne"
+              body="Stockdale Higher Education Institute opens in 2026 as a TEQSA-registered and CRICOS-registered provider. Our first degree, the Bachelor of Information Technology specialising in Data Analytics, is built on an employment-connected model that brings together study, work, and support to help students graduate workplace-ready."
               image="/images/news/cta.webp"
-              imageAlt="Students in lecture"
+              imageAlt="Students on the Stockdale campus"
               imagePosition="left"
-              cta={{ label: "Read More", href: "#" }}
+              cta={{ label: "Explore the Degree", href: "/graduation-courses" }}
             />
           </div>
         )}

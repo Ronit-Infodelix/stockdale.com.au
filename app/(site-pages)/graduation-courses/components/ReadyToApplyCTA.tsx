@@ -39,17 +39,17 @@ export default function ReadyToApplyCTA() {
           {/* Buttons */}
           <div className="flex flex-wrap gap-4">
             <Link
-              href="#"
+              href="/how-to-apply"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white text-black text-[14px] font-sans hover:bg-white/90 transition-opacity"
             >
               How to Apply
               <ChevronRight size={14} strokeWidth={2} />
             </Link>
             <Link
-              href="#"
+              href="/how-to-apply"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-white text-white text-[14px] font-sans hover:bg-white/10 transition-colors"
             >
-              Eligibility Calculator
+              Entry Requirements
               <ChevronRight size={14} strokeWidth={2} />
             </Link>
           </div>

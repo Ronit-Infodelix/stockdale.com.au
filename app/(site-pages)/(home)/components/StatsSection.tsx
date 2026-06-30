@@ -1,10 +1,10 @@
 "use client";
 
 import {
-  Briefcase,
   GraduationCap,
-  Users,
-  BookOpen,
+  CalendarCheck,
+  ShieldCheck,
+  Briefcase,
   ChevronRight,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -23,19 +23,17 @@ const stats: {
   label: string;
 }[] = [
   {
-    icon: Briefcase,
-    value: 94,
-    suffix: "%",
-    label: "Graduate Employability",
+    icon: GraduationCap,
+    value: 7,
+    label: "AQF Level 7 - Bachelor degree",
   },
   {
-    icon: GraduationCap,
-    value: 500,
-    suffix: "+",
-    label: "Students Enrolled",
+    icon: CalendarCheck,
+    value: 2026,
+    label: "Year established in West Melbourne",
   },
-  { icon: Users, value: 25, suffix: "+", label: "Industry Partners" },
-  { icon: BookOpen, value: 40, suffix: "+", label: "Academic Staff" },
+  { icon: ShieldCheck, value: 3, suffix: " yr", label: "Full-time Bachelor degree" },
+  { icon: Briefcase, value: 240, label: "Credit points of industry-designed curriculum" },
 ];
 
 // Card stagger
@@ -121,12 +119,13 @@ export default function StatsSection() {
             <p className="text-brand-gray text-[16px] leading-[28px]">
               Stockdale Higher Education Institute is an Australian higher
               education provider based in West Melbourne, Victoria. Established
-              in 2026 and registered with TEQSA, we deliver professional
-              qualifications to domestic and international students.
+              in 2026 and registered with TEQSA, Stockdale is designed to
+              deliver professional qualifications to domestic and international
+              students.
             </p>
             <p className="text-brand-gray text-[16px] leading-[28px]">
               We are committed to freedom of speech and academic freedom as
-              principles that underpin everything we do — from teaching and
+              principles that underpin everything we do - from teaching and
               research to the way we engage with students, staff, and the wider
               community.
             </p>
